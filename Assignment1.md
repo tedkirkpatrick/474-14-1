@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Assignment 1: Establishing an Amazon Web Services (AWS) id
+title: 'Assignment 1: Establishing an Amazon Web Services (AWS) id'
 assign1-activation: class="active"
 ---
 During the first weeks of the course, you will be building an application across multiple virtual machines running under Amazon Web Services (AWS). You will build this project in stages.
