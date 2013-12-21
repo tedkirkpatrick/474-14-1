@@ -12,11 +12,16 @@
         </div>
         <div class="collapse navbar-collapse" id="collapse-id">
           <ul class="nav navbar-nav">
-            <li {{ page.home-activation }}><a href="home.html">Home</a></li>
-            <li {{ page.about-activation }}><a href="about.html">About</a></li>
-            <li {{ page.contact-activation }}><a href="contact.html">Contact</a></li>
-            <li {{page.test-activation }}><a href="test.html">Test</a></li>
-            <li {{ page.assign1-activation }}><a href="Assignment1.html">Assignment 1</a><li>
+	    {% comment %}
+            <li {{ page.home-activation }}><a href="Home.html">Home</a></li>
+            {% endcomment %}
+	    <li {{ page.about-activation }}><a href="About.html">About</a></li>
+            <li {{ page.contact-activation }}><a href="Contact.html">Contact</a></li>
+            <li {{ page.sched-activation }}><a href="Schedule.html">Schedule</a></li>
+            <li {{ page.outcome-activation }}><a href="Outcomes.html">Learning outcomes</a></li>
+            <li {{ page.design-activation }}><a href="Design.html">Design principles</a></li>
+            <li {{ page.readings-activation }}><a href="Readings.html">Readings</a></li>
+	    <li {{ page.assign1-activation }}><a href="Assignments.html">Assignments</a><li>
             <li {{ page.coding-activation }}><a href="Coding.html">Coding standards</a></li>
 
 {% comment %}

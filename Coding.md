@@ -1,5 +1,5 @@
 ---
-layout: course
+layout: jumbocourse
 title: Coding standards
 coding-activation: class="active"
 ---
