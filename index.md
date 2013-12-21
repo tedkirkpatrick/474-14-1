@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Home for site.course
+title: Home for CMPT 474
 home-activation: class="active"
 ---
 
