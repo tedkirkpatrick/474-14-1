@@ -4,4 +4,16 @@ title: Home for CMPT 474
 home-activation: class="active"
 ---
 
-This is the course site for {{ site.course }}. Please don't be coarse to the course.
+This is the site for {{ site.course }}.
+
+## Course Instructor:
+
+Ted Kirkpatrick<br/>
+Room 4134, Surrey Campus<br/>
+ted@sfu.ca
+
+## Teaching Assistant:
+
+Izzak Schroeder<br/>
+Room Bqhatevwr, Surrey Campus<br/>
+EMAIL

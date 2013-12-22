@@ -4,4 +4,14 @@ title: Contact
 contact-activation: class="active"
 ---
 
-Contact information goes here.
+Course Instructor:
+
+Ted Kirkpatrick<br/>
+Room 4134, Surrey Campus<br/>
+ted@sfu.ca<br/>
+
+Teaching Assistant:
+
+Izzak Schroeder<br/>
+Room Bqhatevwr, Surrey Campus<br/>
+EMAIL
