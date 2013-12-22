@@ -6,13 +6,13 @@ home-activation: class="active"
 
 This is the site for {{ site.course }}.
 
-## Course Instructor:
+## Course Instructor
 
 Ted Kirkpatrick<br/>
 Room 4134, Surrey Campus<br/>
 ted@sfu.ca
 
-## Teaching Assistant:
+## Teaching Assistant
 
 Izzak Schroeder<br/>
 Room Bqhatevwr, Surrey Campus<br/>
