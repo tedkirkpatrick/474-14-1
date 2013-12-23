@@ -16,4 +16,4 @@ ted@sfu.ca
 
 Izzak Schroeder<br/>
 Room Bqhatevwr, Surrey Campus<br/>
-EMAIL
+mis2@sfu.ca
