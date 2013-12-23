@@ -8,7 +8,7 @@ sched-activation: class="active"
 
 Read the following before class:
 
- * pp. 50--53 of [A View of Cloud Computing]({{ site.armbrust2010 }})
- * pp. 50--53 of [Condos and Clouds]({{ site.helland2013 }})
+ * pp. 50--53 of [{{ site.armbrust2010.title }}]({{ site.armbrust2010.url }})
+ * pp. 50--53 of [{{ site.helland2013.title }}]({{ site.helland2013.url }})
 
 ## In-class
