@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Design principles for Cloud-based systems
+title: Design principles for cloud-based systems
 design-activation: class="active"
 ---
 Key design principles for systems intended to run on one or more warehouse-scale computers:
@@ -10,5 +10,3 @@ Key design principles for systems intended to run on one or more warehouse-scale
  * Control latency caused by the high-percentile instances (see [{{site.dean2013.title}}]({{site.dean2013.url}}))
  * Test failure resistance by inducing failures in production systems (see [{{site.tseitlin2013.title}}]({{site.tseitlin2013.url}}))
  * For each service, trade off consistency, availability, and mitigation (see [{{site.brewer2012.title}}]({{site.brewer2012.url}}))
-
-
