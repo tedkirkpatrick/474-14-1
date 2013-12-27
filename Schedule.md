@@ -25,13 +25,14 @@ sched-activation: class="active"
 <td>5</td><td>Distribute&nbsp;(Apply), Tune&nbsp;(Understand), SLA&nbsp;(Understand)</td><td><a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a></td><td>-</td><td>Server distribute</td>
 </tr>
 <tr>
-<td>6</td><td>Midterm</td><td>-</td><td>-</td><td>DEBUG10</td>
+<td>6</td><td>Midterm</td><td>-</td><td>-</td><td>DEBUG11</td>
 </tr>
 <!--
 <tr>
 <td>7</td><td>CAP&nbsp;(Understand)</td><td><a href="{{site.katsov2012.url}}">{{site.katsov2012.title}}</a>, <a href="{{site.vogels2009.url}}">{{site.vogels2009.title}}</a></td><td>-</td><td>-</td>
 </tr>
 -->
+<!--
 <tr>
 <td>8</td><td>Cluster&nbsp;(Understand)</td><td><a href="{{site.brewer2012.url}}">{{site.brewer2012.title}}</a>, <a href="{{site.helland2013.url}}">{{site.helland2013.title}}</a>, <a href="{{site.tseitlin2013.url}}">{{site.tseitlin2013.title}}</a></td><td>-</td><td>-</td>
 </tr>
@@ -50,7 +51,6 @@ sched-activation: class="active"
 <tr>
 <td>13</td><td>Cluster&nbsp;(Create), Reliability&nbsp;(Create)</td><td><a href="{{site.shute2013.url}}">{{site.shute2013.title}}</a></td><td>-</td><td>-</td>
 </tr>
-<!--
 -->
 </tbody>
 </table>
