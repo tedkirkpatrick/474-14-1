@@ -25,17 +25,17 @@ sched-activation: class="active"
 <td>5</td><td>Distribute&nbsp;(Apply), Tune&nbsp;(Understand), SLA&nbsp;(Understand)</td><td><a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a></td><td>-</td><td>Server distribute</td>
 </tr>
 <tr>
-<td>6</td><td>Midterm</td><td>-</td><td>-</td><td>DEBUG8</td>
+<td>6</td><td>Midterm</td><td>-</td><td>-</td><td>DEBUG9</td>
 </tr>
 <!--
 <tr>
 <td>7</td><td>CAP&nbsp;(Understand)</td><td><a href="{{site.katsov2012.url}}">{{site.katsov2012.title}}</a>, <a href="{{site.vogels2009.url}}">{{site.vogels2009.title}}</a></td><td>-</td><td>-</td>
 </tr>
 -->
-<!--
 <tr>
 <td>8</td><td>Cluster&nbsp;(Understand)</td><td><a href="{{site.brewer2012.url}}">{{site.brewer2012.title}}</a>, <a href="{{site.helland2013.url}}">{{site.helland2013.title}}</a>, <a href="{{site.tseitlin2013.url}}">{{site.tseitlin2013.title}}</a></td><td>-</td><td>-</td>
 </tr>
+<!--
 <tr>
 <td>9</td><td>CAP&nbsp;(Apply), Privacy&nbsp;(Understand)</td><td><a href="site.hamilton2007.url">{{site.hamilton2007.title}}</a></td><td>-</td><td>-</td>
 </tr>
