@@ -38,3 +38,6 @@ gregg2013:
 li2010:
     title: "CloudCmp: Comparing Public Cloud Providers"
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+katsov2012:
+    title: Distributed Algorithms in NoSQL Databases
+    url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
