@@ -1,4 +1,4 @@
 .commentary {
-  display: yes;
+  display: inherit;
   font-style: italic;
 }
