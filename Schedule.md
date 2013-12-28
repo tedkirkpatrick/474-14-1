@@ -4,31 +4,32 @@ title: Schedule
 sched-activation: class="active"
 ---
 <table class="commentary table">
-<caption>Planned topics and readings</caption>
+<caption>Planned topics, readings, in-class activities, and out-of-class assignments</caption>
 <thead><tr>
 <th scope="col">Week</th><th scope="col">Outcomes</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>1</td><td>Layered&nbsp;(Understand), Reading&nbsp;(Skill)</td><td><a href="{{site.armbrust2010.url}}">{{site.armbrust2010.title}}</a>, <a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a>, <a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 1&nbsp;(Intro)</a></td><td>-</td><td>AWS ID</td>
+<td>1</td><td>Layered&nbsp;(Understand), Reading&nbsp;(Skill)</td><td><a href="{{site.armbrust2010.url}}">{{site.armbrust2010.title}}</a>, <a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a>, <a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 1&nbsp;(Intro)</a></td><td>-</td><td><a href="AWSID.html">AWS ID</a></td>
 </tr>
 <tr>
-<td>2</td><td>SLA&nbsp;(Remember)</td><td><a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 2&nbsp;(Workloads and Software Infrastructure)</a></td><td>-</td><td>Python</td>
+<td>2</td><td>SLA&nbsp;(Remember)</td><td><a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 2&nbsp;(Workloads and Software Infrastructure)</a></td><td>-</td><td><a href="Python-intro.html">Python intro</a></td>
 </tr>
 <tr>
-<td>3</td><td>Reliability&nbsp;(Understand)</td><td><a href="{{site.dean2013.url}}">{{site.dean2013.title}}</a></td><td>-</td><td>Server</td>
+<td>3</td><td>Reliability&nbsp;(Understand)</td><td><a href="{{site.dean2013.url}}">{{site.dean2013.title}}</a></td><td>-</td><td><a href="Single-comp.html">Single-instance computation on {{site.serName}}</a></td>
 </tr>
 <tr>
-<td>4</td><td>Distribute&nbsp;(Understand)</td><td><a href="{{site.hull2013.url}}">{{site.hull2013.title}}</a></td><td>-</td><td>Server single</td>
+<td>4</td><td>Distribute&nbsp;(Understand)</td><td><a href="{{site.hull2013.url}}">{{site.hull2013.title}}</a></td><td>-</td><td><a href="Cluster-comp.html">Cluster computation on {{site.serName}}</a></td>
 </tr>
 <tr>
-<td>5</td><td>Distribute&nbsp;(Apply), Tune&nbsp;(Understand), SLA&nbsp;(Understand)</td><td><a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a></td><td>-</td><td>Server distribute</td>
+<td>5</td><td>Distribute&nbsp;(Apply), Tune&nbsp;(Understand), SLA&nbsp;(Understand)</td><td><a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a></td><td>-</td><td><a href="Latency-comp.html">Latency-controlling computation on {{site.serName}}</a></td>
 </tr>
 <tr>
-<td>6</td><td>Midterm</td><td>-</td><td>-</td><td>DEBUG13</td>
+<td>6</td><td>Midterm</td><td>-</td><td>-</td><td></td>
 </tr>
-<!--
--->
+<tr>
+<td>7</td><td>CAP&nbsp;(Understand)</td><td><a href="{{site.katsov2012.url}}">{{site.katsov2012.title}}</a>, <a href="{{site.vogels2009.url}}">{{site.vogels2009.title}}</a></td><td>-</td><td>-</td>
+</tr>
 <tr>
 <td>8</td><td>Cluster&nbsp;(Understand)</td><td><a href="{{site.brewer2012.url}}">{{site.brewer2012.title}}</a>, <a href="{{site.helland2013.url}}">{{site.helland2013.title}}</a>, <a href="{{site.tseitlin2013.url}}">{{site.tseitlin2013.title}}</a></td><td>-</td><td>-</td>
 </tr>
