@@ -3,6 +3,9 @@ course: CMPT 474, Spring 2014
 serName: Cloud474
 
 # Course bibliography
+anderson2000:
+   title: Taxonomy of the Cognitive Domain
+   url  : http://www4.uwsp.edu/education/lwilson/curric/newtaxonomy.htm
 armbrust2010: 
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721672
    title: A View of Cloud Computing
