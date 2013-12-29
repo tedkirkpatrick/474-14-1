@@ -12,6 +12,6 @@ ted@sfu.ca<br/>
 
 Teaching Assistant:
 
-Izzak Schroeder<br/>
+Izaak Schroeder<br/>
 Room Bqhatevwr, Surrey Campus<br/>
 EMAIL

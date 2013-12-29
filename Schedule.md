@@ -6,14 +6,14 @@ sched-activation: class="active"
 <table class="commentary table">
 <caption>Planned topics, readings, in-class activities, and out-of-class assignments</caption>
 <thead><tr>
-<th scope="col">Week</th><th scope="col">Outcomes</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
+<th scope="col">Week</th><th scope="col">Outcomes (Bloom 2001 level)</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
 </tr></thead>
 <tbody>
 <tr>
 <td>1</td><td>Layered&nbsp;(Understand), Reading&nbsp;(Skill)</td><td><a href="{{site.armbrust2010.url}}">{{site.armbrust2010.title}}</a>, <a href="{{site.cavage2013.url}}">{{site.cavage2013.title}}</a>, <a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 1&nbsp;(Intro)</a></td><td>-</td><td><a href="AWSID.html">AWS ID</a></td>
 </tr>
 <tr>
-<td>2</td><td>SLA&nbsp;(Remember)</td><td><a href="{{site.brroso2013.url}}">{{site.barroso2013.title}}, Ch. 2&nbsp;(Workloads and Software Infrastructure)</a></td><td>-</td><td><a href="Python-intro.html">Python intro</a></td>
+<td>2</td><td>SLA&nbsp;(Remember)</td><td><a href="{{site.barroso2013.url}}">{{site.barroso2013.title}}, Ch. 2&nbsp;(Workloads and Software Infrastructure)</a></td><td>-</td><td><a href="Python-intro.html">Python intro</a></td>
 </tr>
 <tr>
 <td>3</td><td>Reliability&nbsp;(Understand)</td><td><a href="{{site.dean2013.url}}">{{site.dean2013.title}}</a></td><td>-</td><td><a href="Single-comp.html">Single-instance computation on {{site.serName}}</a></td>
