@@ -13,11 +13,11 @@ sched-activation: class="active"
 {% for item in site.data.schedule %}
 	<tr>
 		<td>{{ item.week }}</td>
-		<td>{{ item.outcomes }}</td>
+		<td>{{ item.outcomes | xml_escape }}</td>
 		<td>
 			{% for entry in item.readings %}
-				<a href="{{ site.data.bibliography[entry].url }}">
-					{{ site.data.bibliography[entry].title }}
+				<a href="{{ site.data.bibliography[entry].url | escape }}">
+					{{ site.data.bibliography[entry].title | xml_escape }}
 				</a>
 			{% endfor %}
 		</td>

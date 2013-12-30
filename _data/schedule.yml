@@ -12,24 +12,28 @@
 - week: 2
   outcomes: 'SLA (Remember)'
   readings:
+  - barroso2013
   activities:
   assignments:
 
 - week: 3
   outcomes: 'Reliability (Understand)'
   readings:
+  - dean2013
   activities:
   assignments:
 
 - week: 4
   outcomes: 'Distribute (Understand)'
   readings:
+  - hull2013
   activities:
   assignments:
 
 - week: 5
   outcomes: 'Distribute (Apply), Tune (Understand), SLA (Understand)'
   readings:
+  - cavage2013
   activities:
   assignments:
 
@@ -42,41 +46,51 @@
 - week: 7
   outcomes: 'CAP (Understand)'
   readings:
+  - katsov2012
   activities:
   assignments:
 
 - week: 8
   outcomes: 'Cluster (Understand)'
   readings:
+  - brewer2012
+  - helland2013
+  - tseitlin2013
   activities:
   assignments:
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
   readings:
+  - hamilton2007
   activities:
   assignments:
 
 - week: 10
   outcomes: 'CAP (Analyze)'
   readings:
+  - li2010
   activities:
   assignments:
 
 - week: 11
   outcomes: 'Tune (Evaluate)'
   readings:
+  - barroso2013
   activities:
   assignments:
 
 - week: 12
   outcomes: 'Cluster (Create), Reliability (Create)'
   readings:
+  - barroso2013
   activities:
   assignments:
 
 - week: 13
   outcomes: 'Cluster (Create), Reliability (Create)'
   readings:
+  - barroso2013
+  - shute2013
   activities:
   assignments:
