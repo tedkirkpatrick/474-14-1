@@ -1,0 +1,82 @@
+- week: 1
+  outcomes: 'Layered (Understand), Reading (Skill)'
+  readings:
+  - armbrust2010
+  - cavage2013
+  - barroso2013
+  activities:
+  - 3
+  assignments:
+  - 4
+
+- week: 2
+  outcomes: 'SLA (Remember)'
+  readings:
+  activities:
+  assignments:
+
+- week: 3
+  outcomes: 'Reliability (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 4
+  outcomes: 'Distribute (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 5
+  outcomes: 'Distribute (Apply), Tune (Understand), SLA (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 6
+  outcomes: 'Midterm'
+  readings:
+  activities:
+  assignments:
+
+- week: 7
+  outcomes: 'CAP (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 8
+  outcomes: 'Cluster (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 9
+  outcomes: 'CAP (Apply), Privacy (Understand)'
+  readings:
+  activities:
+  assignments:
+
+- week: 10
+  outcomes: 'CAP (Analyze)'
+  readings:
+  activities:
+  assignments:
+
+- week: 11
+  outcomes: 'Tune (Evaluate)'
+  readings:
+  activities:
+  assignments:
+
+- week: 12
+  outcomes: 'Cluster (Create), Reliability (Create)'
+  readings:
+  activities:
+  assignments:
+
+- week: 13
+  outcomes: 'Cluster (Create), Reliability (Create)'
+  readings:
+  activities:
+  assignments:

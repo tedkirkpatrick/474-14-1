@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include header.html %}
+	{% include header.html %}
 
-  <body>
-    <div class="container">
-    {% include navbar.html %}
-    </div>
+	<body>
+		<div class="container">
+			{% include navbar.html %}
+		</div>
 
-    <div class="container {{page.commentary}}">
-      <h1>{{ page.title }}</h1>
+		<div class="container {{page.commentary}}">
+			<h1>{{ page.title }}</h1>
+			{{ content }}
+		</div> <!-- /container -->
 
-      {{ content }}
+		{% include corejs.html %}  
 
-    </div> <!-- /container -->
-
-    {% include corejs.html %}  
-
-  </body>
+	</body>
 </html>
