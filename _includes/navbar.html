@@ -1,51 +1,22 @@
-    <!-- Static navbar -->
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">CMPT 474</a>
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-id">
-          <ul class="nav navbar-nav">
-            {% comment %}
-            <li {{ page.home-activation }}><a href="index.html">Home</a></li>
-	    <li {{ page.about-activation }}><a href="About.html">About</a></li>
-	    <li {{ page.contact-activation }}><a href="Contact.html">Contact</a></li>
-            {% endcomment %}
-            <li {{ page.sched-activation }}><a href="Schedule.html">Schedule</a></li>
-            <li {{ page.outcome-activation }}><a href="Outcomes.html">Learning outcomes</a></li>
-            <li {{ page.design-activation }}><a href="Design.html">Design principles</a></li>
-            <li {{ page.readings-activation }}><a href="Readings.html">Readings</a></li>
-	    <li {{ page.assignments-activation }}><a href="Assignments.html">Assignments</a></li>
-            <li {{ page.coding-activation }}><a href="Coding.html">Coding standards</a></li>
-            <li {{ page.outstanding-activation }}><a href="Outstanding.html"><span class="commentary"> Outstanding issues</span></a></li>
-            <li {{ page.challenges-activation }}><a href="Challenges.html">Challenges</a></li>
-
-	    {% comment %}
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-{% endcomment %}
-          </ul>
-{% comment %}
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Fixed top</a></li>
-          </ul>
-{% endcomment %}
-        </div><!--/.nav-collapse -->
-      </div><!--container-->
-    </div><!--navbar-->
+<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+			</button>
+			<a class="navbar-brand" href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li {{ page.sched-activation }}><a href="schedule.html">Schedule</a></li>
+				<li {{ page.outcome-activation }}><a href="outcomes.html">Learning outcomes</a></li>
+				<li {{ page.design-activation }}><a href="design.html">Design principles</a></li>
+				<li {{ page.readings-activation }}><a href="readings.html">Readings</a></li>
+				<li {{ page.assignments-activation }}><a href="assignments.html">Assignments</a></li>
+				<li {{ page.coding-activation }}><a href="coding.html">Coding standards</a></li>
+				<li {{ page.outstanding-activation }}><a href="outstanding.html"><span class="commentary"> Outstanding issues</span></a></li>
+				<li {{ page.challenges-activation }}><a href="challenges.html">Challenges</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
