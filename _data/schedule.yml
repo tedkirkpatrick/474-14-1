@@ -1,9 +1,11 @@
 - week: 1
   outcomes: 'Layered (Understand), Reading (Skill)'
   readings:
-  - armbrust2010
-  - cavage2013
-  - barroso2013
+  - tag: armbrust2010
+  - tag: cavage2013
+  - tag: barroso2013
+    sect:
+    - Ch. 1
   activities:
   assignments:
   - url: awsid.html
@@ -12,7 +14,9 @@
 - week: 2
   outcomes: 'SLA (Remember)'
   readings:
-  - barroso2013
+  - tag: barroso2013
+    sect:
+    - Ch. 2
   activities:
   assignments:
   - url: python-intro.html
@@ -21,7 +25,7 @@
 - week: 3
   outcomes: 'Reliability (Understand)'
   readings:
-  - dean2013
+  - tag: dean2013
   activities:
   assignments:
   - url: single-instance.html
@@ -30,7 +34,7 @@
 - week: 4
   outcomes: 'Distribute (Understand)'
   readings:
-  - hull2013
+  - tag: hull2013
   activities:
   assignments:
   - url: cluster-comp.html
@@ -39,7 +43,7 @@
 - week: 5
   outcomes: 'Distribute (Apply), Tune (Understand), SLA (Understand)'
   readings:
-  - cavage2013
+  - tag: cavage2013
   activities:
   assignments:
   - url: latency-control.html
@@ -54,51 +58,54 @@
 - week: 7
   outcomes: 'CAP (Understand)'
   readings:
-  - katsov2012
+  - tag: katsov2012
   activities:
   assignments:
 
 - week: 8
   outcomes: 'Cluster (Understand)'
   readings:
-  - brewer2012
-  - helland2013
-  - tseitlin2013
+  - tag: brewer2012
+  - tag: helland2013
+  - tag: tseitlin2013
   activities:
   assignments:
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
   readings:
-  - hamilton2007
+  - tag: hamilton2007
   activities:
   assignments:
 
 - week: 10
   outcomes: 'CAP (Analyze)'
   readings:
-  - li2010
+  - tag: li2010
   activities:
   assignments:
 
 - week: 11
   outcomes: 'Tune (Evaluate)'
   readings:
-  - barroso2013
+  - tag: barroso2013
+    sect:
+    - Ch. 7
   activities:
   assignments:
 
 - week: 12
   outcomes: 'Cluster (Create), Reliability (Create)'
   readings:
-  - barroso2013
+  - tag: barroso2013
+    sect:
+    - Ch. 8
   activities:
   assignments:
 
 - week: 13
   outcomes: 'Cluster (Create), Reliability (Create)'
   readings:
-  - barroso2013
-  - shute2013
+  - tag: shute2013
   activities:
   assignments:

@@ -16,19 +16,22 @@ sched-activation: class="active"
 		<td>{{ item.outcomes | xml_escape }}</td>
 		<td>
 			{% for entry in item.readings %}
-				<a href="{{ site.data.bibliography[entry].url | escape }}">
-					{{ site.data.bibliography[entry].title | xml_escape }}
-				</a>
+				<a href="{{ site.data.bibliography[entry.tag].url | escape }}">
+					{{ site.data.bibliography[entry.tag].title | xml_escape }}
+					{% for sect in entry.sect %}
+					   , {{ sect }}
+					{% endfor %}
+				</a><br/>
 			{% endfor %}
 		</td>
 		<td>
 			{% for activity in item.activities %}
-			   <a href="{{ activity.url | escape }}">{{ activity.name | escape }}</a>
+			   <a href="{{ activity.url | escape }}">{{ activity.name | xml_escape }}</a>
 			{% endfor %}
 		</td>
 		<td>
 			{% for assignment in item.assignments %}
-			   <a href="{{ assignment.url | escape }}">{{ assignment.name | escape }}</a>
+			   <a href="{{ assignment.url | escape }}">{{ assignment.name | xml_escape }}</a>
 			{% endfor %}
 		</td>
 	</tr>
