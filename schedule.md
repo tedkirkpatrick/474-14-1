@@ -21,8 +21,16 @@ sched-activation: class="active"
 				</a>
 			{% endfor %}
 		</td>
-		<td></td>
-		<td></td>
+		<td>
+			{% for activity in item.activities %}
+			   <a href="{{ activity.url | escape }}">{{ activity.name | escape }}</a>
+			{% endfor %}
+		</td>
+		<td>
+			{% for assignment in item.assignments %}
+			   <a href="{{ assignment.url | escape }}">{{ assignment.name | escape }}</a>
+			{% endfor %}
+		</td>
 	</tr>
 {% endfor %}
 </tbody>
