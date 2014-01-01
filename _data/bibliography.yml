@@ -5,42 +5,46 @@ anderson2000:
 armbrust2010: 
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721672
    title: A View of Cloud Computing
-helland2013:
-   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374
-   title: Condos and clouds
-hull2013:
-    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
-    title: 20 Obstacles to Scalability
 barroso2013:
     url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
     title: The Datacenter as a Computer, 2d. Ed.
-dean2013:
-    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
-    title: The Tail at Scale
-tseitlin2013:
-    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
-    title: The Antifragile Organization
 brewer2012:
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6133253
     title: CAP Twelve Years Later
-vogels2009:
-    title: Eventual Consistency
-    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1435417.1435432
-shute2013:
-    title: "F1: A Distributed Database that Scales"
-    url  : http://research.google.com/pubs/pub41344.html
-hamilton2007:
-    title: On Designing and Deploying Internet-scale Services
-    url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
 cavage2013:
     title: "There Is No Getting Around It: You Are Building a Distributed System"
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274
+dean2013:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
+    title: The Tail at Scale
 gregg2013:
     title: Thinking Methodically About Performance
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408791
-li2010:
-    title: "CloudCmp: Comparing Public Cloud Providers"
-    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+hamilton2007:
+    title: On Designing and Deploying Internet-scale Services
+    url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
+helland2013:
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374
+   title: Condos and clouds
+hintjens2013:
+   url  : http://zguide.zeromq.org/
+   title: 0MQ---The Guide
+   tooltitle: ZMQ
+hull2013:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
+    title: 20 Obstacles to Scalability
 katsov2012:
     title: Distributed Algorithms in NoSQL Databases
     url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
+li2010:
+    title: "CloudCmp: Comparing Public Cloud Providers"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+shute2013:
+    title: "F1: A Distributed Database that Scales"
+    url  : http://research.google.com/pubs/pub41344.html
+tseitlin2013:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
+    title: The Antifragile Organization
+vogels2009:
+    title: Eventual Consistency
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1435417.1435432

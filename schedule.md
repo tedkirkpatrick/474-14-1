@@ -26,7 +26,10 @@ sched-activation: class="active"
 		</td>
 		<td>
 			{% for activity in item.activities %}
+			   {{ activity.name }}
+			{% comment %}
 			   <a href="{{ activity.url | escape }}">{{ activity.name | xml_escape }}</a>
+			{% endcomment %}
 			{% endfor %}
 		</td>
 		<td>

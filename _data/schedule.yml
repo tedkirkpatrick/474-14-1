@@ -61,6 +61,8 @@
   - tag: katsov2012
   activities:
   assignments:
+  - url: keyvalue.html
+    name: Adding a key-value database
 
 - week: 8
   outcomes: 'Cluster (Understand)'
@@ -70,13 +72,18 @@
   - tag: tseitlin2013
   activities:
   assignments:
+  - url: cluster-inf.html
+    name: Cluster-level infrastructure NEEDS WORK
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
   readings:
   - tag: hamilton2007
   activities:
+  - name: Privacy
   assignments:
+  - url: cap.html
+    name: Trading off consistency, availability, and compensation
 
 - week: 10
   outcomes: 'CAP (Analyze)'
@@ -84,6 +91,8 @@
   - tag: li2010
   activities:
   assignments:
+  - url: analysis.html
+    name: Performance analysis of CAP tradeoffs
 
 - week: 11
   outcomes: 'Tune (Evaluate)'
@@ -93,6 +102,8 @@
     - Ch. 7
   activities:
   assignments:
+  - url: log.html
+    name: Logging system performance
 
 - week: 12
   outcomes: 'Cluster (Create), Reliability (Create)'
@@ -102,6 +113,8 @@
     - Ch. 8
   activities:
   assignments:
+  - url: robustness.html
+    name: Making the system robust
 
 - week: 13
   outcomes: 'Cluster (Create), Reliability (Create)'
@@ -109,3 +122,5 @@
   - tag: shute2013
   activities:
   assignments:
+  - url: final.html
+    name: Overall system report
