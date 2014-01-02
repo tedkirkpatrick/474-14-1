@@ -8,4 +8,4 @@ Challenges:
 * Different clocks
 * Geographical network latency
 * Regulatory requirements for data residency
-* Different network traffic within data centre (see VL2 paper)
+* Different network traffic within data centre (see [{{site.data.bibliography.greenberg2011.title}}]({{site.data.bibliography.greenberg2011.url}}))

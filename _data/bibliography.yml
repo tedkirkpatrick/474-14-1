@@ -8,6 +8,13 @@ armbrust2010:
 barroso2013:
     url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
     title: The Datacenter as a Computer, 2d. Ed.
+basho2013overview:
+    url  : http://basho.com/assets/RelationaltoRiak.pdf
+    title: Riak Technical Overview
+basho2013home:
+    url  : http://basho.com/riak/
+    title: riak Database
+    tooltitle: riak
 brewer2012:
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6133253
     title: CAP Twelve Years Later
@@ -17,6 +24,9 @@ cavage2013:
 dean2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
     title: The Tail at Scale
+greenberg2011:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897877
+    title: "VL2: A Scalable and Flexible Data Center Network"
 gregg2013:
     title: Thinking Methodically About Performance
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408791
@@ -33,6 +43,9 @@ hintjens2013:
 hull2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
     title: 20 Obstacles to Scalability
+iMatix2013tool:
+    url  : http://zeromq.org/
+    title: 0MQ
 katsov2012:
     title: Distributed Algorithms in NoSQL Databases
     url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
