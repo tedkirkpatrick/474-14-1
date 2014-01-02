@@ -21,6 +21,12 @@ brewer2012:
 cavage2013:
     title: "There Is No Getting Around It: You Are Building a Distributed System"
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274
+citrusbyte2014:
+    tooltitle: redis
+    url  : http://redis.io/
+clark2013:
+    title: "OSv: The Open Source Cloud Operating System That is Not Linux"
+    url  : http://www.linux.com/news/featured-blogs/200-libby-clark/748578-osv-the-open-source-cloud-operating-system-that-is-not-linux
 dean2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
     title: The Tail at Scale
