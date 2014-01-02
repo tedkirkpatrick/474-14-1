@@ -16,6 +16,7 @@ and completed in one week. The workload should be commensurate with
 that level of effort (18--24 programmer-hours per week).
 
 To add to general specification:
+
  * CLIENT ROBOTS. 
  * OVERARCHING application narrative.
 
@@ -91,6 +92,10 @@ Feb.&nbsp;10--April&nbsp;9.
 By this point in the semester, the teams should all be competent
 Python programmers, although the expertise will vary across
 individuals within a team.
+
+To expand:
+
+ * Correspondence of infrastructure here and AWS features (perhaps Google as well?)
 
 <h3 id="keyvalue">Key-value database</h3>
 
