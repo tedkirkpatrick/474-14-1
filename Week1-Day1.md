@@ -2,6 +2,13 @@
 layout: course
 title: Week 1, Day 1
 ---
+## Who we are
+
+ * Ted Kirkpatrick---instructor
+ * Izaak Schroeder---Teaching Assistant, programmer extraordinaire
+
+Contact information is on the course home page.
+
 ## Things you need to know about this course:
 
  * There will be group projects.
@@ -29,11 +36,11 @@ title: Week 1, Day 1
 ## Web sites
 
 <table class="table">
-<thead><tr><th scope="col">Site</th><th scope="col">URL</th><th scope="col">Purpose</th></tr></thead>
+<thead><tr><th scope="col">Site</th><th scope="col">URL</th><th scope="col">Purpose</th><th scope="col">Blame</th></tr></thead>
 <tbody>
-<tr><td>Course pages</td><td>http://sfu-innovation.github.io/474-14-1/</td><td>Description of activities, assignments, policies, &hellip;</td></tr>
-<tr><td>Grades</td><td>https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/</td><td>Standard CourSys site for CMPT grades</td></tr>
-<tr><td>Course cloud</td><td>To be announced</td><td>Programming assignments</td></tr>
+<tr><td>Course pages</td><td>http://sfu-innovation.github.io/474-14-1/</td><td>Description of activities, assignments, policies, &hellip;</td><td>Ted</td></tr>
+<tr><td>Course cloud</td><td>To be announced</td><td>Programming assignments</td><td>Izaak</td></tr>
+<tr><td>Grades</td><td>https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/</td><td>Standard CourSys site for CMPT grades</td><td>Greg Baker</td></tr>
 </tbody>
 </table>
 

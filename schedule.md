@@ -3,19 +3,20 @@ layout: course
 title: Schedule
 sched-activation: class="active"
 ---
+The working schedule for the course. Future weeks and classes are tentative and subject to change. Past weeks and classes (indicated by a dark background) can only be modified by [Internet time travelers](http://arxiv.org/abs/1312.7128).
 
 <table class="table">
-<caption>Planned topics, readings, in-class activities, and out-of-class assignments</caption>
+<caption class="ignore-caption">Planned topics, readings, in-class activities, and out-of-class assignments</caption>
 <thead><tr>
 <th scope="col">Week</th><th scope="col">Classes</th><th scope="col">Outcomes (level)</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
 </tr></thead>
 <tbody>
 {% for item in site.data.schedule %}
-	<tr>
+	<tr class="{{item.completed}}">
 		<td>{{ item.week }}</td>
                 <td>
-                        {% for dayprefix in item.days %}
-                           <a href="Week{{ item.week }}-{{ dayprefix }}.html">{{ dayprefix }}</a><br/>
+                        {% for day in item.days %}
+                           <a href="Week{{ item.week }}-{{ day.prefix }}.html" class="{{day.completed}}">{{ day.prefix }}</a><br/>
                         {% endfor %}
                 </td>
 		<td>{{ item.outcomes | xml_escape }}</td>
@@ -47,7 +48,9 @@ sched-activation: class="active"
 </tbody>
 </table>
 
+{% comment %}
 Week 1
 
 * [Day 2](Week1-Day2.html "Week 1, Day 2")
 * [Day 1](Week1-Day1.html "Week 1, Day 1")
+{% endcomment %}

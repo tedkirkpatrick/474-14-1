@@ -1,4 +1,5 @@
 - week: 1
+  #completed: done
   outcomes: 'Layered (Understand)' #, Reading (Skill)
   readings:
   - tag: armbrust2010
@@ -7,8 +8,10 @@
     sect:
     - Ch. 1
   days:
-  - Day1
-  - Day2
+  - prefix: Day1
+    #completed: done
+  - prefix: Day2
+  - prefix: Day3
   activities:
   assignments:
   - url: awsid.html
@@ -20,6 +23,8 @@
   - tag: barroso2013
     sect:
     - Ch. 2
+  days:
+  #- prefix: Day1
   activities:
   assignments:
   - url: python-intro.html

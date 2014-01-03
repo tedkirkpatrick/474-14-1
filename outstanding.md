@@ -12,3 +12,4 @@ Issues to be resolved before start of course:
 * Code reviews
 * Rolling over AWS access key and secret key
 * Levels 1, 2, and 3 networking (perhaps see [VL2]({{site.data.bibliography.greenberg2011.url}})).
+* Non-credit card assignments for Amazon
