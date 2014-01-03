@@ -20,6 +20,146 @@ To add to general specification:
  * CLIENT ROBOTS. 
  * OVERARCHING application narrative.
 
+
+<section>
+	<h1>Izaak's Overview</h1>
+
+	<section>
+		<h2>Nomenclature</h2>
+		<dl>
+			<dt>Instance</dt>
+			<dd>
+				A single container with assigned virtual network,
+				a set of services and an owner.
+			</dd>
+			
+			<dt>Container</dt>
+			<dd>
+				An LXC container. 
+			</dd>
+			
+			<dt>Service</dt>
+			<dd>
+				A single program with distinct configuration and setup
+				requirements. This program may or may not spawn other
+				processes, listen on sockets, manipulate files, etc.
+			</dd>
+
+			<dt>Application</dt>
+			<dd>
+				A collection of services on a non-empty set of instances
+				providing some developer-defined functionality to users.
+			</dd>
+			
+			<dt>User</dt>
+			<dd>
+				An entity which uses an application by accessing its
+				services on one or more instances. 
+			</dd>
+
+			<dt>Redis</dt>
+			<dd>
+				A key-value store available as one of the services.
+			</dd>
+		</dl>
+	</section>
+
+	<section>
+		<h2>Architecture</h2>
+		<p>
+			Platform makes use of a variety of Linux tools
+			to simulate a large scale cloud platform on
+			smaller scale hardware. 
+		</p>
+	</section>
+
+	<section>
+		<h2>Timeline</h2>
+		<section>
+			<h3>Week 3 - Availability</h3>
+			<p>
+				Students are given two instances, one with a Redis service, 
+				the other with the load-balancer service. Students are to
+				explore using the existing code given for the load-balancer.
+				The Redis service instance is setup to fail periodically and 
+				thus students need to create an appropriate number of new 
+				Redis instances that mirror the data such that the global
+				failure rate for requests approaches 0.
+			</p>
+			<p>
+				Evaluated by calculating request failures.
+			</p>
+			<p>
+				Learning outcomes / stuff here.
+			</p>
+		</section>
+		<section>
+			<h3>Week 4 - Latency</h3>
+			<p>
+				Student's existing setup, while now containing some redundency,
+				does not yet address the problem whereby some requests take 
+				longer than others (when a request is made and the instance its
+				being made to times out, for example). Students are to address
+				this using hedged requests which is a relatively simple extension
+				of their work in week 3.
+			</p>
+		</section>
+		<section>
+			<h3>Week 5 - Data Partitioning</h3>
+			<p>
+				Student's are required to add more data than can fit in any single
+				instance. They must add another two Redis instances and distribute
+				their existing and new data amongst all the Redis instances using
+				consistent hashing. 
+			</p>
+		</section>
+		<section>
+			<h3>Week 6 - Midterm</h3>
+			<p>
+				Cause Ted loves his exams. 
+			</p>
+		</section>
+		<section>
+			<h3>Week 7 - Network Partitioning</h3>
+			<p>
+				Student's are required to add writes.
+			</p>
+		</section>
+		<section>
+			<h3>Week 8 - Consistency</h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 9 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 10 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 11 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 12 - </h3>
+			<p>
+				
+			</p>
+		</section>
+	</section>
+
+</section>
+
+
 <h2 id="instance-sequence">Instance-level sequence</h2>
 
 The first sequence of projects will run Week&nbsp;3--Week&nbsp;5,
