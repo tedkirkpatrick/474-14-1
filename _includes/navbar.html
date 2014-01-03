@@ -3,7 +3,10 @@
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
 				<span class="sr-only">Toggle navigation</span>
-			</button>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
 			<a class="navbar-brand" href="index.html">CMPT 474</a>
 		</div>
 		<div class="collapse navbar-collapse" id="collapse-id">
@@ -13,8 +16,11 @@
 				<li {{ page.design-activation }}><a href="design.html">Design principles</a></li>
 				<li {{ page.readings-activation }}><a href="readings.html">Readings</a></li>
 				<li {{ page.assignments-activation }}><a href="assignments.html">Assignments</a></li>
+				{% comment %}
 				<li {{ page.coding-activation }}><a href="coding.html">Coding standards</a></li>
+				{% endcomment %}
 				<li {{ page.challenges-activation }}><a href="challenges.html">Challenges</a></li>
+				<li {{ page.aws-activation }}><a href="aws.html">AWS details</a></li>
 				<li {{ page.outstanding-activation }}><a href="outstanding.html"><span class="commentary"> Outstanding issues</span></a></li>
 			</ul>
 		</div>

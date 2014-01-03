@@ -1,8 +1,9 @@
 ---
 layout: course
+title: Challenges of building distributed systems on warehouse-scale computers
 challenges-activation: class="active"
 ---
-Challenges:
+
 * Handling single points of failure
 * Distributing changes
 * Different clocks

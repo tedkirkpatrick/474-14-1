@@ -10,10 +10,12 @@ This is the site for {{ site.course }}.
 
 Ted Kirkpatrick<br/>
 Room 4134, Surrey Campus<br/>
-ted@sfu.ca
+ted@sfu.ca<br/>
+Office hours: To be announced.
 
 ## Teaching Assistant
 
 Izaak Schroeder<br/>
-Room Bqhatevwr, Surrey Campus<br/>
-mis2@sfu.ca
+Room to be ennounced, Surrey Campus<br/>
+mis2@sfu.ca<br/>
+Office hours: To be announced.

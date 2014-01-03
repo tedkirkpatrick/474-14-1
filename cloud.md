@@ -99,7 +99,7 @@ To expand:
 
 <h3 id="keyvalue">Key-value database</h3>
 
-Key-value database, perhaps [{{site.data.bibliography.basho2013home.tooltitle}}]({{site.data.bibliography.basho2013home.url}}).
+Key-value database, probably [{{site.data.bibliography.citrusbyte2014.tooltitle}}]({{site.data.bibliography.citrusbyte2014.url}}).
 
 <h3 id="infrastructure">Cluster-level infrastructure</h3>
 
