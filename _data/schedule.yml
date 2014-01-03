@@ -1,11 +1,14 @@
 - week: 1
-  outcomes: 'Layered (Understand), Reading (Skill)'
+  outcomes: 'Layered (Understand)' #, Reading (Skill)
   readings:
   - tag: armbrust2010
   - tag: cavage2013
   - tag: barroso2013
     sect:
     - Ch. 1
+  days:
+  - Day1
+  - Day2
   activities:
   assignments:
   - url: awsid.html

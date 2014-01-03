@@ -4,15 +4,20 @@ title: Schedule
 sched-activation: class="active"
 ---
 
-<table class="commentary table">
+<table class="table">
 <caption>Planned topics, readings, in-class activities, and out-of-class assignments</caption>
 <thead><tr>
-<th scope="col">Week</th><th scope="col">Outcomes (Bloom 2001 level)</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
+<th scope="col">Week</th><th scope="col">Classes</th><th scope="col">Outcomes (level)</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
 </tr></thead>
 <tbody>
 {% for item in site.data.schedule %}
 	<tr>
 		<td>{{ item.week }}</td>
+                <td>
+                        {% for dayprefix in item.days %}
+                           <a href="Week{{ item.week }}-{{ dayprefix }}.html">{{ dayprefix }}</a><br/>
+                        {% endfor %}
+                </td>
 		<td>{{ item.outcomes | xml_escape }}</td>
 		<td>
 			{% for entry in item.readings %}
