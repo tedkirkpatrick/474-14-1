@@ -27,11 +27,9 @@ Issues to be resolved before start of course:
   * Result includes boto, zmq, redis, ipython. Runs Python 2.7, with option to insall 3.3 using `conda`.
 
 * Run cluster via [{{site.data.bibliography.hintjens2013.tooltitle}}]({{site.data.bibliography.hintjens2013.url}}), both on {{site.serName}} and EC2.
-* On Mac OS (at least and perhaps other OSes), ssh sessions into EC2 instances will simply drop with borken pipe at times. Try setting `ServerAliveInterval 60` in `/etc/ssh_config` or `/etc/ssh/ssh_config`. Might also set `ClientAliveInterval 60` in `/etc/ssh/sshd_config` on EC2 server.
+* On Mac OS (at least and perhaps other OSes), ssh sessions into EC2 instances will simply drop with borken pipe at times. [Try setting](http://ocaoimh.ie/2008/12/10/how-to-fix-ssh-timeout-problems/) `ServerAliveInterval 60` in `/etc/ssh_config` or `/etc/ssh/ssh_config`. Might also set `ClientAliveInterval 60` in `/etc/ssh/sshd_config` on EC2 server.
 * [Logging](log.html) in {{site.serName}}.
 * Support for adding {{site.serName}} projects to student porfolios.
 * Rolling over AWS access key and secret key
-* Is there any circumstance when I would only use the first AWS access key?
 * Levels 1, 2, and 3 networking (perhaps see [VL2]({{site.data.bibliography.greenberg2011.url}})).
-* SFU formatting of this site.
 * Ted consistenly misspells "outstanding". He also seems to have problems with "consistently".

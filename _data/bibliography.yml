@@ -58,9 +58,16 @@ katsov2012:
 li2010:
     title: "CloudCmp: Comparing Public Cloud Providers"
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+newrelic2014:
+    tooltitle: New Relic
+    title: New Relic
+    url  : http://newrelic.com/
 shute2013:
     title: "F1: A Distributed Database that Scales"
     url  : http://research.google.com/pubs/pub41344.html
+takada2013:
+    title: Distributed systems for fun and profit
+    url  : http://book.mixu.net/distsys/
 tseitlin2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
     title: The Antifragile Organization
