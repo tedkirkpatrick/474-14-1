@@ -12,7 +12,7 @@ The working schedule for the course. Future weeks and classes are tentative and 
 </tr></thead>
 <tbody>
 {% for item in site.data.schedule %}
-	<tr class="{{item.completed}}">
+	<tr class="{{ item.completed }}">
 		<td>{{ item.week }}</td>
                 <td>
                         {% for day in item.days %}
@@ -23,10 +23,27 @@ The working schedule for the course. Future weeks and classes are tentative and 
 		<td>
 			{% for entry in item.readings %}
 				<a href="{{ site.data.bibliography[entry.tag].url | escape }}">
+                                        {% if site.data.bibliography[entry.tag].shorter != null %}
+                                        {% if forloop.first %}
+                                        <div class="visible-sm compact">
+                                        {% endif %}
+{{ site.data.bibliography[entry.tag].title | xml_escape }}{% for sect in entry.sect %}, {{ sect }}{% endfor %}
+                                        {% if forloop.last %}
+                                        </div>
+                                        {% endif %}
+                                        {% if forloop.first %}
+                                        <div class="visible-xs compact">
+                                        {% endif %}
+{{ site.data.bibliography[entry.tag].shorter | xml_escape }}{% for sect in entry.sect %}, {{ sect }}{% endfor %}
+                                        {% if forloop.last %}
+                                        </div>
+                                        {% endif %}
+                                        {% else %}
+                                        <div class="compact">
 					{{ site.data.bibliography[entry.tag].title | xml_escape }}
-					{% for sect in entry.sect %}
-					   , {{ sect }}
-					{% endfor %}
+					{% for sect in entry.sect %}, {{ sect }}{% endfor %}
+                                        </div>
+                                        {% endif %}
 				</a><br/>
 			{% endfor %}
 		</td>

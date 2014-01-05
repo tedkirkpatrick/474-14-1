@@ -14,7 +14,7 @@ Please do not repost the copyrighted entries somewhere else. Downloading the art
 
 {% comment %}
 
-The following does not work, for reasons I have not beeb able to determine.
+The following does not work, for reasons I have not been able to determine.
 
 ## Bibliography
 
@@ -22,7 +22,7 @@ Readings will be taken from the following list (which unfortunately is not sorte
 
 {% for item in site.data.bibliography %}
 
-[{{ itemt.title }}]({{ item.url }})<br/>
+[Title {{ item.title }}]({{ item.url }})<br/>
 
 {% endfor %}
 

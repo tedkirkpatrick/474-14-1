@@ -48,6 +48,7 @@ Contact information is on the course home page (URL below).
 
 ## What we'll focus on
 
+ * How cloud architectures differ from your laptop, desktop, and phone
  * Designing software that works well with cloud architecture
  * The unique requirements of services delivered across the Internet
  * The services offered by Amazon Web Services (AWS)
@@ -55,6 +56,7 @@ Contact information is on the course home page (URL below).
 ## What we won't focus on
 
  * Customer-facing features such as Apple iCloud, Microsoft Office365, or Google Gmail
+ * Details of building a data centre
 
 ***
 
@@ -81,6 +83,8 @@ Break into pairs. Take half of the following phrases and explain it to your part
 * provisioning
 * elastic computing
 * utilization
+* throughput
+* latency
 
 ## Preparation for next class
 

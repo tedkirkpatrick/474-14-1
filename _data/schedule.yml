@@ -6,7 +6,7 @@
   - tag: cavage2013
   - tag: barroso2013
     sect:
-    - Ch. 1
+    - Ch.&nbsp;1
   days:
   - prefix: Day1
     #completed: done
@@ -22,7 +22,7 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 2
+    - Ch.&nbsp;2
   days:
   #- prefix: Day1
   activities:
@@ -107,7 +107,7 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 7
+    - Ch.&nbsp;7
   activities:
   assignments:
   - url: log.html
@@ -118,7 +118,7 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 8
+    - Ch.&nbsp;8
   activities:
   assignments:
   - url: robustness.html

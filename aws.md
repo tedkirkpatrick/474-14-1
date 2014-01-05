@@ -3,7 +3,7 @@ layout: course
 title: Amazon Web Services (AWS) technical details
 aws-activation: class="active"
 ---
-Semi-structured list of technical details of working with Amazon Web Services (AWS).
+Semi-structured list of technical details of working with Amazon Web Services (AWS). This is a holding page for some technical incantations required to use the system.
 
 ## Userids
 
