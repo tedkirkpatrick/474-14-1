@@ -22,29 +22,20 @@ The working schedule for the course. Future weeks and classes are tentative and 
 		<td>{{ item.outcomes | xml_escape }}</td>
 		<td>
 			{% for entry in item.readings %}
-				<a href="{{ site.data.bibliography[entry.tag].url | escape }}">
-                                        {% if site.data.bibliography[entry.tag].shorter != null %}
-                                        {% if forloop.first %}
-                                        <div class="visible-sm compact">
-                                        {% endif %}
+			   <div class="visible-sm visible-md visible-lg compact">
+			   <a href="{{ site.data.bibliography[entry.tag].url | escape }}">
 {{ site.data.bibliography[entry.tag].title | xml_escape }}{% for sect in entry.sect %}, {{ sect }}{% endfor %}
-                                        {% if forloop.last %}
-                                        </div>
-                                        {% endif %}
-                                        {% if forloop.first %}
-                                        <div class="visible-xs compact">
-                                        {% endif %}
+   			   </a>
+			   </div>
+			   <div class="visible-xs compact">
+			   <a href="{{ site.data.bibliography[entry.tag].url | escape }}">
+{% if site.data.bibliography[entry.tag].shorter != null %}
 {{ site.data.bibliography[entry.tag].shorter | xml_escape }}{% for sect in entry.sect %}, {{ sect }}{% endfor %}
-                                        {% if forloop.last %}
-                                        </div>
-                                        {% endif %}
-                                        {% else %}
-                                        <div class="compact">
-					{{ site.data.bibliography[entry.tag].title | xml_escape }}
-					{% for sect in entry.sect %}, {{ sect }}{% endfor %}
-                                        </div>
-                                        {% endif %}
-				</a><br/>
+{% else %}
+{{ site.data.bibliography[entry.tag].title | xml_escape }}{% for sect in entry.sect %}, {{ sect }}{% endfor %}
+{% endif %}
+			   </a>
+			   </div>
 			{% endfor %}
 		</td>
 		<td>
