@@ -7,7 +7,7 @@ title: Week 1, Day 1
  * Ted Kirkpatrick---instructor
  * Izaak Schroeder---Teaching Assistant, programmer extraordinaire
 
-Contact information is on the course home page.
+Contact information is on the course home page (URL below).
 
 ## Things you need to know about this course:
 
@@ -48,4 +48,44 @@ Contact information is on the course home page.
 
 ## What we'll focus on
 
- * GOOD STUFF!
+ * Designing software that works well with cloud architecture
+ * The unique requirements of services delivered across the Internet
+ * The services offered by Amazon Web Services (AWS)
+
+## What we won't focus on
+
+ * Customer-facing features such as Apple iCloud, Microsoft Office365, or Google Gmail
+
+***
+
+## An Introduction to Warehouse-Scale Computers
+
+* [{{ site.data.bibliography.google2014.title }}]({{ site.data.bibliography.google2014.url }})
+
+  * Photo tour of Google Data Centres around the world
+  * [Video of Google data centre]({{ site.data.bibliography.google2014a.url }})
+  * [Video of Google's container-based data centre]({{ site.data.bibliography.google2014b.url }}) (Section at 2:47--5:00 shows containers)
+
+* [{{ site.data.bibliography.gauthier2013a.title }}]({{ site.data.bibliography.gauthier2013a.url }}) (see photo of outdoor containers at Boydon, Virginia, USA).
+
+***
+
+## In-class exercise
+
+Break into pairs. Take half of the following phrases and explain it to your partner to the best of your understanding. Then switch roles, with your partner explaining the other half to you:
+
+* data center
+* virtual machine
+* virtualization
+* API
+* provisioning
+* elastic computing
+* utilization
+
+## Preparation for next class
+
+Read the following before coming to the next class:
+
+ * pp. 50--53 of [{{ site.data.bibliography.armbrust2010.title }}]({{ site.data.bibliography.armbrust2010.url }})
+ * pp. 50--53 of [{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }})
+ * [Amazon EC2 SLA](http://aws.amazon.com/ec2-sla/)

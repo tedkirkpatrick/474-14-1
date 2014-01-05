@@ -1,4 +1,7 @@
 # Course bibliography
+abts2012:
+   title: A Guided Tour of Data-center Networking
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2184319.2184335
 anderson2000:
    title: Taxonomy of the Cognitive Domain
    url  : http://www4.uwsp.edu/education/lwilson/curric/newtaxonomy.htm
@@ -15,6 +18,9 @@ basho2013home:
     url  : http://basho.com/riak/
     title: riak Database
     tooltitle: riak
+brewer2001:
+    title: Lessons from giant-scale services
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=939450
 brewer2012:
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6133253
     title: CAP Twelve Years Later
@@ -31,6 +37,21 @@ clark2013:
 dean2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
     title: The Tail at Scale
+gauthier2013:
+    title: Software Reigns in Microsoft's Cloud-Scale Data Centers
+    url  : http://www.globalfoundationservices.com/posts/2013/february/11/software-reigns-in-microsofts-cloud-scale-data-centers.aspx
+gauthier2013a:
+    title: Microsoft Cloud-Scale Data Center Designs
+    url  : http://www.globalfoundationservices.com/posts/2013/march/26/microsoft-cloud-scale-data-center-designs.aspx
+google2014:
+    title: Google Data Centers
+    url  : http://www.google.com/about/datacenters/
+google2014a:
+    title: Explore a Google Data Center With Street View
+    url  : http://www.youtube.com/watch?v=avP5d16wEp0
+google2014b:
+    title: Google Container Data Center Tour
+    url  : http://www.youtube.com/watch?v=zRwPSFpLX8I
 greenberg2011:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897877
     title: "VL2: A Scalable and Flexible Data Center Network"
@@ -63,6 +84,9 @@ newrelic2014:
     tooltitle: New Relic
     title: New Relic
     url  : http://newrelic.com/
+rexford2011:
+    title: 'VL2: Technical Perspective'
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897876
 shute2013:
     title: "F1: A Distributed Database that Scales"
     url  : http://research.google.com/pubs/pub41344.html
