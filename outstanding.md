@@ -11,5 +11,4 @@ Issues that still need to be resolved:
 * Support for adding {{site.serName}} projects to student portfolios.
 * Code reviews
 * Rolling over AWS access key and secret key
-* Levels 1, 2, and 3 networking (perhaps see [VL2]({{site.data.bibliography.greenberg2011.url}})).
 * Non-credit card assignments for Amazon
