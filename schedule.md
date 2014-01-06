@@ -8,7 +8,11 @@ The working schedule for the course. Future weeks and classes are tentative and 
 <table class="table">
 <caption class="ignore-caption">Planned topics, readings, in-class activities, and out-of-class assignments</caption>
 <thead><tr>
-<th scope="col">Week</th><th scope="col">Classes</th><th scope="col">Outcomes (level)</th><th scope="col">Readings</th><th scope="col">Activities</th><th scope="col">Assignments</th>
+<th scope="col">Week</th><th scope="col">Classes</th><th scope="col">Outcomes (level)</th><th scope="col">Readings</th>
+{% comment %}
+<th scope="col">Activities</th>
+{% endcomment %}
+<th scope="col">Assignments</th>
 </tr></thead>
 <tbody>
 {% for item in site.data.schedule %}
@@ -38,6 +42,7 @@ The working schedule for the course. Future weeks and classes are tentative and 
 			   </div>
 			{% endfor %}
 		</td>
+{% comment %}
 		<td>
 			{% for activity in item.activities %}
 			   {{ activity.name }}
@@ -46,6 +51,7 @@ The working schedule for the course. Future weeks and classes are tentative and 
 			{% endcomment %}
 			{% endfor %}
 		</td>
+{% endcomment %}
 		<td>
 			{% for assignment in item.assignments %}
 			   <a href="{{ assignment.url | escape }}">{{ assignment.name | xml_escape }}</a>

@@ -4,6 +4,7 @@
   readings:
   - tag: armbrust2010
   - tag: cavage2013
+  - tag: helland2013
   - tag: barroso2013
     sect:
     - Ch.&nbsp;1
