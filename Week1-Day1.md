@@ -1,6 +1,7 @@
 ---
 layout: course
 title: Week 1, Day 1
+sched-activation: class="active"
 ---
 ## Who we are
 
