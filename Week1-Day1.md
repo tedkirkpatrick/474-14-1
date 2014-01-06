@@ -34,6 +34,12 @@ Contact information is on the course home page (URL below).
 
 ***
 
+## Office hours
+
+Poll of candidate office hours.
+
+***
+
 ## Web sites
 
 <table class="table">

@@ -82,7 +82,7 @@
   activities:
   assignments:
   - url: cluster-inf.html
-    name: Cluster-level infrastructure NEEDS WORK
+    name: Cluster-level infrastructure
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
