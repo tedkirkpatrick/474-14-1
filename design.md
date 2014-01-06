@@ -11,3 +11,4 @@ Key design principles, addressing the [challenges of systems on the cloud](chall
  * Test failure resistance by inducing failures in production systems (see [{{site.data.bibliography.tseitlin2013.title}}]({{site.data.bibliography.tseitlin2013.url}})).
  * For each service, trade off consistency, availability, and mitigation (see [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})).
  * Design for performance monitoring and adjusting the system (see [{{site.data.bibliography.hamilton2007.title}}]({{site.data.bibliography.hamilton2007.url}})).
+ * Test {{ 'xpl/articleDetails.jsp?tp=&arnumber=6133253' | cgi_escape }}.

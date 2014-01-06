@@ -75,22 +75,53 @@ Contact information is on the course home page (URL below).
 
 ## In-class exercise
 
-Break into pairs. Take half of the following phrases and explain it to your partner to the best of your understanding. Then switch roles, with your partner explaining the other half to you:
+Break into pairs. Take half of the following phrases and explain it to your partner to the best of your understanding. Then switch roles, with your partner explaining the other half to you. If you have no idea what a term means, speculate.
 
 * data center
 * virtual machine
 * virtualization
-* API
 * provisioning
+* overprovisioned
+* oversubscribed
 * elastic computing
 * utilization
 * throughput
 * latency
+* API
 
-## Preparation for next class
+## Reading guide for next class
 
 Read the following before coming to the next class:
 
- * pp. 50--53 of [{{ site.data.bibliography.armbrust2010.title }}]({{ site.data.bibliography.armbrust2010.url }})
- * pp. 50--53 of [{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }})
- * [Amazon EC2 SLA](http://aws.amazon.com/ec2-sla/)
+**1. [{{ site.data.bibliography.armbrust2010.title }}]({{ site.data.bibliography.armbrust2010.url }}), pp. 50--53** (up to but not including "Top 10 Obstacles").
+
+Things to look for in this article:
+
+  * Key enabler of cloud computing.
+  * Advantages of clouds.
+  * The difference between Amazon Web Services and Google App Engine. But note that these services have become more similar since 2010.
+  * How customer usage changes provisioning requirements.
+
+Things of less importance:
+
+  * public versus private clouds.
+
+**2. [{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }}) pp. 50--53** (up to but not including "Patterns in SAAS Apps")
+
+Things to look for in this article:
+
+  * What are the factors that make cloud computing attractive?
+
+As with the first article, we won't pay much attention in this course to the distinction between public and private clouds. 
+
+**3. Skim [Amazon EC2 Service Level Agreement (SLA)](http://aws.amazon.com/ec2-sla/).**
+
+Things to look for:
+
+  * What is Amazon promising, in general terms?
+  * How would the customer know Amazon has broken its promise?
+  * What compensation does Amazon offer if the customer accuses them of breaking their promise?
+
+Things to **ignore**:
+
+  * The complex, legal escape clauses and definitions.

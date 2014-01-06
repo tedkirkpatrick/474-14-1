@@ -20,7 +20,8 @@ The working schedule for the course. Future weeks and classes are tentative and 
 		<td>{{ item.week }}</td>
                 <td>
                         {% for day in item.days %}
-                           <a href="Week{{ item.week }}-{{ day.prefix }}.html" class="{{day.completed}}">{{ day.prefix }}</a><br/>
+                           <a href="Week{{ item.week }}-{{ day.prefix }}.html" class="{{day.completed}}">{{ day.prefix }}</a>
+                           {% unless forloop.last %}<br/>{% endunless %}
                         {% endfor %}
                 </td>
 		<td>{{ item.outcomes | xml_escape }}</td>
