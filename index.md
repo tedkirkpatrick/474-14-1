@@ -10,10 +10,16 @@ This is the site for {{ site.course }}.
 
 Ted Kirkpatrick<br/>
 Room 4134, Surrey Campus<br/>
-ted@sfu.ca
+ted@sfu.ca<br/>
+Office hours: To be announced.
 
 ## Teaching Assistant
 
 Izaak Schroeder<br/>
-Room Bqhatevwr, Surrey Campus<br/>
-mis2@sfu.ca
+Room to be ennounced, Surrey Campus<br/>
+mis2@sfu.ca<br/>
+Office hours: To be announced.
+
+## Site for assignment submission and grades
+
+You can submit your assignments and see your grades on [CourSys](https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/).

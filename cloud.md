@@ -9,7 +9,7 @@ This page specifies the requirements for
 not for the students in the class. The individual assignment pages
 will describe the assignments for the students.
 
-All assignments for {{site.serName}} will be in Python 3, so the APIs should all be in Python.
+All assignments for {{site.serName}} will be in Python, so the APIs should all be in Python.
 
 All assignments for {{site.serName}} will be done in groups of 3--4
 and completed in one week. The workload should be commensurate with
@@ -107,7 +107,7 @@ To add to general specification:
 		<section>
 			<h3>Week 5 - Data Partitioning</h3>
 			<p>
-				Student's are required to add more data than can fit in any single
+				Students are required to add more data than can fit in any single
 				instance. They must add another two Redis instances and distribute
 				their existing and new data amongst all the Redis instances using
 				consistent hashing. 
@@ -116,13 +116,13 @@ To add to general specification:
 		<section>
 			<h3>Week 6 - Midterm</h3>
 			<p>
-				Cause Ted loves his exams. 
+				No activity.
 			</p>
 		</section>
 		<section>
 			<h3>Week 7 - Network Partitioning</h3>
 			<p>
-				Student's are required to add writes.
+				Students add writes.
 			</p>
 		</section>
 		<section>
@@ -159,6 +159,7 @@ To add to general specification:
 
 </section>
 
+## Ted's Overview
 
 <h2 id="instance-sequence">Instance-level sequence</h2>
 
@@ -239,7 +240,7 @@ To expand:
 
 <h3 id="keyvalue">Key-value database</h3>
 
-Key-value database, perhaps [{{site.data.bibliography.basho2013home.tooltitle}}]({{site.data.bibliography.basho2013home.url}}).
+Key-value database, probably [{{site.data.bibliography.citrusbyte2014.tooltitle}}]({{site.data.bibliography.citrusbyte2014.url}}).
 
 <h3 id="infrastructure">Cluster-level infrastructure</h3>
 

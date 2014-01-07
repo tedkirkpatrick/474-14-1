@@ -1,11 +1,18 @@
 - week: 1
-  outcomes: 'Layered (Understand), Reading (Skill)'
+  #completed: done
+  outcomes: 'Layered (Understand)' #, Reading (Skill)
   readings:
   - tag: armbrust2010
   - tag: cavage2013
+  - tag: helland2013
   - tag: barroso2013
     sect:
-    - Ch. 1
+    - Ch.&nbsp;1
+  days:
+  - prefix: Day1
+    #completed: done
+  - prefix: Day2
+  - prefix: Day3
   activities:
   assignments:
   - url: awsid.html
@@ -16,7 +23,9 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 2
+    - Ch.&nbsp;2
+  days:
+  #- prefix: Day1
   activities:
   assignments:
   - url: python-intro.html
@@ -73,7 +82,7 @@
   activities:
   assignments:
   - url: cluster-inf.html
-    name: Cluster-level infrastructure NEEDS WORK
+    name: Cluster-level infrastructure
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
@@ -99,7 +108,7 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 7
+    - Ch.&nbsp;7
   activities:
   assignments:
   - url: log.html
@@ -110,7 +119,7 @@
   readings:
   - tag: barroso2013
     sect:
-    - Ch. 8
+    - Ch.&nbsp;8
   activities:
   assignments:
   - url: robustness.html
