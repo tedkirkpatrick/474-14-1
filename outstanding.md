@@ -11,4 +11,3 @@ Issues that still need to be resolved:
 * Support for adding {{site.serName}} projects to student portfolios.
 * Code reviews
 * Rolling over AWS access key and secret key
-* Non-credit card assignments for Amazon
