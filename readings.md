@@ -25,6 +25,7 @@ Computer"). A few will come from conferences and blog posts.
 Please do not repost the copyrighted entries somewhere else. Downloading the articles from the original sites allows the author and publisher to track the downlaod count. This rewards the author and encourages the publisher to accept more articles on that topic.
 
 {% comment %}
+{% endcomment %}
 
 <!-- The following does not work, for reasons I have not been able to determine. -->
 
@@ -34,8 +35,7 @@ Readings will be taken from the following list (which unfortunately is not sorte
 
 {% for item in site.data.bibliography %}
 
-[Title {{ item.title }}]({{ item.url }})<br/>
+<a href="{{ item.url }}">Title-html {{ item.title }}</a><br/>
 
 {% endfor %}
 
-{% endcomment %}

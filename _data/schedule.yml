@@ -10,13 +10,14 @@
     - Ch.&nbsp;1
   days:
   - prefix: Day1
-    #completed: done
+    completed: done
   - prefix: Day2
   - prefix: Day3
   activities:
   assignments:
   - url: awsid.html
     name: AWS id
+    percent: 2
 
 - week: 2
   outcomes: 'SLA (Remember)'
@@ -30,6 +31,7 @@
   assignments:
   - url: python-intro.html
     name: Python intro
+    percent: 2
 
 - week: 3
   outcomes: 'Reliability (Understand)'
@@ -39,6 +41,7 @@
   assignments:
   - url: single-instance.html
     name: Single-instance computation
+    percent: 2
 
 - week: 4
   outcomes: 'Distribute (Understand)'
@@ -48,6 +51,7 @@
   assignments:
   - url: cluster-comp.html
     name: Cluster computation
+    percent: 4
 
 - week: 5
   outcomes: 'Distribute (Apply), Tune (Understand), SLA (Understand)'
@@ -57,6 +61,7 @@
   assignments:
   - url: latency-control.html
     name: Controlling cluster latency
+    percent: 10
 
 - week: 6
   outcomes: 'Midterm'
@@ -72,6 +77,7 @@
   assignments:
   - url: keyvalue.html
     name: Adding a key-value database
+    percent: 3
 
 - week: 8
   outcomes: 'Cluster (Understand)'
@@ -83,6 +89,7 @@
   assignments:
   - url: cluster-inf.html
     name: Cluster-level infrastructure
+    percent: 5
 
 - week: 9
   outcomes: 'CAP (Apply), Privacy (Understand)'
@@ -93,6 +100,7 @@
   assignments:
   - url: cap.html
     name: Trading off consistency, availability, and compensation
+    percent: 5
 
 - week: 10
   outcomes: 'CAP (Analyze)'
@@ -102,6 +110,7 @@
   assignments:
   - url: analysis.html
     name: Performance analysis of CAP tradeoffs
+    percent: 2
 
 - week: 11
   outcomes: 'Tune (Evaluate)'
@@ -113,6 +122,7 @@
   assignments:
   - url: log.html
     name: Logging system performance
+    percent: 2
 
 - week: 12
   outcomes: 'Cluster (Create), Reliability (Create)'
@@ -124,6 +134,7 @@
   assignments:
   - url: robustness.html
     name: Making the system robust
+    percent: 3
 
 - week: 13
   outcomes: 'Cluster (Create), Reliability (Create)'
@@ -133,3 +144,4 @@
   assignments:
   - url: final.html
     name: Overall system report
+    percent: 10
