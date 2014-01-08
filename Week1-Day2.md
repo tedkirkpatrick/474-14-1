@@ -2,7 +2,6 @@
 layout: course
 title: Week 1, Day 2
 sched-activation: class="active"
-commentary: commentary
 ---
 
 ## In-class exercise
@@ -16,12 +15,16 @@ means, speculate.
 * virtualization
 * provisioning
 * overprovisioned
-* oversubscribed
 * elastic computing
+* oversubscribed
 * API
 
 List the two or three words or phrases you found hardest to understand from
 the readings (ignoring the legal terms in Amazon's SLA).
+
+## The Xen virtual machine (used by AWS)
+
+<a title="By Radoslaw Korzeniewski (RadekK) [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AXEN-schema.png"><img width="512" alt="XEN-schema" src="http://upload.wikimedia.org/wikipedia/commons/5/5b/XEN-schema.png"/></a>
 
 ## Uptime and availability
 
