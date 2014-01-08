@@ -128,7 +128,7 @@ To add to general specification:
 		<section>
 			<h3>Week 8 - Consistency</h3>
 			<p>
-				
+				Student's are required to make consistency garantees for their writes.
 			</p>
 		</section>
 		<section>
