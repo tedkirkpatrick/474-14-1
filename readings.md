@@ -30,7 +30,7 @@ Readings will be taken from the following list (which unfortunately is not sorte
 
 {% for item in site.data.bibliography %}
 
- * [Title {{ item[1].title }}]({{ item[1].url }}) ({{ item[0] }})
+ * [{{ item[1].title }}]({{ item[1].url }})
 
 {% endfor %}
 

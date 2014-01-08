@@ -81,6 +81,8 @@ Poll of candidate office hours.
 
 ## In-class exercise
 
+_This exercise was moved to Wednesday due to lack of time._
+
 Break into pairs. Take half of the following phrases and explain it to your partner to the best of your understanding. Then switch roles, with your partner explaining the other half to you. If you have no idea what a term means, speculate.
 
 * data center

@@ -3,7 +3,6 @@
   outcomes: 'Layered (Understand)' #, Reading (Skill)
   readings:
   - tag: armbrust2010
-  - tag: cavage2013
   - tag: helland2013
   - tag: barroso2013
     sect:
@@ -22,6 +21,7 @@
 - week: 2
   outcomes: 'SLA (Remember)'
   readings:
+  - tag: cavage2013
   - tag: barroso2013
     sect:
     - Ch.&nbsp;2
