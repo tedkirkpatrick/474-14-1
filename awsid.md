@@ -14,10 +14,11 @@ __Assignment due:__ Sunday Jan. 12, 23:59.
 
 Upload to [CourSys](http://courses.cs.sfu.ca/) a screen shot of your signon.
 
-* If you have IAM and MFA (Steps 2 and 3), take a screen shot of your MFA authentication request for your IAM id.
+* If you have IAM and MFA (Steps 2 and 3), take a screen shot of your MFA authentication request for your IAM id. Sample shot: <img src="images/assignment-1-mfa-iam.png" alt="Screen shot of MFA request for IAM account">.
 * If you have just IAM (Step 3), take a screen shot of your IAM sign on.
 * If you just have an AWS root account with MFA (Step 2), take a screen shot of your MFA authentication for your root account.
-* IF you just have an AWS root account (but not MFA) (Step 1), take a screen shot of your root AWS sign on.
+* IF you just have an AWS root account (but not MFA) (Step 1), take a screen shot of your root AWS sign on. Sample shot:
+<img src="images/assignment-1-password-root.png" alt="Screen shot of userid and password request for AWS account root id">.
 
 ## Description
 
@@ -97,6 +98,36 @@ sign in to your root AWS account, disable the hacked IAM account, and create a
 fresh IAM account to work from.
 
 Amazon describes [the differences between a root id and IAM id](http://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html).
+
+**Added Wed Jan. 8** There are some subtleties to IAM that can trip
+you up. Consider the following screen, taken while signed on as the root AWS ID, setting up an IAM id:
+
+<img alt="IAM set up screen" src="images/iam-signon-link.png">
+
+The top right corner of the screen lists my root ID (I've obscured it
+under a red box for security purposes). The middle left shows that
+I've set up MFA and password policies for my root id.  The middle
+right shows that I've created a group and a user for IAM.  You have to
+create a group first, then add an IAM user to that group. Give the
+group "Administrator Access" permissions---the highest level.
+
+The lower left is the subtlest part. This lists the URL from which you
+sign on using your IAM id. Initially, it will include your AWS account
+number, so it will look like
+<code>https://1234567890.signin.aws.amazon.com/console</code>. That's
+neither easy to type nor remember, so Amazon lets you set an "alias"
+by pressing a button just below the signing URL. You can pick anything
+you want, but it will have to be different from any other AWS user's
+alias.
+
+Once you have set your alias, say to <code>chenaws</code> then your
+signon will become
+<code>https://chenaws.signin.aws.amazon.com/console</code>. These are
+indicated by the red rectangles on the lower left.
+
+Now when you want to sign in to AWS using your IAM id, put the above
+URL into your browser. Then AWS will ask you for your IAM id and
+password and (if you've set MFA on the IAM id) then your MFA number.
 
 ### Step 4 (Optional) Give your IAM account access to your AWS billing pages
 
