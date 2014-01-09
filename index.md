@@ -23,7 +23,7 @@ Office hours: To be announced.
 
 ## Discussion
 
-Connect to [irc.freenode.net #sfu-cmpt474](irc://irc.freenode.net:6667/sfu-cmpt474) or use the friendly neighborhood [webchat](/chat.html).
+Connect to [irc.freenode.net #sfu-cmpt474](irc://irc.freenode.net:6667/sfu-cmpt474) or use the friendly neighborhood [webchat](chat.html).
 
 
 ## Site for assignment submission and grades
