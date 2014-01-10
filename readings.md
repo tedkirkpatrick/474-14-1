@@ -28,9 +28,22 @@ Please do not repost the copyrighted entries somewhere else. Downloading the art
 
 Readings will be taken from the following list (which unfortunately is not sorted in any useful order yet):
 
+<table id="bibtable">
+<caption>Bibliography</caption>
+<thead>
+<tr><th scope="col">Title</th></tr>
+</thead>
+<tbody>
 {% for item in site.data.bibliography %}
-
- * [{{ item[1].title }}]({{ item[1].url }})
-
+<tr>
+<td><a href="{{ item[1].url | escape }}">{{ item[1].title | escape}}</a></td>
+</tr>
 {% endfor %}
+</tbody>
+</table>
 
+<script>
+$(document).ready(function() {
+  $('#bibtable').dataTable();
+} );
+</script>
