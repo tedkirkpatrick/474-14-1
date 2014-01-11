@@ -1,5 +1,5 @@
 - week: 1
-  #completed: done
+  completed: done
   outcomes: 'Layered (Understand)' #, Reading (Skill)
   readings:
   - tag: armbrust2010
@@ -13,6 +13,7 @@
   - prefix: Day2
     completed: done
   - prefix: Day3
+    completed: done
   activities:
   assignments:
   - url: awsid.html
