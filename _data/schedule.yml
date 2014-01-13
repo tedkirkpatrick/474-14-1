@@ -27,8 +27,9 @@
   - tag: barroso2013
     sect:
     - Ch.&nbsp;2
+  - tag: helland2013
   days:
-  #- prefix: Day1
+  - prefix: Day1
   activities:
   assignments:
   - url: python-intro.html

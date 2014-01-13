@@ -5,7 +5,7 @@ outcomes-activation: class="active"
 ---
 By the end of this course, you will be able to:
 
-* Explain the layered architecture of cloud-based systems, the requirements for each layer, and the services provided by each layer.
+* Explain the layered architecture of cloud-based systems, the requirements for each layer, and the services provided by each layer.<br/>
  Level 2: Understand.
 * Distribute a computation across a set of unreliable computational instances while maintaining a set of well-defined service level criteria such as response availability, consistency, and latency.<br/>
  Level 3: Apply.

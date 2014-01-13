@@ -2,115 +2,196 @@
 abts2012:
    title: A Guided Tour of Data-center Networking
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2184319.2184335
+   type: Article
+   topic: Datacenter
 anderson2000:
    title: Taxonomy of the Cognitive Domain
    url  : http://www4.uwsp.edu/education/lwilson/curric/newtaxonomy.htm
+   type: Reference
+   topic: Learning
 armbrust2010: 
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721672
    title: A View of Cloud Computing
    shorter: View
+   type: Article
+   topic: Business
 barroso2013:
     url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
     title: The Datacenter as a Computer, 2d. Ed.
     shorter: Datacenter
+    type: Book
+    topic: Datacenter
 basho2013overview:
     url  : http://basho.com/assets/RelationaltoRiak.pdf
     title: Riak Technical Overview
+    type: Documentation
+    topic: Database
 basho2013home:
     url  : http://basho.com/riak/
     title: riak Database
     tooltitle: riak
+    type: Software
+    topic: Database
 brewer2001:
     title: Lessons from giant-scale services
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=939450
+    type: Article
+    topic: Scalability
 brewer2012:
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6133253
     title: CAP Twelve Years Later
     shorter: CAP+12
+    type: Article
+    topic: CAP
 cavage2013:
     title: "There Is No Getting Around It: You Are Building a Distributed System"
     shorter: Distributed
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274
+    type: Article
+    topic: App-design
 citrusbyte2014:
     tooltitle: redis
     title: redis
     url  : http://redis.io/
+    type: Software
+    topic: Database
 clark2013:
     title: "OSv: The Open Source Cloud Operating System That is Not Linux"
     url  : http://www.linux.com/news/featured-blogs/200-libby-clark/748578-osv-the-open-source-cloud-operating-system-that-is-not-linux
+    type: Post
+    topic: Container
 dean2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
     title: The Tail at Scale
     shorter: Tail-Scale
+    type: Article
+    topic: Latency
 gauthier2013:
     title: Software Reigns in Microsoft's Cloud-Scale Data Centers
     url  : http://www.globalfoundationservices.com/posts/2013/february/11/software-reigns-in-microsofts-cloud-scale-data-centers.aspx
+    type: Post
+    topic: Datacenter
 gauthier2013a:
     title: Microsoft Cloud-Scale Data Center Designs
     url  : http://www.globalfoundationservices.com/posts/2013/march/26/microsoft-cloud-scale-data-center-designs.aspx
+    type: Post
+    topic: Datacenter
 google2014:
     title: Google Data Centers
     url  : http://www.google.com/about/datacenters/
+    type: Post
+    topic: Datacenter
 google2014a:
     title: Explore a Google Data Center With Street View
     url  : http://www.youtube.com/watch?v=avP5d16wEp0
+    type: Post
+    topic: Datacenter
 google2014b:
     title: Google Container Data Center Tour
     url  : http://www.youtube.com/watch?v=zRwPSFpLX8I
+    type: Post
+    topic: Datacenter
 greenberg2011:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897877
     title: "VL2: A Scalable and Flexible Data Center Network"
+    type: Article
+    topic: Network
 gregg2013:
     title: Thinking Methodically About Performance
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408791
+    type: Article
+    topic: Performance
 hamilton2007:
     title: On Designing and Deploying Internet-scale Services
     shorter: Internet-scale
     url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
+    type: Article
+    topic: Operations
 helland2013:
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374
    title: Condos and clouds
    shorter: Condos
+   type: Article
+   topic: App-design
 hintjens2013:
    url  : http://zguide.zeromq.org/
    title: 0MQ---The Guide
    tooltitle: ZMQ
+   type: Documentation
+   topic: Messaging
 hull2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
     title: 20 Obstacles to Scalability
     shorter: Obstacles
+    type: Article
+    topic: Scalability
 iMatix2013tool:
     url  : http://zeromq.org/
     title: 0MQ
+    type: Software
+    topic: Messaging
 katsov2012:
     title: Distributed Algorithms in NoSQL Databases
     shorter: NoSQL
     url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
+    type: Article
+    topic: CAP
 li2010:
     title: "CloudCmp: Comparing Public Cloud Providers"
     shorter: CloudCmp
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+    type: Article
+    topic: Performance
 newrelic2014:
     tooltitle: New Relic
     title: New Relic
     url  : http://newrelic.com/
+    type: Software
+    topic: Operations
+princeton2014:
+    title: Princeto Alumni Weekly Special Issue on Privacy
+    url  : http://paw.princeton.edu/issues/2014/01/08/features/
+    type : Issue
+    topic: Privacy
 rexford2011:
     title: 'VL2: Technical Perspective'
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897876
+    type: Article
+    topic: Network
+roche2013:
+    title: Adopting DevOps practices in quality assurance
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2524713.2524721
+    type : Article
+    topic: Operations
+samovskiy2010:
+    title: The Rise of DevOps
+    url  : http://www.somic.org/2010/03/02/the-rise-of-devops/
+    type : Post
+    topic: Operations
 shute2013:
     title: "F1: A Distributed Database that Scales"
     shorter: F1
     url  : http://research.google.com/pubs/pub41344.html
+    type: Article
+    topic: Database
 takada2013:
     title: Distributed systems for fun and profit
     url  : http://book.mixu.net/distsys/
+    type: Book
+    topic: Distributed
 terry2013:
     title: Replicated Data Consistency Explained Through Baseball
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2534706.2500500
+    type: Article
+    topic: CAP
 tseitlin2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
     title: The Antifragile Organization
     shorter: Antifragile
+    type: Article
+    topic: Operations
 vogels2009:
     title: Eventual Consistency
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1435417.1435432
+    type: Article
+    topic: CAP

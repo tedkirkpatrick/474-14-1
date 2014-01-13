@@ -26,11 +26,11 @@ See screen listing all AWS services.
 
 Read the following before coming to the next class:
 
-**[{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }}), pp. 53--55 (from "SaaS: Front end, back end, and decision support" and stop before "A Quick Refresher on Simple Queing Theory").**
+**[{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }}), pp. 53--55 (from "SaaS: Front end, back end, and decision support" and stop before "A Quick Refresher on Simple Queuing Theory").**
 
 This section begins with the structure of a typical application for
-the cloud. Online stores such as Amazon or Indigo might have a
-structure such as this. Then the article focuses on the front-end
+the cloud. Online stores such as Amazon or Indigo might have this
+structure. Then the article focuses on the front-end
 portion of the application, which interacts directly with the user and
 therefore has strong response time requirements.
 
@@ -47,8 +47,8 @@ These two pages describe the lower two of the three layers of software
 custer-level. We'll be going into the concrete details of these layers
 as the course proceeds, using their counterparts on AWS and {{ site.serName }}.
 
-The platform level (2.3) and the resource, hardware, and eployment
+The platform level (2.3) and the resource, hardware, and deployment
 infrastructures (2.4.1--2.4.3) are mostly the concern of the
 datacenter operators. We won't consider them in this course. We will
 consider the programming framework infrastructure (2.4.4). That is the
-general-purpose logic from Figure&nbsp; of today's first article.
+general-purpose logic from Figure&nbsp;3 of today's first article.

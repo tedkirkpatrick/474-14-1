@@ -11,7 +11,10 @@ This is the site for {{ site.course }}.
 Ted Kirkpatrick<br/>
 Room 4134, Surrey Campus<br/>
 [ted@sfu.ca](mailto:ted@sfu.ca)<br/>
-Office hours: To be announced.
+**Office hours:**<br/>
+Mon 3:30--4:20<br/>
+Wed 1:30--2:20
+
 
 ## Teaching Assistant
 
