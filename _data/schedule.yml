@@ -23,13 +23,15 @@
 - week: 2
   outcomes: 'SLA (Remember)'
   readings:
-  - tag: cavage2013
   - tag: barroso2013
     sect:
     - Ch.&nbsp;2
   - tag: helland2013
+  - tag: cavage2013
   days:
   - prefix: Day1
+    completed: done
+  - prefix: Day2
   activities:
   assignments:
   - url: python-intro.html

@@ -55,9 +55,9 @@ _Example:_ Assume the fifth step said, "Buys book and sends to friend's address 
 
 On an **unsigned** sheet of paper, briefly complete:
 
-1. I most want to see the class start &hellip;
-2. I most want to see the class continue &hellip;
-3. I most want to see the class stop &hellip;
+1. I most want to see the class start doing &hellip;
+2. I most want to see the class continue doing &hellip;
+3. I most want to see the class stop doing &hellip;
 
 ## Reading guide for next class
 
@@ -66,6 +66,11 @@ Read the following before coming to the next class:
 **[{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }}), from "A quick refresher on simple queuing theory" (p.&nbsp;55) up to but not including "The drive toward commonality in computing" (p.&nbsp;58).**
 
 The short queuing theory part that begins the reading is optional. 
+
+{% if site.courseId != '474-14-1' %}
+**Plumbing and concierge == cluster-level infrastructure.<br/>
+'partitioning' in his sense we call 'sharding'.**
+{% endif %}
 
 Key points to look for:
 
