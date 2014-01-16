@@ -44,6 +44,10 @@ Source: [{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliograp
 <img src="http://deliveryimages.acm.org/10.1145/2400000/2398374/figs/f4.jpg" alt="Hierarchy of services in a service call graph"><br/>
 Source: [{{ site.data.bibliography.helland2013.title }}]({{ site.data.bibliography.helland2013.url }}), Fig.&nbsp;4. Copyright&nbsp;2013, ACM.
 
+Test: <a
+href="http://deliveryimages.acm.org/10.1145/2400000/2398374/figs/f4.jpg">Test
+of href</a>.
+
 * Each lower level has tighter SLA (response time) 
 
 ## Ensuring scalability
