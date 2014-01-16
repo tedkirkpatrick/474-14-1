@@ -32,6 +32,7 @@
   - prefix: Day1
     completed: done
   - prefix: Day2
+    completed: done
   activities:
   assignments:
   - url: python-intro.html
