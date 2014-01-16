@@ -1,7 +1,8 @@
 ---
-layout: course
+layout: course-table
 title: Course readings
 readings-activation: class="active"
+table: bibtable
 ---
 All the readings for this course will be articles for professional
 programmers and system designers. Most of them have been published in
@@ -26,11 +27,20 @@ Please do not repost the copyrighted entries somewhere else. Downloading the art
 
 ## Bibliography
 
-Readings will be taken from the following list (which unfortunately is not sorted in any useful order yet):
+Readings will be taken from the following list (click on the column title to sort by that column):
 
+<table id="{{ page.table }}" class="display">
+<caption class="ignore-caption">Bibliography</caption>
+<thead>
+<tr><th scope="col">Title</th><th scope="col">Type</th><th scope="col">Topic</th></tr>
+</thead>
+<tbody>
 {% for item in site.data.bibliography %}
-
- * [{{ item[1].title }}]({{ item[1].url }})
-
+<tr>
+<td><a href="{{ item[1].url | escape }}">{{ item[1].title | escape}}</a></td>
+<td>{{ item[1].type | escape }}</td>
+<td>{{ item[1].topic | escape }}</td>
+</tr>
 {% endfor %}
-
+</tbody>
+</table>

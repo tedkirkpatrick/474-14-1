@@ -226,7 +226,7 @@ vogels2009:
     type : Article
     topic: CAP
 weeks2014:
-    title:"S3mper: Consistency in the Cloud"
+    title: "S3mper: Consistency in the Cloud"
     url  : http://techblog.netflix.com/2014/01/s3mper-consistency-in-cloud.html
     type : Post
     topic: CAP
