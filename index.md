@@ -28,6 +28,7 @@ Office hours: To be announced.
 
 Connect to [irc.freenode.net #sfu-cmpt474](irc://irc.freenode.net:6667/sfu-cmpt474) or use the friendly neighborhood [webchat](chat.html).
 
+Post discussion, interesting links, questions and more to [/r/sfu_innovation](http://www.reddit.com/r/sfu_innovation/).
 
 ## Site for assignment submission and grades
 
