@@ -140,6 +140,16 @@ iMatix2013tool:
     title: 0MQ
     type : Software
     topic: Messaging
+jacobsen2012:
+    title: "The Essence of Software Engineering: The SEMAT Kernel"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2380656.2380670
+    type : Article
+    topic: Process
+jacobsen-nd:
+    title: Alpha State Cards
+    url  : http://www.ivarjacobson.com/alphastatecards/
+    type : Post
+    topic: Process
 katsov2012:
     title: Distributed Algorithms in NoSQL Databases
     shorter: NoSQL

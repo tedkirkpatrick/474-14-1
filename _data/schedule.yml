@@ -21,17 +21,19 @@
     percent: 2
 
 - week: 2
+  completed: done
   outcomes: 'SLA (Remember)'
   readings:
   - tag: barroso2013
     sect:
     - Ch.&nbsp;2
   - tag: helland2013
-  - tag: cavage2013
   days:
   - prefix: Day1
     completed: done
   - prefix: Day2
+    completed: done
+  - prefix: Day3
     completed: done
   activities:
   assignments:
@@ -43,6 +45,7 @@
   outcomes: 'Reliability (Understand)'
   readings:
   - tag: dean2013
+  - tag: cavage2013
   activities:
   assignments:
   - url: single-instance.html
