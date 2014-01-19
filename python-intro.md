@@ -3,7 +3,7 @@ layout: course
 title: Introduction to Python
 commentary: commentary
 ---
-Extended exercise, building upon skills learned in Friday's class.  Details to come today (Saturday).
+Extended exercise, building upon skills learned in Monday's class.  Details to come Monday.
 
 {% comment %}
 

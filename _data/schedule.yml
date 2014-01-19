@@ -36,10 +36,6 @@
   - prefix: Day3
     completed: done
   activities:
-  assignments:
-  - url: python-intro.html
-    name: Python intro
-    percent: 2
 
 - week: 3
   outcomes: 'Reliability (Understand)'
@@ -48,9 +44,13 @@
   - tag: cavage2013
   activities:
   assignments:
-  - url: single-instance.html
-    name: Single-instance computation
+  - url: python-intro.html
+    name: Python intro
     percent: 2
+#  assignments:
+#  - url: single-instance.html
+#    name: Single-instance computation
+#    percent: 2
 
 - week: 4
   outcomes: 'Distribute (Understand)'
