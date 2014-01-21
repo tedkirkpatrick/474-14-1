@@ -38,22 +38,23 @@
   activities:
 
 - week: 3
-  outcomes: 'Reliability (Understand)'
+  outcomes: 'Distribute (Understand)'
   readings:
   - tag: dean2013
   - tag: cavage2013
+  days:
+  - prefix: Day1
+    completed: done
   activities:
   assignments:
-  - url: python-intro.html
-    name: Python intro
-    percent: 2
-#  assignments:
-#  - url: single-instance.html
-#    name: Single-instance computation
-#    percent: 2
+   - url: access-keys-tut.html
+     name: Creating a new access key for an AWS id
+#  - url: simple-sqs.html
+#    name: Simple SQS application
+#    percent: 4
 
 - week: 4
-  outcomes: 'Distribute (Understand)'
+  outcomes: 'Reliability (Understand)'
   readings:
   - tag: hull2013
   activities:
