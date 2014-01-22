@@ -55,7 +55,7 @@ The working schedule for the course. Future weeks and classes are tentative and 
 {% endcomment %}
 		<td>
 			{% for assignment in item.assignments %}
-			   <a href="{{ assignment.url | escape }}">{{ assignment.name | xml_escape }}</a>
+			   <a href="{{ assignment.url | escape }}">{{ assignment.name | xml_escape }}</a><br/>
 			{% endfor %}
 		</td>
 	</tr>
