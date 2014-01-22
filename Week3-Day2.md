@@ -36,11 +36,17 @@ the instance.
 
 ### Structure of the assignment
 
+See [My little image sharer](a2.html).
+
 * Creating a service that distributes images.
-* Service has two subservices
-* Customer-facing service called `server`
-* Server calls worker subservice behind the scenes
-* 
+* Service has two subservices.
+* Customer-facing service called `server`.
+* Server stores images into S3 (we provide code).
+* Server sends message to `worker` subservice behind the scenes.
+* You write the connection between worker and server using SQS.
+* Worker creates thumbnails of images and stores thumbnails
+* We provide thumbnail code
+* You provide communications code between worker and server
 
 ## Reading guide for next class
 
