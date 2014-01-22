@@ -32,24 +32,3 @@ Introduction to the SQS Console.
 
 Using the [Tutorial for creating access keys](access-keys-tut.html), create
 a new access key for your AWS account.
-
-{% comment %}
-## Reading guide for next class
-
-Read the following before coming to the next class:
-
-**[{{ site.data.bibliography.dean2013.title }}]({{ site.data.bibliography.dean2013.url }})**,
-from beginning up to but not including "Cross-request long-term adaptations".
-
-The key points:
-
-* _latency_ is the length of time for a request to complete
-* The sources of variability in system response
-* The algorithm for hedged requests (p.&nbsp;77)
-
-Less important:
-
-* The middle section on "reducing component variability". This is good
-  advice on how to improve response time for individual requests
-
-{% endcomment %}

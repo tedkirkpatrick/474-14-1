@@ -4,6 +4,11 @@ abts2012:
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2184319.2184335
    type : Article
    topic: Datacenter
+amazon-nd:
+    title: "boto: A Python Interface to Amazon Web Services"
+    url  : http://boto.readthedocs.org/en/latest/
+    type : Documentation
+    topic: AWS
 anderson2000:
    title: Taxonomy of the Cognitive Domain
    url  : http://www4.uwsp.edu/education/lwilson/curric/newtaxonomy.htm
