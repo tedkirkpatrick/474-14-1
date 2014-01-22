@@ -50,9 +50,9 @@
   assignments:
    - url: access-keys-tut.html
      name: Creating a new access key for an AWS id
-#  - url: simple-sqs.html
-#    name: Simple SQS application
-#    percent: 4
+   - url: a2.html
+     name: My little image-sharer
+     percent: 4
 
 - week: 4
   outcomes: 'Reliability (Understand)'

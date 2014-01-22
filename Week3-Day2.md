@@ -2,7 +2,6 @@
 layout: course
 title: Week 3, Day 2 (Wednesday, Jan 22)
 sched-activation: class="active"
-commentary: commentary
 ---
 ## In-class activity
 
@@ -29,13 +28,25 @@ Congratulations! You won't have to do these steps again for this EC2
 instance. These changes will be retained even if you stop and then restart
 the instance.
 
-### Introduction to Assignment 2
+### Groups for Assignment 2
 
 1. Groups of 1 or 2.
 2. Form a group using CourSys group facilities. (Form own group, invite another to join yours, accept/decline invitations.)
 3. Groups formed by midnight Thursday (tomorrow).
 
+### Structure of the assignment
 
+See [My little image sharer](a2.html).
+
+* Creating a service that distributes images.
+* Service has two subservices.
+* Customer-facing service called `server`.
+* Server stores images into S3 (we provide code).
+* Server sends message to `worker` subservice behind the scenes.
+* You write the connection between worker and server using SQS.
+* Worker creates thumbnails of images and stores thumbnails
+* We provide thumbnail code
+* You provide communications code between worker and server
 
 ## Reading guide for next class
 
