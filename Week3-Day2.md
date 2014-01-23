@@ -36,7 +36,7 @@ the instance.
 
 ### Structure of the assignment
 
-See [My little image sharer](a2.html).
+See [My Little Image Sharer](a2.html).
 
 * Creating a service that distributes images.
 * Service has two subservices.
