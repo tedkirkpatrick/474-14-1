@@ -47,6 +47,7 @@
     completed: done
   - prefix: Day2
     completed: done
+  - prefix: Day3
   activities:
   assignments:
    - url: access-keys-tut.html
