@@ -1,0 +1,29 @@
+Layered:
+  full: Explain the layered architecture of cloud-based systems, the requirements for each layer, and the services provided by each layer.
+  level: Understand
+Distribute:
+  full: Distribute a computation across a set of unreliable computational instances while maintaining a set of well-defined service level criteria such as response availability, consistency, and latency.
+  level: Apply
+SLA:
+  full: Explain the requirements imposed on a design by a service level agreement (including inward-facing objectives for subservices).
+  level: Understand
+CAP:
+  full: Make appropriate tradeoffs of consistency versus availability for different features in a design.
+  level: Create
+Cluster:
+  full: Build a system using cluster-level infrastructure.
+  level: Create
+Tune:
+  full: Analyze and tune the performance of a system constructed from cloud infrastructure.
+  level: Evaluate
+Privacy:
+  full: Classify whether a given event is a breach of privacy or security and suggest an approach to preventing such an event.
+  level: Understand
+Reliability-classify:
+  full: Classify which attribute of reliability engineering is present (or absent) in a system.
+  level: Understand
+Reliability-use:
+  full: Incorporate one reliability engineering principle in a system you build.
+  level: Create
+
+

@@ -1,6 +1,8 @@
 - week: 1
   completed: done
-  outcomes: 'Layered (Understand)' #, Reading (Skill)
+  outcomes: 
+    - tag: Layered
+      level: Understand
   readings:
   - tag: armbrust2010
   - tag: helland2013
@@ -22,7 +24,9 @@
 
 - week: 2
   completed: done
-  outcomes: 'SLA (Remember)'
+  outcomes:
+    - tag: SLA
+      level: Remember
   readings:
   - tag: barroso2013
     sect:
@@ -38,7 +42,10 @@
   activities:
 
 - week: 3
-  outcomes: 'Distribute (Understand)'
+  completed: done
+  outcomes:
+    - tag: Distribute
+      level: Understand
   readings:
   - tag: dean2013
   - tag: cavage2013
@@ -48,6 +55,7 @@
   - prefix: Day2
     completed: done
   - prefix: Day3
+    completed: done
   activities:
   assignments:
    - url: access-keys-tut.html
@@ -57,7 +65,9 @@
      percent: 4
 
 - week: 4
-  outcomes: 'Reliability (Understand)'
+  outcomes:
+    - tag: Reliability-classify
+      level: Understand
   readings:
   - tag: hull2013
   activities:
@@ -67,7 +77,13 @@
     percent: 4
 
 - week: 5
-  outcomes: 'Distribute (Apply), Tune (Understand), SLA (Understand)'
+  outcomes:
+    - tag: Distribute
+      level: Apply
+    - tag: Tune
+      level: Understand
+    - tag: SLA
+      level: Understand
   readings:
   - tag: cavage2013
   activities:
@@ -76,14 +92,26 @@
     name: Controlling cluster latency
     percent: 10
 
+- week: Break
+  outcomes:
+    - tag: 'Reading break'
+      level: ''
+  readings:
+  activities:
+  assignments:
+
 - week: 6
-  outcomes: 'Midterm'
+  outcomes:
+    - tag: Midterm
+      level: ''
   readings:
   activities:
   assignments:
 
 - week: 7
-  outcomes: 'CAP (Understand)'
+  outcomes:
+    - tag: CAP
+      level: Understand
   readings:
   - tag: katsov2012
   activities:
@@ -93,7 +121,9 @@
     percent: 3
 
 - week: 8
-  outcomes: 'Cluster (Understand)'
+  outcomes:
+    - tag: Cluster
+      level: Understand
   readings:
   - tag: brewer2012
   - tag: helland2013
@@ -105,7 +135,11 @@
     percent: 5
 
 - week: 9
-  outcomes: 'CAP (Apply), Privacy (Understand)'
+  outcomes:
+    - tag: CAP
+      level: Apply
+    - tag: Privacy
+      level: Understand
   readings:
   - tag: hamilton2007
   activities:
@@ -116,7 +150,9 @@
     percent: 5
 
 - week: 10
-  outcomes: 'CAP (Analyze)'
+  outcomes:
+    - tag: CAP
+      level: Analyze
   readings:
   - tag: li2010
   activities:
@@ -126,7 +162,9 @@
     percent: 2
 
 - week: 11
-  outcomes: 'Tune (Evaluate)'
+  outcomes:
+    - tag: Tune
+      level: Evaluate
   readings:
   - tag: barroso2013
     sect:
@@ -138,7 +176,11 @@
     percent: 2
 
 - week: 12
-  outcomes: 'Cluster (Create), Reliability (Create)'
+  outcomes:
+    - tag: Cluster
+      level: Create
+    - tag: Reliability-use
+      level: Create
   readings:
   - tag: barroso2013
     sect:
@@ -150,7 +192,11 @@
     percent: 3
 
 - week: 13
-  outcomes: 'Cluster (Create), Reliability (Create)'
+  outcomes:
+    - tag: Cluster
+      level: Create
+    - tag: Reliability-use
+      level: Create
   readings:
   - tag: shute2013
   activities:

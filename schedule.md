@@ -24,7 +24,16 @@ The working schedule for the course. Future weeks and classes are tentative and 
                            {% unless forloop.last %}<br/>{% endunless %}
                         {% endfor %}
                 </td>
-		<td>{{ item.outcomes | xml_escape }}</td>
+		<td>
+                  {% for outcome in item.outcomes %}
+                    {% if outcome.level != '' %}
+                      <abbr title="{{ site.data.outcomes[outcome.tag].full }}">{{ outcome.tag }}</abbr>, {{ outcome.level }}
+                      {% unless forloop.last %}<br/>{% endunless %}
+                    {% else %}
+                      {{ outcome.tag }}
+                    {% endif %}
+                  {% endfor %}
+                </td>
 		<td>
 			{% for entry in item.readings %}
 			   <div class="visible-sm visible-md visible-lg compact">
