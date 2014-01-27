@@ -48,7 +48,7 @@
       level: Understand
   readings:
   - tag: dean2013
-  - tag: cavage2013
+#  - tag: cavage2013 # There's no getting around it
   days:
   - prefix: Day1
     completed: done
@@ -70,11 +70,13 @@
       level: Understand
   readings:
   - tag: hull2013
+  days:
+  - prefix: Day1
   activities:
   assignments:
-  - url: cluster-comp.html
-    name: Cluster computation
-    percent: 4
+#  - url: cluster-comp.html
+#    name: Cluster computation
+#    percent: 4
 
 - week: 5
   outcomes:
