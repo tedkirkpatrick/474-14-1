@@ -177,6 +177,11 @@ madhavapeddy2014:
     url  : http://queue.acm.org/detail.cfm?id=2566628
     type : Article
     topic: Platform
+ms-escience2014:
+    title: Cloud Design Patterns Now Available
+    url  : http://blogs.msdn.com/b/escience/archive/2014/01/28/cloud-design-patterns-now-available.aspx
+    type : Post
+    topic: App-design
 netflix:
     title: The Netflix Tech Blog
     url  : http://techblog.netflix.com/

@@ -48,7 +48,6 @@
       level: Understand
   readings:
   - tag: dean2013
-#  - tag: cavage2013 # There's no getting around it
   days:
   - prefix: Day1
     completed: done
@@ -69,9 +68,12 @@
     - tag: Reliability-classify
       level: Understand
   readings:
+  - tag: cavage2013
   - tag: hull2013
   days:
   - prefix: Day1
+    completed: done
+  - prefix: Day2
   activities:
   assignments:
 #  - url: cluster-comp.html
@@ -87,7 +89,7 @@
     - tag: SLA
       level: Understand
   readings:
-  - tag: cavage2013
+#  - tag: cavage2013
   activities:
   assignments:
   - url: latency-control.html
