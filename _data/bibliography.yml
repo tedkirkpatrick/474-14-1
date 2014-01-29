@@ -208,6 +208,11 @@ samovskiy2010:
     url  : http://www.somic.org/2010/03/02/the-rise-of-devops/
     type : Post
     topic: Operations
+scott-nd:
+    title: Latency Numbers Every Programmer Should Know
+    url  : http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html
+    type : Reference
+    topic: Latency
 shute2013:
     title: "F1: A Distributed Database that Scales"
     shorter: F1

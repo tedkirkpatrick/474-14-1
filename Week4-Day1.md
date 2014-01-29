@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Week 4, Day 1 (Jan27, 2014)
+title: Week 4, Day 1 (Monday Jan 27)
 sched-activation: class="active"
 ---
 ## In-class exercise
