@@ -69,11 +69,12 @@
       level: Understand
   readings:
   - tag: cavage2013
-  - tag: hull2013
   days:
   - prefix: Day1
     completed: done
   - prefix: Day2
+    completed: done
+  - prefix: Day3
   activities:
   assignments:
 #  - url: cluster-comp.html
@@ -89,6 +90,7 @@
     - tag: SLA
       level: Understand
   readings:
+  - tag: hull2013
 #  - tag: cavage2013
   activities:
   assignments:
@@ -109,6 +111,8 @@
     - tag: Midterm
       level: ''
   readings:
+  days:
+  - prefix: Fri-midterm
   activities:
   assignments:
 
