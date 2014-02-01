@@ -29,7 +29,7 @@ Assuming you sent a request during a heavily-loaded period,
 1. For requests that require the entire response before they can complete, how much latency do you save using a tied system?
 2. If you had a heavily-loaded system that used unhedged requests and you wanted to reduce your latency, would it be better to increase your provisioning or implement tied requests? (Assume both solutions have the same cost.)
 
-## Messaging in distributed systems <small>(From [{{ site.data.bibliography.dean2013.title }}]({{ site.data.bibliography.dean2013.url }}))</small>
+## Messaging in distributed systems <small>(From [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }}))</small>
 
 The categories of analysis:
 
@@ -39,7 +39,7 @@ The categories of analysis:
 * IAAA
 * Deployment
 
-## Automating failover <small>(From [{{ site.data.bibliography.dean2013.title }}]({{ site.data.bibliography.dean2013.url }}))</small>
+## Automating failover <small>(From [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }}))</small>
 
 What happens when the "lead" server fails? 
 
