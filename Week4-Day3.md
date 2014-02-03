@@ -29,27 +29,11 @@ Assuming you sent a request during a heavily-loaded period,
 1. For requests that require the entire response before they can complete, how much latency do you save using a tied system?
 2. If you had a heavily-loaded system that used unhedged requests and you wanted to reduce your latency, would it be better to increase your provisioning or implement tied requests? (Assume both solutions have the same cost.)
 
-## Messaging in distributed systems <small>(From [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }}))</small>
+## Demo of testing software
 
-The categories of analysis:
+By Izaak.
 
-* Geographies
-* Data segregation
-* SLA availability/throughput/consistency/durability
-* IAAA
-* Deployment
+## Discussion of distributed systems
 
-## Automating failover <small>(From [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }}))</small>
+**Moved to Monday.**
 
-What happens when the "lead" server fails? 
-
-Do you bring up a new leader automatically or have the operations staff do it?
-
-## Guide to readings for next class
-
-**Read [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }})**, from Platform Components (p.&nbsp;68) up to and including Platform Usage Collection (p.&nbsp;69).
-
-Two key points from these sections:
-
-1. There are many components of these systems that are not glamorous nor "complicated" but that are necessary for the system.
-2. How do these components have to be designed to make them _scalable_?
