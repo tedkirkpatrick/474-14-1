@@ -22,6 +22,7 @@ The categories of analysis:
 * SLA guarantees
 
   * availability
+  * latency
   * throughput
   * consistency 
   * durability
