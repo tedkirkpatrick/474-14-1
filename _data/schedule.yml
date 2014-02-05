@@ -93,13 +93,15 @@
       level: Understand
   days:
   - prefix: Mon
+    completed: done
+  - prefix: Wed
   readings:
-  - tag: hull2013
-#  - tag: cavage2013
+#  - tag: hull2013
+  - tag: cavage2013
   activities:
   assignments:
-  - url: latency-control.html
-    name: Controlling cluster latency
+  - url: sla.html
+    name: Developing an SLA
     percent: 10
 
 - week: Break

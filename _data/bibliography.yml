@@ -4,9 +4,19 @@ abts2012:
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2184319.2184335
    type : Article
    topic: Datacenter
+adams2014:
+   title: "AWS Tips I Wish I'd Known Before I Started"
+   url  : http://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/
+   type : Post
+   topic: AWS
 amazon-nd:
     title: "boto: A Python Interface to Amazon Web Services"
     url  : http://boto.readthedocs.org/en/latest/
+    type : Documentation
+    topic: AWS
+amazon-nd2:
+    title: AWS SDK for Java API Reference
+    url  : http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
     type : Documentation
     topic: AWS
 anderson2000:
@@ -213,6 +223,11 @@ samovskiy2010:
     url  : http://www.somic.org/2010/03/02/the-rise-of-devops/
     type : Post
     topic: Operations
+sarkuni2014:
+    title: AWS Tips, Tricks, and Techniques
+    url  : https://launchbylunch.com/posts/2014/Jan/29/aws-tips/
+    type : Post
+    topic: AWS
 scott-nd:
     title: Latency Numbers Every Programmer Should Know
     url  : http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html
@@ -229,6 +244,11 @@ smith2012:
      url  : http://www.oncourseworkshop.com/Learning049.htm
      type : Reference
      topic: Learning
+somers2013:
+     title: Heroku's Ugly Secret
+     url  : http://news.rapgenius.com/James-somers-herokus-ugly-secret-annotated
+     type : Post
+     topic: Platform
 takada2013:
     title: Distributed systems for fun and profit
     url  : http://book.mixu.net/distsys/
