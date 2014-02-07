@@ -2,6 +2,7 @@
 # Begin with brief introduction to concepts that will be dealt with in much detail in Weeks 8--13:
 #  CAP issues
 #  What "durability" means
+#  SLO (alternative to SLA)
 #
 # Students need to understand the basics of these to be able to read even some early papers.
 - week: 1
