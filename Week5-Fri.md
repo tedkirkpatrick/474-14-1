@@ -14,7 +14,9 @@ retrieve it with low latency. We also want to ensure our images are
 retained even if there are disk crashes. (Recall that many data centers
 intentionally use disks with relatively low reliabilities.)
 
-
+How would you use the approaches of sharding and replication (from
+[Week 2 Wednesday](Week2-Day2.html)) to decrease the latency of your
+image retrievals? For your sharding, how might you group images?
 
 ## Implementation <small>(from [You Are Building a Distributed System]({{ site.data.bibliography.cavage2013.url }}))</small>
 
@@ -43,4 +45,4 @@ On an **unsigned** sheet of paper, briefly complete:
 
 ## No readings over Reading Break
 
-Work on [Assignment&nbsp;3](sla.md) and review the previous readings.
+Work on [Assignment&nbsp;3](sla.html) and review the previous readings.

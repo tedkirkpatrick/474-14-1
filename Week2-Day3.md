@@ -20,7 +20,7 @@ to an EC2 instance. This included:
 
 ## Post-class optional session
 
-For those who wished to stay after 3:20&nsp;PM, Izaak continued:
+For those who wished to stay after 3:20&nbsp;PM, Izaak continued:
 
 * Running Python on the EC2 instance
 * Connecting to AWS S3 storage
