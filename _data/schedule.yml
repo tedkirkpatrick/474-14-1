@@ -1,3 +1,9 @@
+# FOR NEXT OFFERING
+# Begin with brief introduction to concepts that will be dealt with in much detail in Weeks 8--13:
+#  CAP issues
+#  What "durability" means
+#
+# Students need to understand the basics of these to be able to read even some early papers.
 - week: 1
   completed: done
   outcomes: 
@@ -66,6 +72,7 @@
 - week: 4
   completed: done
   outcomes:
+    # NEXT OFFERING:  DIDN'T COVER THIS AT ALL
     - tag: Reliability-classify
       level: Understand
   readings:
@@ -95,6 +102,8 @@
   - prefix: Mon
     completed: done
   - prefix: Wed
+    completed: done
+  - prefix: Fri
   readings:
 #  - tag: hull2013
   - tag: cavage2013

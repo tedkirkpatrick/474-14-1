@@ -80,6 +80,11 @@ clark2013:
     url  : http://www.linux.com/news/featured-blogs/200-libby-clark/748578-osv-the-open-source-cloud-operating-system-that-is-not-linux
     type : Post
     topic: Platform
+davis2014:
+    title: How to Save 90% on Your S3 Bill
+    url  : http://www.appneta.com/blog/s3-list-get-bucket-default/
+    type : Post
+    topic: AWS
 dck-nd:
     title: Data Center Knowledge
     url  : http://www.datacenterknowledge.com/
@@ -233,6 +238,11 @@ scott-nd:
     url  : http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html
     type : Reference
     topic: Latency
+sirer2013:
+    title: "Broken by Design: MongoDB Fault Tolerance"
+    url  : http://hackingdistributed.com/2013/01/29/mongo-ft/
+    type : Post
+    topic: Database
 shute2013:
     title: "F1: A Distributed Database that Scales"
     shorter: F1
