@@ -92,6 +92,7 @@
 #    percent: 4
 
 - week: 5
+  completed: done
   outcomes:
     - tag: Distribute
       level: Apply
@@ -105,6 +106,7 @@
   - prefix: Wed
     completed: done
   - prefix: Fri
+    completed: done
   readings:
 #  - tag: hull2013
   - tag: cavage2013
@@ -112,7 +114,7 @@
   assignments:
   - url: sla.html
     name: Developing an SLA
-    percent: 10
+    percent: 4
 
 - week: Break
   outcomes:
