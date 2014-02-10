@@ -96,6 +96,11 @@ dean2013:
     shorter: Tail-Scale
     type : Article
     topic: Latency
+drdobbs-nd:
+    title: Cloud---Dr. Dobb's
+    url  : http://www.drdobbs.com/cloud
+    type : Blog
+    topic: Tools
 gauthier2013:
     title: Software Reigns in Microsoft's Cloud-Scale Data Centers
     url  : http://www.globalfoundationservices.com/posts/2013/february/11/software-reigns-in-microsofts-cloud-scale-data-centers.aspx
