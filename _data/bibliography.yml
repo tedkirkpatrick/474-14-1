@@ -142,6 +142,11 @@ hamilton2007:
     url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
     type : Article
     topic: Operations
+helland2012:
+   title: Idempotence Is Not a Medical Condition
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160734
+   type : Article
+   topic: Distributed
 helland2013:
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374
    title: Condos and clouds
