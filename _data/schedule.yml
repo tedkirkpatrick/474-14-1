@@ -74,8 +74,8 @@
   completed: done
   outcomes:
     # NEXT OFFERING:  DIDN'T COVER THIS AT ALL
-    - tag: Reliability-classify
-      level: Understand
+    #- tag: Reliability-classify
+    #  level: Understand
   readings:
   - tag: cavage2013
   days:
