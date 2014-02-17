@@ -1,8 +1,7 @@
 ---
 layout: course
-title: Review of Weeks 1&ndash;5
+title: Review of Weeks 1&ndash;2+
 sched-activation: class="active"
-commentary: commentary
 ---
 
 ## Who wrote these articles?
@@ -22,7 +21,15 @@ Fellows (a senior technical position) in the Google Systems Infrastructure Group
 * [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }}):
 Software engineer at Joyent (a cloud provider) and Amazon Web Services.
 
-## What did they say?
+## Review questions
+
+* What are some of the advantages of large, centralized data structures?
+* What are some of the layers of cloud software?
+* What does SLA stand for? What is in one?
+* What does the layered structure of a service do to its SLAs?
+* What is a hedged request?
+
+## What did the readings say?
 
 * Large, centralized datacentres change the economics of computing
   * Elastic provisioning---pay only for as much as you need, when you need it
@@ -32,13 +39,13 @@ Software engineer at Joyent (a cloud provider) and Amazon Web Services.
 
 * A cloud service provides several layers of software 
   * Platform-level: Supporting the basic container in which applications run. Often a virtual machine (VM)
-    * Amazon EC2 virtual machines
+    * Amazon EC2 virtual machines, Heroku dynos
   * Cluster-level: Basic operations underlying __distributed__ services
     * Message-sending (Amazon SQS)
     * Monitoring performance and responding (Amazon CloudWatch)
     * Distributed storage (Amazon S3)
-    * Deployment and maintenance
-    * Frameworks (Google AppEngine, Heroku dynos)
+    * Deployment and maintenance (after midterm)
+    * Frameworks (Google AppEngine)
 
 * Service Level Agreements (SLAs) define the requirements for your service
   * Many categories: latency, throughput, availability, durability, consistency
@@ -52,7 +59,13 @@ Software engineer at Joyent (a cloud provider) and Amazon Web Services.
 
 * Latency, latency, latency, latency
   * Users want their answers quickly
-  * 
+  * Reduce latency by spreading work over multiple workers
+  * Cannot predict which workers will be slow or fail outright
+    * **But some will!**
+    * Can accelerate by duplicating requests---but that doubles resource consumption
+    * Hedged request: Wait till most (99% or more) of requests have completed, then issue second requests for remaining 1%
 
+{% comment %}
 * Service-oriented architecture (SOA)
+{% endcomment %}
 
