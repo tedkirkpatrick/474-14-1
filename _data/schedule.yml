@@ -130,6 +130,7 @@
       level: ''
   readings:
   days:
+  - prefix: Mon
   - prefix: Fri-midterm
   activities:
   assignments:
