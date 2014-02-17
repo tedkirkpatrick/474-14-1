@@ -4,3 +4,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="dist/js/jquery.dataTables.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    {% if page.requires-math %}
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    {% endif %}
