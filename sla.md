@@ -81,6 +81,7 @@ and that every request will require creation of 1000 thumbnails, one for each wo
 calculate the 99.9th percentile latency.
 
 ### Question 3
+__Added Mon, Feb 17:__ _For this question, continue the assumption that you have 1000 workers, as done in Question&nbsp;2._
 
 Now assume that you have revised your project to use a hedged request
 algorithm. At the 99th percentile time, for every worker that has
@@ -93,6 +94,11 @@ computation easier.)
 What is the 99.9th percentile of this latency distribution?
 
 ## Part 2: SLA for Throughput
+
+__Added Mon, Feb 17:__ _This question does not include any of the
+assumptions from Part&mbsp;1. Answer it only using the assumptions
+given in this part. Each EC2 instance can only do one request at a
+time and every request requires only a single EC2 instance._
 
 Assume that your latency computations make you comfortable setting an
 SLA of 99% at 1400&nbsp;ms for all your requests. You have reserved

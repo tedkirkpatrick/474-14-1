@@ -23,7 +23,7 @@ Software engineer at Joyent (a cloud provider) and Amazon Web Services.
 
 ## Review questions
 
-* What are some of the advantages of large, centralized data structures?
+* What are some of the advantages of large, centralized data centers?
 * What are some of the layers of cloud software?
 * What does SLA stand for? What is in one?
 * What does the layered structure of a service do to its SLAs?
@@ -46,6 +46,7 @@ Software engineer at Joyent (a cloud provider) and Amazon Web Services.
     * Distributed storage (Amazon S3)
     * Deployment and maintenance (after midterm)
     * Frameworks (Google AppEngine)
+  * Application level
 
 * Service Level Agreements (SLAs) define the requirements for your service
   * Many categories: latency, throughput, availability, durability, consistency
