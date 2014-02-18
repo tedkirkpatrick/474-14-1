@@ -96,7 +96,7 @@ What is the 99.9th percentile of this latency distribution?
 ## Part 2: SLA for Throughput
 
 __Added Mon, Feb 17:__ _This question does not include any of the
-assumptions from Part&mbsp;1. Answer it only using the assumptions
+assumptions from Part&nbsp;1. Answer it only using the assumptions
 given in this part. Each EC2 instance can only do one request at a
 time and every request requires only a single EC2 instance._
 
