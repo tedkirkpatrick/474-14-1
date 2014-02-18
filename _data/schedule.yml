@@ -131,6 +131,7 @@
   readings:
   days:
   - prefix: Mon
+    completed: done
   - prefix: Fri-midterm
   activities:
   assignments:
