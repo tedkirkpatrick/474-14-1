@@ -132,6 +132,7 @@
   days:
   - prefix: Mon
     completed: done
+  - prefix: Wed
   - prefix: Fri-midterm
   activities:
   assignments:

@@ -37,15 +37,16 @@ the underlying database that each service is based upon?
 
 Points to look for:
 
-Up to this point, the aarticle has described choices in system
-_architecture_. These last two pages describe the choices you have to
-make when implementing your chosen architecture:
+Up to this point, the article has described choices in system
+_architecture_. These last sections describe the choices you have to
+make when _implementing_ your chosen architecture:
 
 * When is it OK to use a component that is already built? What are the risks?
 * What is the great threat that the network poses to meeting your reliability SLA?
 * What information do you need to run the system effectively?
 * What are the risks of using a "platform as a service" rather than writing your own?
 
-By the way, if you're intrigued by the notion of the Netflix _Chaos&nbsp;Monkey_, see 
-[{{ site.data.bibliography.tseitlin2013.title }}]({{ site.data.bibliography.tseitlin2013.url }}), which describes these systems.
-We'll read that article around the middle of the course.
+By the way, if you're intrigued by the notion of the Netflix
+_Chaos&nbsp;Monkey_, see [{{ site.data.bibliography.tseitlin2013.title }}]({{ site.data.bibliography.tseitlin2013.url }}),
+which describes that system and others like it.  We'll read that article
+around the middle of the course.

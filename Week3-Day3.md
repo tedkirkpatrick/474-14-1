@@ -1,6 +1,7 @@
 ---
 layout: course
 title: Week 3, Day 3 (Friday, Jan 24)
+sched-activation: class="active"
 ---
 ## Distributing computation across instances
 
@@ -26,5 +27,5 @@ You might also consider rereading the sections on "Hedged requests" and "Tied re
 
 Key points to look for:
 
-* What is a good balance of partitions of the data?
-* How do large information retrieval systems (such as search services) different from other services?
+* What is a good trade-off of partitions of the data?
+* How do large information retrieval systems (such as search services) differ from other services?

@@ -35,6 +35,11 @@ up to but not including "Messaging", p. 67.
 Note that (as he says on p. 85), his use of "distributed system" is
 synonymous with how we use "cloud". 
 
+Key point:
+
+<blockquote>While much of the discussion, literature, and presentations focus on the en vogue technologies such as Paxos, Dynamo, or MapReduce &hellip; the reality of building a large distributed system is that many “traditional” problems are left unsolved by off-the-shelf solutions, whether commercial or open source. (p.&nbsp;64)
+</blockquote>
+
 You don't need to pay close attention to:
 
-* The opening pages, giving two reasons for using a distributed system, are background.
+* The opening pages (pp.&nbsp;63--64), giving two reasons for using a distributed system, are background.

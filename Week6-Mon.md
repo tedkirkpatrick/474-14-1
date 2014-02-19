@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Review of Weeks 1&ndash;2+
+title: Review of Weeks 1&ndash;2+ (Week 6, Monday)
 sched-activation: class="active"
 ---
 

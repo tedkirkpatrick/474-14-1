@@ -106,5 +106,6 @@ The key points:
 Less important:
 
 * The middle section on "reducing component variability". This is good
-  advice on how to improve response time for individual requests
-
+  advice on how to improve response time for individual requests (including
+  subrequests) but we are interested in how to improve response time for
+  _multiple_ subrequests comprising a larger request.

@@ -57,9 +57,9 @@ The many questions to ask about a distributed service:
 
 **Read [{{ site.data.bibliography.cavage2013.title }}]({{ site.data.bibliography.cavage2013.url }})**, from Messaging (p.&nbsp;67) up to but not including Platform Components (p.&nbsp;68).
 
-These sections are short but dense. For the Messaging section,
+These two sections are short but dense. For the "Messaging" section,
 consider how your use of SQS in Assignment&nbsp;2 fits his
 description. Also note how he considers each of the factors (geographies, etc.) for this subservice.
 
-For the automated failover section, focus on the basic need: We need
+For the "Automating Failover" section, focus on the basic need: We need
 to design how the system recovers when a subcomponent fails.

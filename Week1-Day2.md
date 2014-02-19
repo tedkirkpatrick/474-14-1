@@ -33,6 +33,10 @@ downtime)</code>. But note that customers and providers (such as Amazon)
 will define "downtime" differently. This is the source of the legalese in
 Amazon's SLA (and every other cloud vendor's SLA).
 
+{% if site.courseId != '474-14-1' %}
+**Break the following into three columns.**
+{% endif %}
+
 <table class="table">
 <caption>Availability and uptime</caption>
 <thead>
