@@ -3,6 +3,9 @@ layout: course
 title: Developing a Service-Level Agreement (SLA)
 sched-activation: class="active"
 ---
+## Solution
+**Thursday, Feb. 20:** The [answer key](sla-sol.html).
+
 ## Submission details
 
 **Due:** Wednesday, February&nbsp;19, 2014<br/>
