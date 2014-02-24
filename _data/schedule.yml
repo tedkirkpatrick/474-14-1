@@ -126,6 +126,7 @@
   assignments:
 
 - week: 6
+  completed: done
   outcomes:
     - tag: Midterm
       level: ''
@@ -136,6 +137,7 @@
   - prefix: Wed
     completed: done
   - prefix: Fri-midterm
+    completed: done
   activities:
   assignments:
 
