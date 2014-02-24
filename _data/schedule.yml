@@ -146,12 +146,14 @@
     - tag: CAP
       level: Understand
   readings:
-  - tag: katsov2012
+  - tag: takada2013
+  days:
+  - prefix: Mon
   activities:
   assignments:
-  - url: keyvalue.html
-    name: Adding a key-value database
-    percent: 3
+  #- url: keyvalue.html
+  #  name: Adding a key-value database
+  #  percent: 3
 
 - week: 8
   outcomes:

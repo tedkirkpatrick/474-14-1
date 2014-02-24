@@ -71,7 +71,7 @@ cavage2013:
     topic: App-design
 citrusbyte2014:
     tooltitle: Redis
-    title: Redis
+    title: Redis Key-Value Store
     url  : http://redis.io/
     type : Software
     topic: Database
@@ -157,6 +157,11 @@ hamilton2007:
     url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
     type : Article
     topic: Operations
+hedges2013:
+    title: Notes on Distributed Systems for Young Bloods
+    url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
+    type : Post
+    topic: Distributed
 helland2012:
    title: Idempotence Is Not a Medical Condition
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160734
@@ -222,6 +227,11 @@ madhavapeddy2014:
     url  : http://queue.acm.org/detail.cfm?id=2566628
     type : Article
     topic: Platform
+marz2011:
+    title: How to Beat the CAP Theorem
+    url  : http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html
+    type : Post
+    topic: CAP
 ms-escience2014:
     title: Cloud Design Patterns Now Available
     url  : http://blogs.msdn.com/b/escience/archive/2014/01/28/cloud-design-patterns-now-available.aspx
@@ -235,7 +245,7 @@ netflix:
 netflix-nd:
     title: Netflix Open Source Software Centre
     url  : http://netflix.github.io/#repo
-    typ  : Software
+    type : Software
     topic: Cloud
 newrelic2014:
     tooltitle: New Relic
@@ -269,7 +279,7 @@ sarkuni2014:
     type : Post
     topic: AWS
 scott-nd:
-    title: Latency Numbers Every Programmer Should Know
+    title: "Latency Numbers Every Programmer Should Know (By Year)"
     url  : http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html
     type : Reference
     topic: Latency
