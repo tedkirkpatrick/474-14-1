@@ -126,6 +126,11 @@ gauthier2013a:
     url  : http://www.globalfoundationservices.com/posts/2013/march/26/microsoft-cloud-scale-data-center-designs.aspx
     type : Post
     topic: Datacenter
+gilbert2012:
+    title: Perspectives on the CAP Theorem
+    url  : http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6122006
+    type : Article
+    topic: CAP
 google2014:
     title: Google Data Centers
     url  : http://www.google.com/about/datacenters/

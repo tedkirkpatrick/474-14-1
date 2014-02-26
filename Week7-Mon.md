@@ -87,5 +87,14 @@ How do you coordinate updates when you have multiple copies of a database?
 ## Guide to reading for next class
 
 **Read [{{ site.data.bibliography.takada2013.title }}]({{ site.data.bibliography.takada2013.url }}intro.html),
-  Chapter 1**, from "What we want to achieve: Scalability and other good things", up to and including,
+  Chapter 1**, from "What we want to achieve: Scalability and other good things", up to and **including**,
   "What prevents us from achieving good things?".
+
+This book is a good introduction to the issues of designing cloud
+systems. The book's title refers to "Distributed Systems" but as he states
+in the [Introduction]({{site.data.bibliography.takada2013.url}}index.html),
+
+> This text is focused on distributed programming and systems concepts you'll need to understand commercial systems in the data center.
+
+This reading defines the vocabulary he will be using in later readings. It
+is review but the concepts are worth considering again.

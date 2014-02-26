@@ -149,6 +149,8 @@
   - tag: takada2013
   days:
   - prefix: Mon
+    completed: done
+  - prefix: Wed
   activities:
   assignments:
   #- url: keyvalue.html
