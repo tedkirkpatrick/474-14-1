@@ -151,10 +151,12 @@
   - prefix: Mon
     completed: done
   - prefix: Wed
+    completed: done
+  - prefix: Fri
   activities:
   assignments:
-  #- url: keyvalue.html
-  #  name: Adding a key-value database
+  - url: http://innovate.cs.surrey.sfu.ca/
+    name: Welcome
   #  percent: 3
 
 - week: 8
