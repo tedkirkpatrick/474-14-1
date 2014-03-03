@@ -163,12 +163,13 @@
 
 - week: 8
   outcomes:
-    - tag: Cluster
-      level: Understand
+    - tag: CAP
+      level: Apply 
   readings:
+  - tag: katsov2012
   - tag: brewer2012
-  - tag: helland2013
-  - tag: tseitlin2013
+  days:
+  - prefix: Mon
   activities:
   assignments:
   #- url: cluster-inf.html
@@ -177,8 +178,8 @@
 
 - week: 9
   outcomes:
-    - tag: CAP
-      level: Apply
+    - tag: Cluster
+      level: Understand
     - tag: Privacy
       level: Understand
   readings:
