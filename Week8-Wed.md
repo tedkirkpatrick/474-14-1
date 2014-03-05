@@ -35,6 +35,7 @@ Finally, systems might offer Availability and Partition Tolerance but give up co
 These systems will remain available, accepting reads and writes even in the case of network partitions. Their tradeoff
 is that **different nodes might give different results to the same query**.
 
+{% comment %}
 ## Tradeoffs in the CAP space
 
 <img class="aligncenter size-full wp-image-798" title="consistency-plot-3" alt="Tradeoffs between consistency, availability, and latency" src="http://highlyscalable.files.wordpress.com/2012/09/consistency-plot-3.png" class="img-responsive"/>
@@ -48,3 +49,5 @@ presumably held by Ilya Katsov.</small>
 presumably held by Ilya Katsov.</small>
 
 (B) and (C) in the above are variants of Anti-entropy (see text in [original post](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases)).
+
+{% endcomment %}
