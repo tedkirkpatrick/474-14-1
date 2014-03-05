@@ -39,12 +39,12 @@ is that **different nodes might give different results to the same query**.
 
 <img class="aligncenter size-full wp-image-798" title="consistency-plot-3" alt="Tradeoffs between consistency, availability, and latency" src="http://highlyscalable.files.wordpress.com/2012/09/consistency-plot-3.png" class="img-responsive"/>
 
-<small>Source: [Highly Scalable
-blog](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/). Rights
+<small>Source: [Highly Scalable blog](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/). Rights
 presumably held by Ilya Katsov.</small>
 
 <img class="size-full wp-image-768" title="consistency-catalog" alt="" src="http://highlyscalable.files.wordpress.com/2012/09/consistency-catalog.png"  class="img-responsive"/>
 
-<small>Source: [Highly Scalable
-blog](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/). Rights
+<small>Source: [Highly Scalable blog](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/). Rights
 presumably held by Ilya Katsov.</small>
+
+(B) and (C) in the above are variants of Anti-entropy (see text in [original post](http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases)).

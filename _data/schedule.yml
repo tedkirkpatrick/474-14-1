@@ -176,6 +176,8 @@
   assignments:
   - url: vm.html
     name: Virtual machine test environment
+  - url: http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium
+    name: The Tea Emporium
   #  percent: 5
 
 - week: 9
