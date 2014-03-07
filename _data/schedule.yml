@@ -173,6 +173,7 @@
     completed: done
   - prefix: Wed
     completed: done
+  - prefix: Fri
   activities:
   assignments:
   - url: vm.html
