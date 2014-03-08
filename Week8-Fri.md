@@ -48,8 +48,19 @@ If R + W > N
 * Not tolerant of network partitions
    * Can be modified to achieve that
 
-{% comment %}
-
 ## Guide to reading for next class
 
-{% endcomment %}
+Read
+[{{site.data.bibliography.katsov2012.title}}]({{site.data.bibliography.katsov2012.url}})
+**section "Sharding and Replication in Dynamic Environments"**. Stop
+just before "Multi-Attribute Sharding".
+
+In our discussion of availability/partition-tolerance tradeoffs so far
+(and in the [Tea Emporium](http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium)
+assignment as well), we have assumed a fixed number of replications of
+our data. But what do you do if you need to increase the number of
+replications to meet higher demand or reduce replications when demand
+drops? This section considers the challenges that arise when you
+change your number of replications as your application runs.
+Nearly all real applications do dynamic replica management, so these techniques
+are necessary to building real apps.

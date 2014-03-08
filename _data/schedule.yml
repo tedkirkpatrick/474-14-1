@@ -162,18 +162,19 @@
   #  percent: 3
 
 - week: 8
+  completed: done
   outcomes:
     - tag: CAP
       level: Apply 
   readings:
   - tag: katsov2012
-  - tag: brewer2012
   days:
   - prefix: Mon
     completed: done
   - prefix: Wed
     completed: done
   - prefix: Fri
+    completed: done
   activities:
   assignments:
   - url: vm.html
