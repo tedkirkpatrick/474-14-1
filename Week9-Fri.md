@@ -6,7 +6,7 @@ sched-activation: class="active"
 
 ## Emphasizing availability when partitions occur
 
-<small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small>
+<!-- <small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small> -->
 
 <img src="images/AP-Venn.png" alt="CAP Venn diagram with A and P subset highlighted" class="img-responsive">
 
@@ -38,7 +38,7 @@ Every service request has a time out
 
 * Might retry one or more times, but when the final retry times out?
 
-The **partition decision** <small>(Brewer)</small>: How your code responds
+The **partition decision**: How your code responds
 to timed-out requests determines whether your system is strongly consistent
 or available:
 
