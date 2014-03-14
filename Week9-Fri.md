@@ -88,6 +88,8 @@ Those are the _best_ you can do after a partition
 
   * So you'll have to make some hard decisions
 
+{% comment %}
+
 ### Maintaining business rules and data structure invariants
 
 An application typically has business rules it must maintain
@@ -137,3 +139,5 @@ with strong guarantees" (CRDTs and CALM)---this remains a research topic, with f
 applications built using this concept.
 
 **Important section:** Reconciling different operation orders
+
+{% endcomment %}
