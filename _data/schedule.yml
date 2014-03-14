@@ -181,22 +181,28 @@
     name: Virtual machine test environment
   - url: http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium
     name: The Tea Emporium
-  #  percent: 5
+    percent: 5
 
 - week: 9
   outcomes:
     - tag: Cluster
       level: Understand
-    - tag: Privacy
-      level: Understand
+     #- tag: Privacy
+     # level: Understand
   readings:
   - tag: hamilton2007
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
   activities:
-  - name: Privacy
+  #- name: Privacy
   assignments:
-  - url: cap.html
-    name: Trading off consistency, availability, and compensation
-    percent: 5
+  #- url: cap.html
+  #  name: Trading off consistency, availability, and compensation
+  #  percent: 5
 
 - week: 10
   outcomes:

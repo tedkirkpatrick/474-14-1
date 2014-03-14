@@ -52,6 +52,11 @@ basho2013home:
     tooltitle: Riak
     type : Software
     topic: Database
+bayer2012:
+    title: The Absolutely Simplest Consistent Hashing Example
+    url  : http://techspot.zzzeek.org/2012/07/07/the-absolutely-simplest-consistent-hashing-example/
+    type : Post
+    topic: Database
 brewer2001:
     title: Lessons from giant-scale services
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=939450
@@ -101,11 +106,21 @@ dean2013:
     shorter: Tail-Scale
     type : Article
     topic: Latency
+decandia2007:
+    title: "Dynamo: Amazon's Highly Available Key-Value Store"
+    url  : http://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf
+    type : Article
+    topic: CAP
 drdobbs-nd:
     title: Cloud---Dr. Dobb's
     url  : http://www.drdobbs.com/cloud
     type : Blog
     topic: Tools
+drysdale2012:
+    title: "Pynamo: Exploring the Dynamo Paper in Python"
+    url  : http://lurklurk.org/pynamo/pynamo.html
+    type : Post
+    topic: CAP
 durkee2010:
     title: Why Cloud Computing Will Never Be Free
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1735223.1735242
@@ -128,7 +143,7 @@ gauthier2013a:
     topic: Datacenter
 gilbert2012:
     title: Perspectives on the CAP Theorem
-    url  : http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6122006
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?arnumber=6122006
     type : Article
     topic: CAP
 google2014:
@@ -340,3 +355,8 @@ weeks2014:
     url  : http://techblog.netflix.com/2014/01/s3mper-consistency-in-cloud.html
     type : Post
     topic: CAP
+white2007:
+    title: Consistent Hashing
+    url  : https://weblogs.java.net/blog/tomwhite/archive/2007/11/consistent_hash.html
+    type : Post
+    topic: Database
