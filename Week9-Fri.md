@@ -3,8 +3,6 @@ layout: course
 title: Trading consistency for availability (Week 9, Friday&mdash;March 14, 2014)
 sched-activation: class="active"
 ---
-{% comment %}
-
 
 ## Emphasizing availability when partitions occur <small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small>
 
@@ -60,6 +58,7 @@ How long do we set the time out value?
 
   * Fewer partitions
 
+{% comment %}
 ### Relaxing consistency
 
 If we abandon the requirement that all users see the same order of updates (strong consistency), what do we gain?
