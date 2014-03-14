@@ -4,7 +4,9 @@ title: Trading consistency for availability (Week 9, Friday&mdash;March 14, 2014
 sched-activation: class="active"
 ---
 
-## Emphasizing availability when partitions occur <small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small>
+## Emphasizing availability when partitions occur
+
+<small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small>
 
 <img src="images/AP-Venn.png" alt="CAP Venn diagram with A and P subset highlighted" class="img-responsive">
 
