@@ -106,6 +106,8 @@ These imply invariants across your data structures
     raise Overdraft
 </code></pre>
 
+{% endcomment %}
+
 Relational database systems offer key constraints to ensure some invariants
 
 * A Purchase record cannot be created with a nonexistent customer id
@@ -142,4 +144,3 @@ applications built using this concept.
 
 **Important section:** Reconciling different operation orders
 
-{% endcomment %}
