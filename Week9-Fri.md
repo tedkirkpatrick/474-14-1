@@ -3,6 +3,8 @@ layout: course
 title: Trading consistency for availability (Week 9, Friday&mdash;March 14, 2014)
 sched-activation: class="active"
 ---
+{% comment %}
+
 
 ## Emphasizing availability when partitions occur <small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small>
 
@@ -87,8 +89,6 @@ Those are the _best_ you can do after a partition
   * But you will not be able to build a full application using only these operations
 
   * So you'll have to make some hard decisions
-
-{% comment %}
 
 ### Maintaining business rules and data structure invariants
 
