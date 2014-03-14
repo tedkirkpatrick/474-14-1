@@ -60,7 +60,6 @@ How long do we set the time out value?
 
   * Fewer partitions
 
-{% comment %}
 ### Relaxing consistency
 
 If we abandon the requirement that all users see the same order of updates (strong consistency), what do we gain?
@@ -100,6 +99,8 @@ An application typically has business rules it must maintain
   * A flight cannot carry more passengers than seats
 
 These imply invariants across your data structures
+
+{% comment %}
 
 <pre><code>if user.account - withdrawal &lt; 0.00:
     raise Overdraft
