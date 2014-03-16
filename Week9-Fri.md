@@ -6,7 +6,7 @@ sched-activation: class="active"
 
 ## Emphasizing availability when partitions occur
 
-<!-- <small>Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})</small> -->
+Source: [{{site.data.bibliography.brewer2012.title}}]({{site.data.bibliography.brewer2012.url}})
 
 <img src="images/AP-Venn.png" alt="CAP Venn diagram with A and P subset highlighted" class="img-responsive">
 
@@ -134,7 +134,7 @@ When designing for partitioned operations, which invariant violations can you co
 
 ## Guide to reading for next class
 
-**Read [{{site.data.bibliography.takada2013.title}}, Chap.&nbsp;5]({{site.data.bibliography.takada2013.url}}/eventual.html):** up to but not including "Replica synchronization: gossip and Merkle trees".
+**Read [{{site.data.bibliography.takada2013.title}}, Chap.&nbsp;5]({{site.data.bibliography.takada2013.url}}eventual.html):** up to but not including "Replica synchronization: gossip and Merkle trees".
 
 **Important points:** "Eventual consistency with probabilistic guarantees"---this is the normal definition of _eventual consistency_.
 

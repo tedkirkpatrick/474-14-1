@@ -184,6 +184,7 @@
     percent: 5
 
 - week: 9
+  completed: done
   outcomes:
     - tag: Cluster
       level: Understand
@@ -197,6 +198,7 @@
   - prefix: Wed
     completed: done
   - prefix: Fri
+    completed: done
   activities:
   #- name: Privacy
   assignments:
