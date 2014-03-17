@@ -211,12 +211,14 @@
     - tag: CAP
       level: Analyze
   readings:
-  - tag: li2010
+  #- tag: li2010
+  days:
+  - prefix: Mon
   activities:
   assignments:
-  - url: analysis.html
-    name: Performance analysis of CAP tradeoffs
-    percent: 2
+  #- url: analysis.html
+  #  name: Performance analysis of CAP tradeoffs
+  #  percent: 2
 
 - week: 11
   outcomes:

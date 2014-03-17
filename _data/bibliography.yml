@@ -30,10 +30,15 @@ armbrust2010:
    shorter: View
    type : Article
    topic: Business
-bailis20113:
+bailis2013:
     title: Eventual Consistency Today
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2447976.2447992
     type : Article
+    topic: CAP
+bailis-nd:
+    title: 'PBS: Probabilistically Bounded Staleness'
+    url  : http://pbs.cs.berkeley.edu/
+    type : Reference
     topic: CAP
 barroso2013:
     url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
