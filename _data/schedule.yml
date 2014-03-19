@@ -214,6 +214,8 @@
   #- tag: li2010
   days:
   - prefix: Mon
+    completed: done
+  - prefix: Wed
   activities:
   assignments:
   #- url: analysis.html

@@ -36,7 +36,7 @@ bailis2013:
     type : Article
     topic: CAP
 bailis-nd:
-    title: 'PBS: Probabilistically Bounded Staleness'
+    title: 'PBS: Probabilistically Bounded Staleness (with interactive demonstration)'
     url  : http://pbs.cs.berkeley.edu/
     type : Reference
     topic: CAP
