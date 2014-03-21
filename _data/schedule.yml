@@ -216,6 +216,8 @@
   - prefix: Mon
     completed: done
   - prefix: Wed
+    completed: done
+  - prefix: Fri
   activities:
   assignments:
   #- url: analysis.html
