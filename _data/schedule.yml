@@ -191,7 +191,7 @@
      #- tag: Privacy
      # level: Understand
   readings:
-  - tag: hamilton2007
+  #- tag: hamilton2007
   days:
   - prefix: Mon
     completed: done
@@ -207,6 +207,7 @@
   #  percent: 5
 
 - week: 10
+  completed: done
   outcomes:
     - tag: CAP
       level: Analyze
@@ -218,6 +219,7 @@
   - prefix: Wed
     completed: done
   - prefix: Fri
+    completed: done
   activities:
   assignments:
   #- url: analysis.html
@@ -228,15 +230,19 @@
   outcomes:
     - tag: Tune
       level: Evaluate
+  days:
+  - prefix: Mon
   readings:
-  - tag: barroso2013
-    sect:
-    - Ch.&nbsp;7
+  - tag: hamilton2007
+  - tag: tseitlin2013
+  #- tag: barroso2013
+  #  sect:
+  #  - Ch.&nbsp;7
   activities:
   assignments:
-  - url: log.html
-    name: Logging system performance
-    percent: 2
+  #- url: log.html
+  #  name: Logging system performance
+  #  percent: 2
 
 - week: 12
   outcomes:

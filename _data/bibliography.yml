@@ -40,6 +40,11 @@ bailis-nd:
     url  : http://pbs.cs.berkeley.edu/
     type : Reference
     topic: CAP
+ball2013:
+    title: Deliberate Git
+    url  : http://rakeroutes.com/blog/deliberate-git/
+    type : Post
+    topic: Tools
 barroso2013:
     url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
     title: The Datacenter as a Computer, 2d. Ed.
@@ -355,6 +360,11 @@ vogels2009:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1435417.1435432
     type : Article
     topic: CAP
+webster2014:
+    title: Git Workflow, or, How to Use Git and Prosper
+    url  : https://gist.github.com/jasonwebster/5a54d9d1cdb24a2495e0
+    type : Post
+    topic: Tools
 weeks2014:
     title: "S3mper: Consistency in the Cloud"
     url  : http://techblog.netflix.com/2014/01/s3mper-consistency-in-cloud.html
