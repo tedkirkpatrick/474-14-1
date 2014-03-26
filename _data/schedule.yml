@@ -232,6 +232,7 @@
       level: Evaluate
   days:
   - prefix: Mon
+    completed: done
   readings:
   - tag: hamilton2007
   - tag: tseitlin2013
