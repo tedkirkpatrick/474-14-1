@@ -38,6 +38,7 @@ Multi-tenant your services
 * Give up some system efficiency for operations efficiency
 
 Allow rare human intervention in an emergency
+
 * Test the scripts with fire drills or Game Days
 
 Admission control---block new work when system is overloaded

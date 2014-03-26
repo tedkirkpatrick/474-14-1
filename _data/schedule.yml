@@ -228,14 +228,16 @@
 
 - week: 11
   outcomes:
-    - tag: Tune
-      level: Evaluate
+    - tag: Reliability-classify
+      level: Understand
   days:
   - prefix: Mon
     completed: done
+  - prefix: Wed
   readings:
   - tag: hamilton2007
   - tag: tseitlin2013
+  - tag: krishnan2012
   #- tag: barroso2013
   #  sect:
   #  - Ch.&nbsp;7

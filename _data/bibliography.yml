@@ -241,6 +241,11 @@ katsov-nd:
     url  : http://highlyscalable.wordpress.com/
     type : Blog
     topic: Scalability
+krishnan2012:
+    title: Weathering the Unexpected
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332
+    type : Article
+    type : Operations
 lango2014:
     title: Toward Software-Defined SLAs
     url  :  http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2541883.2541894
