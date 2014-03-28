@@ -136,6 +136,11 @@ durkee2010:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1735223.1735242
     type : Article
     topic: Business
+eaton2014:
+    title: 'The "Four Hamiltons" Framework for Mitigating Faults in the Cloud: Avoid It, Mask It, Bound It, Fix It Fast'
+    url  : http://highscalability.com/blog/2014/3/3/the-four-hamiltons-framework-for-mitigating-faults-in-the-cl.html
+    type : Post
+    topic: Operations
 eucalyptus-nd:
     title: "Eucalyptus: Open Source AWS Compatible Private Clouds"
     url  : https://www.eucalyptus.com/
@@ -187,6 +192,11 @@ hamilton2007:
     url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
     type : Article
     topic: Operations
+hamilton2013:
+    title: The Power Failure Seen Around the World
+    url  : http://perspectives.mvdirona.com/2013/02/04/ThePowerFailureSeenAroundTheWorld.aspx
+    type : Post
+    topic: Operations
 hedges2013:
     title: Notes on Distributed Systems for Young Bloods
     url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
@@ -209,6 +219,11 @@ hintjens2013:
    tooltitle: ZMQ
    type : Documentation
    topic: Messaging
+hoff2007:
+   title: Log Everything All the Time
+   url  : http://highscalability.com/blog/2007/8/30/log-everything-all-the-time.html
+   type : Post
+   topic: Operations
 hull2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
     title: 20 Obstacles to Scalability
@@ -245,7 +260,7 @@ krishnan2012:
     title: Weathering the Unexpected
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332
     type : Article
-    type : Operations
+    topic: Operations
 lango2014:
     title: Toward Software-Defined SLAs
     url  :  http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2541883.2541894
@@ -302,6 +317,11 @@ roche2013:
     title: Adopting DevOps practices in quality assurance
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2524713.2524721
     type : Article
+    topic: Operations
+rollbar-nd:
+    title: Rollbar
+    url  : https://rollbar.com/
+    type : Software
     topic: Operations
 samovskiy2010:
     title: The Rise of DevOps

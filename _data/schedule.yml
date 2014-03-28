@@ -234,6 +234,8 @@
   - prefix: Mon
     completed: done
   - prefix: Wed
+    completed: done
+  - prefix: Fri
   readings:
   - tag: hamilton2007
   - tag: tseitlin2013
@@ -243,9 +245,8 @@
   #  - Ch.&nbsp;7
   activities:
   assignments:
-  #- url: log.html
-  #  name: Logging system performance
-  #  percent: 2
+  - url: http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium-2
+    name: The Tea Emporium 2
 
 - week: 12
   outcomes:
@@ -254,9 +255,7 @@
     - tag: Reliability-use
       level: Create
   readings:
-  - tag: barroso2013
-    sect:
-    - Ch.&nbsp;8
+  - tag: hoff2007
   activities:
   assignments:
   - url: robustness.html
