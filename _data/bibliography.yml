@@ -272,6 +272,11 @@ li2010:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
     type : Article
     topic: Performance
+loggly-nd:
+    title: loggly
+    url  : https://www.loggly.com/
+    type : Software
+    topic: Operations
 madhavapeddy2014:
     title: "Unikernels:	Rise of the Virtual Library Operating System"
     url  : http://queue.acm.org/detail.cfm?id=2566628

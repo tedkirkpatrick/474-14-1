@@ -227,6 +227,7 @@
   #  percent: 2
 
 - week: 11
+  completed: done
   outcomes:
     - tag: Reliability-classify
       level: Understand
@@ -236,6 +237,7 @@
   - prefix: Wed
     completed: done
   - prefix: Fri
+    completed: done
   readings:
   - tag: hamilton2007
   - tag: tseitlin2013
@@ -254,8 +256,12 @@
       level: Create
     - tag: Reliability-use
       level: Create
+  days:
+  - prefix: Mon
+  - prefix: 'Fri CANCELLED'
   readings:
   - tag: hoff2007
+  - tag: shute2013
   activities:
   assignments:
   - url: robustness.html
@@ -263,15 +269,6 @@
     percent: 3
 
 - week: 13
-  outcomes:
-    - tag: Cluster
-      level: Create
-    - tag: Reliability-use
-      level: Create
-  readings:
-  - tag: shute2013
+#  readings:
   activities:
   assignments:
-  - url: final.html
-    name: Overall system report
-    percent: 10
