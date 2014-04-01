@@ -96,6 +96,15 @@ Products such as
 [{{site.data.bibliography.loggly-nd.title}}]({{site.data.bibliography.loggly-nd.url}})
 integrate logs from multiple sources and analyze them.
 
-{% comment %}
 ## Guide to reading for next class
-{% endcomment %}
+
+**Read the following two short sections from [{{site.data.bibliography.shute2013.title}}]({{site.data.bibliography.shute2013.url}}):**
+
+1. Section 1: Introduction (pp.&nbsp;1068--1069, not including "2. Basic Architecture").
+
+2. Section 10: Latency and Throughput (p.&nbsp;1078, not including "11. Related Work").
+
+Key points: Most of the paper is concerned with database topics that are outside the scope of this course. However, the two sections I selected respond to two themes of the course:
+
+* The relation between scalability, availability, and latency. The F1 team claims to have found a unique design point in that space.
+* Latency, replication, and distribution across data centres. The Paxos algorithm they mention is a quorum algorithm that requires a quorum of instances to be available in order to run. 

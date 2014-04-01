@@ -264,9 +264,9 @@
   - tag: shute2013
   activities:
   assignments:
-  - url: robustness.html
-    name: Making the system robust
-    percent: 3
+#  - url: robustness.html
+#    name: Making the system robust
+#    percent: 3
 
 - week: 13
 #  readings:
