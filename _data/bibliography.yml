@@ -100,6 +100,11 @@ cockcroft-nd:
     url  : http://www.slideshare.net/adrianco
     type : Blog
     topic: Performance
+corbett2012:
+    title: "Spanner: Google's Globally-Distributed Database"
+    url  : https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf
+    type : Article
+    topic: CAP
 davis2014:
     title: How to Save 90% on Your S3 Bill
     url  : http://www.appneta.com/blog/s3-list-get-bucket-default/

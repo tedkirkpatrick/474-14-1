@@ -258,6 +258,8 @@
       level: Create
   days:
   - prefix: Mon
+    completed: done
+  - prefix : 'Wed--Evals'
   - prefix: 'Fri CANCELLED'
   readings:
   - tag: hoff2007
