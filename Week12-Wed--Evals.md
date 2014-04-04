@@ -49,7 +49,7 @@ Global timestamps provide a total order
 The system has an uncertainty measure that indicates fuzziness of times
 
 * Uncertainty computed using a mixture of GPS and atomic clocks
-* Uncertainty typicall around 10&nbsp;ms
+* Uncertainty typically around 10&nbsp;ms
 
 ## Latency and throughput for F1
 

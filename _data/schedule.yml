@@ -251,6 +251,7 @@
     name: The Tea Emporium 2
 
 - week: 12
+  completed: done
   outcomes:
     - tag: Cluster
       level: Create
@@ -260,7 +261,9 @@
   - prefix: Mon
     completed: done
   - prefix : 'Wed--Evals'
+    completed: done
   - prefix: 'Fri CANCELLED'
+    completed: done
   readings:
   - tag: hoff2007
   - tag: shute2013

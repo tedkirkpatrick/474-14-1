@@ -313,6 +313,11 @@ newrelic2014:
     url  : http://newrelic.com/
     type : Software
     topic: Operations
+peterson2008:
+    title: reindent.py
+    url  : http://svn.python.org/view/python/trunk/Tools/scripts/reindent.py?revision=66903&view=markup
+    type : Software
+    topic: Tools
 princeton2014:
     title: Princeton Alumni Weekly Special Issue on Privacy
     url  : http://paw.princeton.edu/issues/2014/01/08/features/
