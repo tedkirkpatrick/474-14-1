@@ -320,7 +320,7 @@ From Python (in your `serverDB.py`):
   # The first argument must be a channel name, the second must be a Python dict
   # If you want to include VectorClocks in the dict, they must be contained in a list
   # If you want to include a single VectorClock, wrap it as a singleton list: 'clock': [clock]
-  queue.put('db3', {'primary': 'db0', 'key': 'white-tea', 'rating': rating, 'choices': choices, 'clocks': clocks)) 
+  queue.put('db3', {'primary': 'db0', 'key': 'white-tea', 'rating': rating, 'choices': choices, 'clocks': clocks}) 
 ```
 
 **Example read:** Assume that you want to read from channel `db3`. From the command line (for testing):
@@ -337,7 +337,7 @@ From Python (in your `serverDB.py`):
   queue = Queue(qport)
 
   # To use
-  msg = queue.set('db3')
+  msg = queue.get('db3')
   # If there is nothing on the channel, msg == None
   # If there are one or more dicts on the channel, msg will be assigned the first dict
 ```
