@@ -337,7 +337,7 @@ From Python (in your `serverDB.py`):
   queue = Queue(qport)
 
   # To use
-  msg = queue.set('db3')
+  msg = queue.get('db3')
   # If there is nothing on the channel, msg == None
   # If there are one or more dicts on the channel, msg will be assigned the first dict
 ```
