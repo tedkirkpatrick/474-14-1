@@ -349,8 +349,11 @@ will start and stop them.
 
 ## Development tips
 
-**NOTE:** The initial `test/run.py` file has only two tests, `simple` and `testGetGossip`. It requires you to use `--test` to specify one
-of the two. We will be adding more tests soon and fixing run.py to let you run the whole sequence.
+<del>**NOTE:** The initial `test/run.py` file has only two tests, `simple` and `testGetGossip`. It requires you to use `--test` to specify one
+of the two. We will be adding more tests soon and fixing run.py to let you run the whole sequence.</del>
+
+**UPDATE:** As of 15:45 Saturday April 5, `test/run.py` now runs all the tests in its suite by default. You
+have to request single tests via the `--test NAME` option.
 
 Tips on testing and debugging this assignment:
 
