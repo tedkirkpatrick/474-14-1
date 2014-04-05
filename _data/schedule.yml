@@ -277,3 +277,5 @@
 #  readings:
   activities:
   assignments:
+   - url: final-assignment.html
+     name: Final assignment
