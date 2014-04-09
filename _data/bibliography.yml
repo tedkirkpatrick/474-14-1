@@ -256,6 +256,11 @@ katsov2012:
     url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
     type : Article
     topic: CAP
+katsov2014:
+    title: 'Google Finds: Centralized Control, Distributed Data Architectures Work Better Than Fully Decentralized Architectures'
+    url  : http://highscalability.com/blog/2014/4/7/google-finds-centralized-control-distributed-data-architectu.html
+    type : Post
+    topic: CAP
 katsov-nd:
     title: Highly Scalable Blog
     url  : http://highlyscalable.wordpress.com/

@@ -383,6 +383,11 @@ Redis. Then use `curl` to send requests to the servers, seeing if they respond c
 kill and restart the process running it. You can't test gossip this
 way though, because gossip requires more than one DB instance.
 
+5. **Use the `--wait` option if you get connection errors.** The `--wait` option to `test/run.py` specifies the seconds to
+wait between starting the LB and DB servers and sending them requests. By default, we wait one second. Sometimes that is not
+enough lead time for the servers to start and you get a connection error. In case you get a connection error, try specifying a
+longer wait time.
+
 ### Note for people using the VM we provided several weeks ago
 
 The Ubuntu VM for Virtual Box that we provided some time ago is fine for developing this project. You may need to
@@ -392,7 +397,7 @@ add the Python termcolor package, though:
   sudo pip install --upgrade termcolor
 ```
 
-## And now you're feeling overwhelemed
+## And now you're feeling overwhelmed
 
 You've read this far. It seems like _so much_ material. Where to even start? Bear in mind, _this is just the stuff we've
 been talking and reading about for the past five weeks_, stuff that you already have an idea about, stuff that might even, um,
