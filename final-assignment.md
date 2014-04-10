@@ -198,7 +198,7 @@ On every write request (rating, clock) and every read request:
        merge the value with the value stored in this instance's Redis server
        save the merged rating, choice list, and clock list on Redis
        append these values to this instance's digest_list, for later gossip to its neighbour
-       if the digest now has `config['digest-length']` or more values     # Update
+       if the digest now has config['digest-length'] or more values       # Update
          write the tuples to this insance's channel (as for sender above) # Update
 ```
 
