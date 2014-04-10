@@ -171,6 +171,8 @@ Here is the gossip algorithm:
 
 On every write request (rating, clock):
 
+**Update Thu April 10:** Added `digest_list = []`.
+
 ```python
   #  the global variable digest_list has been initialized to []
   Merge the new rating and clock value into the average rating, choice list, and clock list already saved for this key
@@ -179,11 +181,14 @@ On every write request (rating, clock):
   If the digest now has `config['digest-length']` or more values:
      for every tuple in digest_list:
        write the tuple to this instance's channel
+     digest_list = [] # Update
 ```
 
 **Recipient**
 
 On every write request (rating, clock) and every read request:
+
+**Update Thu April 10:** Clarified write when `digest_list` fills.
 
 ```python
   # Gossip algorithm
@@ -193,6 +198,8 @@ On every write request (rating, clock) and every read request:
        merge the value with the value stored in this instance's Redis server
        save the merged rating, choice list, and clock list on Redis
        append these values to this instance's digest_list, for later gossip to its neighbour
+       if the digest now has `config['digest-length']` or more values     # Update
+         write the tuples to this insance's channel (as for sender above) # Update
 ```
 
 
