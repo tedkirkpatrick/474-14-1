@@ -274,8 +274,14 @@
 #    percent: 3
 
 - week: 13
+  completed: done
 #  readings:
   activities:
   assignments:
    - url: final-assignment.html
      name: Final assignment
+
+- week: Final exam
+  assignments:
+    - url: final-review.html
+      name: Review for final exam
