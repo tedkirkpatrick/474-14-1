@@ -46,7 +46,7 @@ Poll of candidate office hours.
 <thead><tr><th scope="col">Site</th><th scope="col">URL</th><th scope="col">Purpose</th><th scope="col">Blame</th></tr></thead>
 <tbody>
 <tr><td>Course pages</td><td>http://sfu-innovation.github.io/474-14-1/</td><td>Description of activities, assignments, policies, &hellip;</td><td>Ted</td></tr>
-<tr><td>Course cloud</td><td>To be announced</td><td>Programming assignments</td><td>Izaak</td></tr>
+<tr><td>Course cloud</td><td>http://http://innovate.cs.surrey.sfu.ca/</td><td>Programming assignments</td><td>Izaak</td></tr>
 <tr><td>Grades</td><td>https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/</td><td>Standard CourSys site for CMPT grades</td><td>Greg Baker</td></tr>
 </tbody>
 </table>

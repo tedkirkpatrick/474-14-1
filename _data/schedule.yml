@@ -282,6 +282,7 @@
      name: Final assignment
 
 - week: Final exam
+  completed: done
   assignments:
     - url: final-review.html
       name: Review for final exam
