@@ -202,6 +202,11 @@ hamilton2013:
     url  : http://perspectives.mvdirona.com/2013/02/04/ThePowerFailureSeenAroundTheWorld.aspx
     type : Post
     topic: Operations
+hathaway2010:
+    title: Lazy logging calls in Python
+    url  : http://stackoverflow.com/questions/4148790/lazy-logger-message-string-evaluation
+    type : Post
+    topic: Operations
 hedges2013:
     title: Notes on Distributed Systems for Young Bloods
     url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
@@ -287,6 +292,11 @@ loggly-nd:
     url  : https://www.loggly.com/
     type : Software
     topic: Operations
+logstash-nd:
+    title: logstash
+    url  : http://logstash.net/
+    type : Software
+    topic: Operations
 madhavapeddy2014:
     title: "Unikernels:	Rise of the Virtual Library Operating System"
     url  : http://queue.acm.org/detail.cfm?id=2566628
@@ -297,6 +307,11 @@ marz2011:
     url  : http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html
     type : Post
     topic: CAP
+mitsuhiko-nd:
+    title: Logbook source code
+    url  : https://github.com/mitsuhiko/logbook
+    type : Software
+    topic: Operations
 ms-escience2014:
     title: Cloud Design Patterns Now Available
     url  : http://blogs.msdn.com/b/escience/archive/2014/01/28/cloud-design-patterns-now-available.aspx
@@ -316,6 +331,11 @@ newrelic2014:
     tooltitle: New Relic
     title: New Relic
     url  : http://newrelic.com/
+    type : Software
+    topic: Operations
+pantheios-nd:
+    title: Pantheios
+    url  : http://www.pantheios.org/
     type : Software
     topic: Operations
 peterson2008:
@@ -341,6 +361,11 @@ roche2013:
 rollbar-nd:
     title: Rollbar
     url  : https://rollbar.com/
+    type : Software
+    topic: Operations
+ronacher2010:
+    title: Logbook 0.6.0
+    url  : https://pythonhosted.org/Logbook/index.html
     type : Software
     topic: Operations
 samovskiy2010:
