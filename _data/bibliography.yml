@@ -191,6 +191,11 @@ gregg2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408791
     type : Article
     topic: Performance
+hale2010:
+    title: "You Can't Sacrifice Partition Tolerance"
+    url  : http://codahale.com/you-cant-sacrifice-partition-tolerance/
+    type : Post
+    topic: CAP
 hamilton2007:
     title: On Designing and Deploying Internet-scale Services
     shorter: Internet-scale
@@ -207,11 +212,6 @@ hathaway2010:
     url  : http://stackoverflow.com/questions/4148790/lazy-logger-message-string-evaluation
     type : Post
     topic: Operations
-hedges2013:
-    title: Notes on Distributed Systems for Young Bloods
-    url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
-    type : Post
-    topic: Distributed
 helland2012:
    title: Idempotence Is Not a Medical Condition
    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160734
@@ -229,6 +229,11 @@ hintjens2013:
    tooltitle: ZMQ
    type : Documentation
    topic: Messaging
+hodges2013:
+    title: Notes on Distributed Systems for Young Bloods
+    url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
+    type : Post
+    topic: Distributed
 hoff2007:
    title: Log Everything All the Time
    url  : http://highscalability.com/blog/2007/8/30/log-everything-all-the-time.html
