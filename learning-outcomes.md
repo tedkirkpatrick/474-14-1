@@ -39,6 +39,8 @@ Values
 - Ultimately a personal choice
 - I write these in terms of [choices I want the students to consider](http://www.cs.sfu.ca/CourseCentral/363/ted/363-11-1/outcomes.html)
 
+Things for people to think about
+
 ## How do we characterize "degrees of mastery"?
 
 Bloom's taxonomy of cognitive outcomes
