@@ -166,6 +166,11 @@ gilbert2012:
     url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?arnumber=6122006
     type : Article
     topic: CAP
+golab2014:
+    title: 'Eventually Consistent: Not What You Were Expecting?'
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2576794
+    type : Article
+    topic: CAP
 google2014:
     title: Google Data Centers
     url  : http://www.google.com/about/datacenters/
@@ -276,6 +281,16 @@ katsov-nd:
     url  : http://highlyscalable.wordpress.com/
     type : Blog
     topic: Scalability
+kingsbury-2013:
+    title: 'Jepsen: Testing the Partition Tolerance of PostgreSQL, Redis, MongoDB, and Riak'
+    url  : http://www.infoq.com/articles/jepsen
+    type : Article
+    topic: CAP
+kingsbury-2014:
+    title: 'Call me maybe: Carly Rae Jepsen and the perils of network partitions'
+    url  : http://aphyr.com/tags/jepsen
+    type : Post
+    topic: CAP
 krishnan2012:
     title: Weathering the Unexpected
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332
@@ -283,7 +298,7 @@ krishnan2012:
     topic: Operations
 lango2014:
     title: Toward Software-Defined SLAs
-    url  :  http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2541883.2541894
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2541883.2541894
     type : Article
     topic: SLA
 li2010:
@@ -297,6 +312,11 @@ loggly-nd:
     url  : https://www.loggly.com/
     type : Software
     topic: Operations
+lloyd-2014:
+    title: "Don't Settle for Eventual Consistency"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2596624
+    type : Article
+    topic: CAP
 logstash-nd:
     title: logstash
     url  : http://logstash.net/
@@ -307,6 +327,11 @@ madhavapeddy2014:
     url  : http://queue.acm.org/detail.cfm?id=2566628
     type : Article
     topic: Platform
+marohnic2014:
+    title: Every Line of Code is Always Documented
+    url  : http://mislav.uniqpath.com/2014/02/hidden-documentation/
+    type : Post
+    topic: Tools
 marz2011:
     title: How to Beat the CAP Theorem
     url  : http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html
@@ -424,6 +449,11 @@ terry2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2534706.2500500
     type : Article
     topic: CAP
+thompson-2013:
+    title: 5 Useful Tips for a Better Commit Message
+    url  : http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
+    type : Post
+    topic: Tools
 tseitlin2013:
     url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
     title: The Antifragile Organization
