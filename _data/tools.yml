@@ -1,6 +1,136 @@
 # Tools bibliography
+apache-nd:
+  title: Apache Accumulo
+  url  : https://accumulo.apache.org/
+  type : Software
+  topic: NoSQL
+apache-nd-zookeeper:
+  title: "Apache ZooKeeper [CP store]"
+  url  : http://zookeeper.apache.org/
+  type : Software
+  topic: CAP
+apache-nd-curator:
+  title: "Apache Curator [Framework for ZooKeeper]"
+  url  : http://curator.apache.org/
+  type : Software
+  topic: CAP
+ball2013:
+  title: Deliberate Git
+  url  : http://rakeroutes.com/blog/deliberate-git/
+  type : Post
+  topic: Git
 chacon2011:
-    title: Reset Demystified
-    url  : http://git-scm.com/blog/2011/07/11/reset.html
-    type : Post
-    topic: Git
+  title: Reset Demystified
+  url  : http://git-scm.com/blog/2011/07/11/reset.html
+  type : Post
+  topic: Git
+cukes-nd:
+  title: "Cucumber: Behaviour Driven Development With Elegance and Joy"
+  url  : http://cukes.info/
+  type : Software
+  topic: Testing
+duarte2008:
+  title: What Your Computer Does While You Wait
+  url  : http://duartes.org/gustavo/blog/post/what-your-computer-does-while-you-wait/
+  type : Post
+  topic: Performance
+google--nd-pdns:
+  title: "What is Google Public DNS?"
+  url  : https://developers.google.com/speed/public-dns/
+  type : Post
+  topic: DNS
+greenfeld2013:
+  title: "Cookiecutter: Project Templates Made Easy"
+  url  : http://pydanny.com/cookie-project-templates-made-easy.html
+  type : Post
+  topic: Opensource
+hileman2012:
+  title: Git Pretty
+  url  : http://justinhileman.info/article/git-pretty/
+  type : Post
+  topic: Git
+hileman2013:
+  title: Changing History, or How to Git Pretty
+  url  : https://presentate.com/bobthecow/talks/changing-history
+  type : Slides
+  topic: Git
+jacobsen2012:
+  title: "The Essence of Software Engineering: The SEMAT Kernel"
+  url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2380656.2380670
+  type : Article
+  topic: Process
+jacobsen-nd:
+  title: "[SEMAT] Alpha State Cards"
+  url  : http://www.ivarjacobson.com/alphastatecards/
+  type : Post
+  topic: Process
+kingsbury-nd:
+  title: 'Call me maybe: Carly Rae Jepsen and the perils of network partitions'
+  url  : http://aphyr.com/tags/jepsen
+  type : Post
+  topic: NoSQL
+knupp2013:
+  title: Open Sourcing a Python Project the Right Way
+  url  : http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
+  type : Post
+  topic: Opensource
+kovacs-nd:
+  title: Cassandra vs MongoDB vs CouchDB vs Redis vs Riak vs HBase vs Couchbase vs OrientDB vs Aerospike vs Neo4j vs Hypertable vs ElasticSearch vs Accumulo vs VoltDB vs Scalaris comparison
+  url  : http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis
+  type : Post
+  topic: NoSQL
+luu2014:
+  title: How Misaligning Data Can Increase Performance 12x by Reducing Cache Misses
+  url  : http://danluu.com/3c-conflict/
+  type : Post
+  topic: Performance
+marohnic2014:
+  title: Every Line of Code is Always Documented
+  url  : http://mislav.uniqpath.com/2014/02/hidden-documentation/
+  type : Post
+  topic: Git
+meijer2012:
+  title: "Your Mouse Is a Database [Reactive programming]"
+  url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160718.2160735
+  type : Article
+  topic: Paradigm
+morgenthaler-2012:
+  title: "Searching for Build Debt: Experiences Managing Technical Debt at Google"
+  url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6225994
+  type : Article
+  topic: Technical debt
+neville-neil2009:
+  title: Kode Reviews 101
+  url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1562764.1562778
+  type : Article
+  topic: CodeReview
+peterson2008:
+  title: reindent.py
+  url  : http://svn.python.org/view/python/trunk/Tools/scripts/reindent.py?revision=66903&view=markup
+  type : Software
+  topic: Formatting
+presten-werner-nd:
+  title: Semantic Versioning
+  url  : http://semver.org/
+  type : Specification
+  topic: Versioning
+rose-2014:
+  title: "Erik Rose: Designing Poetic APIs - PyCon 2014"
+  url  : https://www.youtube.com/watch?v=JQYnFyG7A8c
+  type : Video
+  topic: API
+thompson-2013:
+  title: 5 Useful Tips for a Better Commit Message
+  url  : http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
+  type : Post
+  topic: Git
+webster2014:
+  title: Git Workflow, or, How to Use Git and Prosper
+  url  : https://gist.github.com/jasonwebster/5a54d9d1cdb24a2495e0
+  type : Post
+  topic: Git
+wiki-nd-solid:
+  title: "SOLID (Object-Oriented Design)"
+  url  : http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+  type : Introduction
+  topic: Design
