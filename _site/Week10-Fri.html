@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>DynamoDB internal algorithms (Friday, Week 10, March 21, 2014)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>DynamoDB internal algorithms (Friday, Week 10, March 21, 2014)</h1>
+		        
+			<h2 id="amazon-dynamodb">Amazon DynamoDB</h2>
+
+<p>Cluster-level infrastructure for storage</p>
+
+<ul>
+  <li>Scalable</li>
+  <li>Strong performance SLAs for 99.9% of queries</li>
+  <li>Highly available</li>
+  <li>Sacrifices consistency</li>
+  <li><strong>Application</strong> expected to resolve version conflicts, not Dynamo</li>
+</ul>
+
+<p>This is Version 1 (2007)</p>
+
+<p>Version 2 has simpler interface</p>
+
+<ul>
+  <li>Many of same underlying principles</li>
+  <li>Still distinguishes between consistent and eventually consistent reads</li>
+</ul>
+
+<h2 id="vector-clocks-in-writes">Vector clocks in writes</h2>
+
+<p>The first node to do the write &#8220;owns&#8221; the write&#8217;s time</p>
+
+<ul>
+  <li>Replicas (if W &gt; 1) record the &#8220;owner&#8217;s&#8221; time</li>
+</ul>
+
+<p><img src="images/write-sequence-vector-dynamo.png" cls="img-responsive" alt="Five writes to a Dynamo key, including a partition and reconciliation by the client" /></p>
+
+<p>Partition opens room for several &#8220;owners&#8221;</p>
+
+<ul>
+  <li>Timestamps diverge</li>
+  <li>When partitions end, app must reconcile</li>
+</ul>
+
+<h2 id="client-must-record-vector-clocks">Client must record vector clocks</h2>
+
+<p>Every write preceded by a read to get the current clock</p>
+
+<ul>
+  <li>Pass that clock value as an argument to the write</li>
+  <li>The node uses that context </li>
+</ul>
+
+<p>The original paper is <a href="http://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf">Dynamo: Amazon&#8217;s Highly Available Key-Value Store</a>.</p>
+
+<p>If you&#8217;re interested in the full algorithm, David Drysdale has <a href="http://lurklurk.org/pynamo/pynamo.html">implemented it in Python</a>.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

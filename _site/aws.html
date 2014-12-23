@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Amazon Web Services (AWS) technical details</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li ><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li class="active"><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Amazon Web Services (AWS) technical details</h1>
+		        
+			<p>Semi-structured list of technical details of working with Amazon Web Services (AWS). This is a holding page for some technical incantations required to use the system.</p>
+
+<h2 id="userids">Userids</h2>
+
+<ul>
+  <li>Distinguish the account id, any IAM ids, your public/private key pair for SSH to any EC2 instances, and your access key/private key pair.</li>
+</ul>
+
+<h2 id="ec2-instances">EC2 instances</h2>
+
+<ul>
+  <li>
+    <p>Connecting to an instance: <code>ssh -i &lt;keyfile&gt; ec2-user@&lt;public IP for your machine&gt;</code>, where <code>&lt;keyfile&gt;</code> is the path to your public/private key pair and <code>public IP for your machine&gt;</code> is taken from the instance description, available on the EC2 console.</p>
+  </li>
+  <li>
+    <p>Installing ZMQ, on an EC2 instance running Amazon linux:</p>
+
+    <ul>
+      <li><code>sudo yum group-install "Development Tools"</code></li>
+      <li><code>curl -O http://download.zeromq.org/zeromq-4.0.3.tar.gz</code></li>
+      <li><code>tar -xvf zeromq-4.0.3.tar.gz</code></li>
+      <li><code>cd zeromq-4.0.3</code></li>
+      <li><code>./configure</code></li>
+      <li><code>sudo make install</code></li>
+      <li><code>sudo make check</code> Succeeds but all tests will fail if no sudo</li>
+      <li><code>sudo ldonfig /usr/local/lib</code></li>
+      <li>System can now compile and run basic C calls to 0mq <strong>but</strong> <code>sudo easy_install pyzmq</code> still fails</li>
+      <li><code>PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/</code></li>
+      <li><code>export PKG_CONFIG_PATH</code></li>
+      <li>Now <code>python setup.py install</code> finds zmq but still fails to compile <code>timer_create</code> or <code>init_threads</code>. Perhaps because Amazon comes with Python 2.6 and it&#8217;s probably not the full development version?</li>
+    </ul>
+  </li>
+  <li>
+    <p>Installing Python distribution with all necessary libraries and packages:</p>
+
+    <ul>
+      <li>Download Anaconda 1.8.0 <code>curl -O http://09c8d0b2229f813c1b93-c95ac804525aac4b6dba79b00b39d1d3.r79.cf1.rackcdn.com/Anaconda-1.8.0-Linux-x86_64.sh</code></li>
+      <li>Check MD5: <code>md5sum Anaconda[TAB]</code></li>
+      <li>Install Anaconda: <code>bash Anaconda[TAB]</code></li>
+      <li>Result includes boto, zmq, redis, ipython. Runs Python 2.7, with option to insall 3.3 using <code>conda</code> package manager.</li>
+    </ul>
+  </li>
+  <li>
+    <p>ssh sessions into EC2 instances will simply drop with broken pipe at times. <a href="http://ocaoimh.ie/2008/12/10/how-to-fix-ssh-timeout-problems/">To fix, set</a> <code>ServerAliveInterval 60</code> in <code>/etc/ssh_config</code> or <code>/etc/ssh/ssh_config</code>. Might also set <code>ClientAliveInterval 60</code> in <code>/etc/ssh/sshd_config</code> on EC2 instance.</p>
+  </li>
+</ul>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

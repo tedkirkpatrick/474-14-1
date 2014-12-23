@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 3, Day 2 (Wednesday, Jan 22)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 3, Day 2 (Wednesday, Jan 22)</h1>
+		        
+			<h2 id="in-class-activity">In-class activity</h2>
+
+<h3 id="access-key">Access key</h3>
+
+<ol>
+  <li>Check: Everyone has an AWS access key ID and secret access key</li>
+  <li>Everyone knows the path to the file containing their access key</li>
+  <li>Test: Access function works</li>
+</ol>
+
+<ul>
+  <li>Sign on to your EC2 instance.</li>
+  <li>Copy your credentials file from your machine to your instance:
+    <ul>
+      <li>On Mac OS and Linux: <code>scp CREDENTIALS-FILE ubuntu@IP-ADDRESS</code>, where <code>CREDENTIALS-FILE</code> is the path to your access key credentials, downloaded from Amazon, and <code>IP-ADDRESS</code> is the public IP address of the instance (the address you connected to via ssh).</li>
+      <li>On Windows: Download <a href="http://winscp.net/eng/index.php">WinSCP</a> and use that to send <code>CREDENTIALS-FILE</code> to the EC2 instance.</li>
+    </ul>
+  </li>
+  <li>Check if you have git installed (probably not): if the command <code>which git</code> displays a path, you <strong>have git</strong>.</li>
+  <li>If you need git, install it: <code>sudo apt-get install git</code>.</li>
+  <li>Get the test code: <code>git clone https://gist.github.com/8553680.git</code></li>
+  <li>Run the test:</li>
+</ul>
+<pre><code>    $ cd 8553680
+    $ python
+    &gt;&gt;&gt; import testcreds
+    &gt;&gt;&gt; testcreds.test('YOUR-CREDENTIALS-PATH') 
+</code></pre>
+
+<p>replacing <code>YOUR-CREDENTIALS-PATH</code> with the absolute path to your credentials file. The path will begin with <code>/home/ubuntu/</code>.</p>
+
+<h4 id="to-download-the-latest-version-of-the-test-software">To download the latest version of the test software</h4>
+
+<p>The test software has been revised. To download it <em>to your EC2 instance</em>, sign on to your EC2 instance and</p>
+
+<pre><code>$ cd 8553680
+$ git pull
+</code></pre>
+
+<p>You will see some messages from <code>git</code>.</p>
+
+<p>Now run the test using the instructions above.</p>
+
+<h4 id="analyzing-your-test-results">Analyzing your test results</h4>
+
+<p><strong>If the test succeeds</strong>, you will see <code>Test SUCCEEDED</code>. Congratulations! You won&#8217;t have to do these steps again for this EC2
+instance. These changes will be retained even if you stop and then restart
+the instance.</p>
+
+<p><strong>If you get a Python file IO error</strong>, it is most likely that the path to the credentials file is incorrect.</p>
+
+<p><strong>If you get a 403 Permissions error</strong>, and your access key is for an IAM id, it is likely that your IAM id does not have a full range of permissions. In the IAM console, select your ID and go to the Permissions tab. View the policies for your id. They should include one like the following:</p>
+
+<pre><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}
+</code></pre>
+
+<h4 id="another-way-to-use-your-access-keys">Another way to use your access keys</h4>
+
+<p>Redditor <code>sickan90</code> suggests an alternative approach: Placing your
+access keys into the boto configuration file. See their
+<a href="http://www.reddit.com/r/sfu_innovation/comments/1vwkbb/an_easy_way_to_setup_your_credentials_to_sqs/">post on Reddit</a>.</p>
+
+<p>Thanks, <code>sickan90</code>!</p>
+
+<h3 id="groups-for-assignment-2">Groups for Assignment 2</h3>
+
+<ol>
+  <li>Groups of 1 or 2.</li>
+  <li>Form a group using CourSys group facilities. (Form own group, invite another to join yours, accept/decline invitations.)</li>
+  <li>Groups formed by midnight Thursday (tomorrow).</li>
+</ol>
+
+<h3 id="structure-of-the-assignment">Structure of the assignment</h3>
+
+<p>See <a href="a2.html">My Little Image Sharer</a>.</p>
+
+<ul>
+  <li>Creating a service that distributes images.</li>
+  <li>Service has two subservices.</li>
+  <li>Customer-facing service called <code>server</code>.</li>
+  <li>Server stores images into S3 (we provide code).</li>
+  <li>Server sends message to <code>worker</code> subservice behind the scenes.</li>
+  <li>You write the connection between worker and server using SQS.</li>
+  <li>Worker creates thumbnails of images and stores thumbnails</li>
+  <li>We provide thumbnail code</li>
+  <li>You provide communications code between worker and server</li>
+</ul>
+
+<h2 id="reading-guide-for-next-class">Reading guide for next class</h2>
+
+<p>Read the following before coming to the next class:</p>
+
+<p><strong><a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794">The Tail at Scale</a></strong>,
+from beginning up to but not including &#8220;Cross-request long-term adaptations&#8221;.</p>
+
+<p>The key points:</p>
+
+<ul>
+  <li><em>latency</em> is the length of time for a request to complete</li>
+  <li>The sources of variability in system response</li>
+  <li>The algorithm for hedged requests (p.&nbsp;77)</li>
+</ul>
+
+<p>Less important:</p>
+
+<ul>
+  <li>The middle section on &#8220;reducing component variability&#8221;. This is good
+advice on how to improve response time for individual requests (including
+subrequests) but we are interested in how to improve response time for
+<em>multiple</em> subrequests comprising a larger request.</li>
+</ul>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

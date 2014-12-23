@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Creating access keys for AWS REST calls</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li ><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Creating access keys for AWS REST calls</h1>
+		        
+			<p>This tutorial shows you how to create an access key pair for AWS. You use
+these keys to make REST calls from tools like boto.</p>
+
+<div class="well">The sequence of steps depends upon whether you are
+creating keys for a root id or an IAM id. You only need to do this for one
+kind of id.
+</div>
+
+<h2 id="creating-access-keys-for-an-aws-root-id">Creating access keys for an AWS root ID</h2>
+
+<ul>
+  <li>
+    <p>Sign on to your root ID. In the upper right corner of the console, there
+is a menu that you can drop down from your name. Select the &#8220;Security
+Credentials&#8221; item:<br />
+<img src="images/root-menu.png" class="img-responsive" alt="Root id console with menu expanded" /></p>
+  </li>
+  <li>
+    <p>On &#8220;Your Security Credentials&#8221;, expand the &#8220;Access keys&#8221; item.</p>
+  </li>
+</ul>
+
+<p>On the expanded item, press &#8220;Create New Access Key&#8221;. Note that if you have
+two active keys already created, you will not be able to create any
+more. Delete one of your existing keys and you will be able to create a new
+pair.<br />
+<img src="images/root-expanded-credentials-page.png" class="img-responsive" alt="Security Credentials page (Expanded)" /><br /></p>
+
+<ul>
+  <li>
+    <p>At the bottom of the &#8220;Create Access Key&#8221; dialogue, you will see a button, &#8220;Download key file&#8221;. Click it.<br />
+<img src="images/root-download-new-keys.png" class="img-responsive" alt="Download access key dialogue" /><br />
+Pick a name for your file such as &#8220;access-keys.csv&#8221;. Be sure to retain the .CSV filetype.</p>
+  </li>
+  <li>
+    <p>Move your file to a secure directory and set its permissions so that only you can read it.</p>
+  </li>
+  <li>
+    <p><strong>You&#8217;re done!</strong></p>
+  </li>
+</ul>
+
+<h2 id="creating-access-keys-for-an-iam-identifier">Creating access keys for an IAM identifier</h2>
+
+<ul>
+  <li>
+    <p>Sign in to your IAM ID.Get the list of AWS services by clicking on the
+orange box in the upper left corner. Then select the IAM service:<br />
+<img src="images/iam-services-page.png" class="img-responsive" alt="AWS Service list" /></p>
+  </li>
+  <li>
+    <p>From the IAM page, select &#8220;Users&#8221;:<br />
+<img src="images/iam-iam-page.png" class="img-responsive" alt="IAM page" /></p>
+  </li>
+  <li>
+    <p>On the Security Credentials page, select a user, go to the Security
+Credentials tab, and click on the &#8220;Manage Access Keys&#8221; button.<br />
+<img src="images/iam-security-credentials-page.png" class="img-responsive" alt="IAM user Security Credentials page" /></p>
+  </li>
+  <li>
+    <p>At the bottom of the &#8220;Manage Access Key&#8221; dialogue, you will see a button,
+&#8220;Create Access Key&#8221;. Click it.  Note that if you have two active keys
+already created, you will not be able to create any more. Delete one of your
+existing keys and you will be able to create a new pair.  <br />
+<img src="images/iam-create-key-page.png" class="img-responsive" alt="IAM Manage Access Keys dialogue" /></p>
+  </li>
+  <li>
+    <p>At the bottom of the &#8220;Manage Access Keys&#8221; dialogue, you will see a button, &#8220;Download Credentials&#8221;. Click it.<br />
+<img src="images/iam-download-credentials-page.png" class="img-responsive" alt="Manage access keys dialogue" /><br />
+Pick a name for your file such as &#8220;access-keys.csv&#8221;. Be sure to retain the .CSV filetype.</p>
+  </li>
+  <li>
+    <p>Move your file to a secure directory and set its permissions so that only you can read it.</p>
+  </li>
+  <li>
+    <p><strong>You&#8217;re done!</strong></p>
+  </li>
+</ul>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

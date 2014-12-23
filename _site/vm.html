@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Ubuntu Virtual Machine for testing assignments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li ><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Ubuntu Virtual Machine for testing assignments</h1>
+		        
+			<h2 id="why-you-might-want-to-use-this">Why you might want to use this</h2>
+
+<h3 id="the-simple-but-slow-method">The simple but slow method</h3>
+
+<p>If you wish, you can run your entire project by submitting it to the
+test server. This has the appeal of simplicity: All you need on your
+own computer is your preferred editor and
+<a href="http://git-scm.com/downloads">git</a>.</p>
+
+<p>But this approach has the disadvantage of being slow. Every submisison
+takes time, and you will wind up going through the process many times,
+only to find out you have a syntax error because you mis-typed a
+variable name or forgot a closing colon. Or you get a runtime error because
+you mispelled the method for one of the library classes.</p>
+
+<h3 id="install-everything-the-faster-method-that-requires-lots-of-setup">Install everything: The faster method that requires lots of setup</h3>
+
+<p>It will be a lot faster to run short, initial tests on your own
+machine, clean out the dumb errors, and only then submit to the test
+server to see how well your code performs.</p>
+
+<p>To run tests, on your own machine, you&#8217;ll need to install on your
+machine the full software stack that runs on the test server.  That
+can take a lot of time, is specific to your operating system, and is
+generally annoying. But if you already have all or most of the tools
+installed, it could be a good approach.</p>
+
+<h3 id="this-vm-the-almost-as-fast-method-that-requires-much-less-setup">This VM: The almost-as-fast method that requires much less setup</h3>
+
+<p>The final approach is to download and use this virtual machine, containing
+Ubuntu 13.10 Server and all the necessary packages. <strong>This approach will
+require at least 1GB free space on your disk.</strong> You still have to do a bit
+of installation (to install VirtualBox), followed by some configuration, but
+it&#8217;s generally less work than building the entire stack yourself.  Once you
+have the VM installed, you development cycle becomes:</p>
+
+<ol>
+  <li>Edit your program using your standard editor on your regular operating system.</li>
+  <li>Test it by running it under our stack on the virtual machine.</li>
+  <li>Once it works, <code>git push submit master</code> from your regular operating system, to run your code on the test server.</li>
+</ol>
+
+<h2 id="setting-up-the-virtual-machine">Setting up the virtual machine</h2>
+
+<p>If you decide to use the virtual machine, here&#8217;s how to set it up.</p>
+
+<h3 id="installing-the-system-do-once">Installing the system (do once)</h3>
+
+<ol>
+  <li>
+    <p>Download and install <a href="https://www.virtualbox.org/wiki/Downloads">Oracle VirtualBox</a>. There are versions
+for the popular operating systems.</p>
+  </li>
+  <li>
+    <p>Download the <a href="http://innovate.cs.surrey.sfu.ca/ovas/ubuntu-13.10-3GB-disk.ova">virtual machine</a>  Note that the <code>ubuntu-13.10-3GB-disk.ova</code> file is 430
+MB long&#8212;you might schedule the download at a time when the network is less congested, such as the morning.</p>
+  </li>
+  <li>
+    <p>Import the virtual machine file <code>ubuntu-13.10-3GB-disk.ova</code> into Virtual
+Box. Use the <code>File/Import Appliance...</code> menu entry. Accept all the default settings.</p>
+  </li>
+  <li>
+    <p>Start the virtual machine (green arrow button) and sign on. Your userid and password are both &#8216;ubuntu&#8217;.</p>
+  </li>
+  <li>
+    <p>Set your git id and email:</p>
+  </li>
+</ol>
+<pre><code>git config --global user.name YOURNAME
+git config --global user.email YOUREMAIL
+</code></pre>
+
+<p>replacing <code>YOURNAME</code> and <code>YOUREMAIL</code> with your name and email as single-quoted strings (i.e., <code>'Hao Ramayanan'</code>, and <code>'hr543@sfu.ca'</code>).</p>
+
+<ol>
+  <li>Shutdown the machine (menu entry <code>Machine/ACPI Shutdown</code>&#8212;you will probably want to learn the hotkey for this action).</li>
+</ol>
+
+<h3 id="sharing-a-directory-between-your-host-os-and-the-guest-os-in-the-virtual-machine-repeat-for-every-assignment">Sharing a directory between your host OS and the guest OS in the virtual machine (repeat for every assignment)</h3>
+
+<p>For each assignment, you will want to share the directory containing your
+code on the host machine with a directory in the guest Ubuntu OS in the
+virtual machine.</p>
+
+<p>Assume that you have cloned the boilerplate repository for your current assignment into directory <code>assign</code> and are editing code there.</p>
+
+<ol>
+  <li>Select the virtual machine from the list in VirtualBox.</li>
+  <li>Press the &#8220;Settings&#8221; button (orange gear).</li>
+  <li>Select the &#8220;Shared Folders&#8221; tab on the far right top.</li>
+  <li>Press the &#8220;Add&#8221; button (folder with &#8216;+&#8217; sign on right).</li>
+  <li>Navigate the &#8220;Folder Path&#8221; to the directory containing your assignment (<code>assign</code> in our example) and select that directory.</li>
+  <li>Check the &#8220;Auto-mount&#8221; box.  The directory should appear in the &#8220;Machine Folders&#8221; list, with &#8220;Auto-mount&#8221; as &#8220;Yes&#8221; and &#8220;Access&#8221; as &#8220;Full&#8221;.</li>
+  <li>Press &#8220;OK&#8221;.</li>
+  <li>Start the machine and sign in.</li>
+</ol>
+
+<p>Your assignment directory will be <code>/media/sf_NAME</code>, where <code>NAME</code> is your
+assignment (<code>/media/sf_assign</code> in our example). You can edit files in your
+host operating system using your favourite editor, save them, and those updated files will
+be visible to the guest Ubuntu system, where you can run your tests.</p>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

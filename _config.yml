@@ -1,6 +1,7 @@
 # Specify MarkDown interpreter
 markdown: kramdown
+
 # Site-wide definitions
-course: CMPT 474, Spring 2014
-courseId : 474-14-1
+course: CMPT 474, Spring 2015
+courseId : 474-15-1
 serName: Cloud474

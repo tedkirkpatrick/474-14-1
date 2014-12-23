@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Final assignment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Final assignment</h1>
+		        
+			<h2 id="overview">Overview</h2>
+
+<p>In this assignment, you will create a reliable, scalable data store. In the
+notation we use in this course, the store has N replications, W=1 (one
+replica written by synchronous write) and R=1 (one replica read by
+synchronous read). After the primary node has been synchronously written,
+the new value will be distributed to the replicas via a simple gossip
+algorithm.</p>
+
+<p>By default, reads will be strongly consistent, but an
+optional parameter will allow the user to request an eventually consistent read.
+Eventually consistent reads will allow a faster implementation, although for
+the scales used in our test examples you&#8217;re not going to be able to measure
+the difference.</p>
+
+<p>The code required to implement this is in fact fairly simple. The boilerplate
+we provide you will implement the communications protocols and the central
+queuing mechanism. The challenge for you will be to understand the architecture
+and faithfully implement it. We&#8217;ve spent the semester looking at
+architectural issues; building this system will give you a chance to think
+through these details on a system of your own.</p>
+
+<p>This writeup is considerably longer than for the other assignments. This is
+partly because it is giving more details than the earlier assignments,
+partly because we&#8217;re specifying in this document things that were in code
+for previous assignments, and partly because the focus in this assignment is
+the architecture.  Read the entire document before starting.</p>
+
+<h2 id="the-architecture">The architecture</h2>
+
+<p>The system has four services, each accepting requests over a different TCP port:</p>
+
+<p><img src="images/final-assignment-architecture.jpg" class="img-responsive" alt="Architecture, showing user, single LB, single Q, N DBs, and N Rs" /></p>
+
+<ul>
+  <li>
+    <p>The Load Balancer service (LB) accepts requests over port 2500. This service is implemented as
+a single process for our assignment. You will implement the LB code. You can use your hash algorithm
+from the first Tea-emporium assignment. This file must be named <code>serverLB.py</code>.</p>
+  </li>
+  <li>
+    <p>The Database service (DB) accepts requests over consecutive ports starting at 3000. There are N instances
+of the DB process, running identical code but handling different shards of the key space. You will implement
+the DB code. This file must be named <code>serverDB.py</code>.</p>
+  </li>
+  <li>
+    <p>The Queue service (Q) accepts requests over port 6000. This service is implemented as a single
+process. We provide the Q code, <code>serverQ.py</code>&#8212;you simply call it.</p>
+  </li>
+  <li>
+    <p>The Redis services (R) accept requests over consecutive ports start at 5555. There are N instances of
+the R process. The R code is the same Redis server you have been running for all the assignments.</p>
+  </li>
+</ul>
+
+<h2 id="the-load-balancer-service-lb">The Load Balancer Service (LB)</h2>
+
+<p>The load balancer process is the interface to the whole service. It is the
+endpoint for all user requests. To write to the store, the user sends a <code>PUT</code>
+request to port 2500. The data for these requests is identical to those for
+the second Tea Emporium assignment (the most recent assignment): a key (a
+tea name), a single rating for the tea, and a single vector clock giving the
+time for the rating.</p>
+
+<p>The load balancer routes the request to the database instance storing the
+shard for this key. You can reuse your hash function from the first Tea
+Emporium assignment to assign keys uniformly across the shards. But note
+that unlike the first assignment, in this assignment the load balancer
+will be <strong>passing the reads and writes to a DB process, not directly
+to Redis.</strong></p>
+
+<p>To read from the store, the user sends a <code>GET</code> request to port 2500. The syntax
+for this is the same as both of the previous tea examples. The load balancer
+routes this <code>GET</code> request to the same database instance to which it sends <code>PUT</code>s.
+This database instance is called the <em>primary instance</em> for that key.</p>
+
+<p>The <code>GET</code> requests have an optional argument, specifying an eventually
+consistent read. The query parameter is <code>consistency=weak</code>. The load
+balancer passes eventually
+consistent reads to a <em>random</em> DB instance, not necessarily the
+primary instance. As we will see in the discussion for the
+database instances, reading from a random instance
+might give you an older value.</p>
+
+<h3 id="specification-for-the-load-balancer">Specification for the Load Balancer</h3>
+
+<p><strong>Example Write:</strong> Assume you want to rate the tea named &#8220;persimmon&#8221; as &#8220;1&#8221; at time {&#8220;c0&#8221;:1}.
+From the command line (for testing):</p>
+
+<p><code>
+  curl -XPUT -H'Content-type: application/json' -d'{"rating": 1, "clock": {"c0":1}}' http://localhost:2500/rating/persimmon
+</code></p>
+
+<p>From Python (in test routines):</p>
+
+<p><code>python
+  headers = { 'Accept': 'application/json', 'Content-type': 'application/json' }
+  data = json.dumps({ 'rating': rating, 'clock': clock.asDict() })
+  requests.put('http://localhost:2500/rating/persimmon', headers=headers, data=data)
+</code></p>
+
+<p><strong>Example Read (Strongly Consistent):</strong> Assume that you want to read the values for the tea named &#8220;persimmon&#8221;. From the command line (for testing):</p>
+
+<p><code>
+  curl -XGET http://localhost:2500/rating/persimmon
+</code></p>
+
+<p>From Python (in test routines):</p>
+
+<p><code>python
+    headers = { 'Accept': 'application/json' }
+    request = requests.get('http://localhost:2500/rating/persimmon', headers=headers)
+    data = request.json()
+    # Values now in data['rating'], data['choices'], [VectorClock.fromDict(dc) for dc in data['clocks']]
+</code></p>
+
+<p><strong>Example Read (Weakly Consistent):</strong> Assume that you want to read the values for the tea named &#8220;persimmon&#8221; and are willing
+to tolerate somewhat out-of-date values. From the command line (for testing):</p>
+
+<p><code>
+  curl -XGET http://localhost:2500/rating/persimmon?consistency=weak
+</code></p>
+
+<p>From Python (in test routines):</p>
+
+<p><code>python
+    headers = { 'Accept': 'application/json' }
+    request = requests.get('http://localhost:2500/rating/persimmon', headers=headers, params={'consistency': 'weak'})
+    data = request.json()
+    # Values now in data['rating'], data['choices'], [VectorClock.fromDict(dc) for dc in data['clocks']]
+</code></p>
+
+<h2 id="the-database-service-db">The Database Service (DB)</h2>
+
+<p>The database service is a set of N instances. Each instance is the primary shard for 1/N of the keys and the
+replica shard for every other key. Users never directly call the DB service. Instead, the user sends requests to
+the load balancer, which routes them to the primary DB instance for the key (for all writes and strongly consistent
+reads) or a random DB instance (for eventually consistent reads). The DB instance in turn reads the value
+from its associated Redis server, merges the new rating and clock with the rating, choices, and clocks that
+were read from Redis (using the algorithm you developed for the last assignment), and writes the merged
+values back to Redis.</p>
+
+<p>As described so far, the database service seems unnecessary, an extra layer added to the structure of the first
+Tea Emporium assignment, contributing no value. The database instances are in fact performing an important
+service <em>in the background</em>: They are replicating copies of recent writes via a <em>gossip protocol</em>.</p>
+
+<p>As stated in the load balancer section, every key is mapped to a primary database instance by the hash function.
+In the first Tea Emporium, that was the only location where the key&#8217;s value was stored, its shard. In this
+assignment, the primary instance remains the authoritative source, guaranteed to contain the most up-to-date
+value, but the rating for tea is also replicated across all the other nodes. Because the replications are
+shared in the background, they might be out of date compared to the value in the primary instance.</p>
+
+<h3 id="db-gossip-protocol">DB Gossip protocol</h3>
+
+<p>Every time a database instance receives a write request, in addition to merging the new rating and time into the
+value saved on this instance&#8217;s Redis server, the DB process also saves the merged value for later gossip. Once it
+has accumulated <code>config['digest-length']</code> ratings, it enqueues them for its neighbour DB instance to save as replicates.
+The neighbour is defined as the instance with the next-higher number, with the neighbour of the highest-numbered
+instance being Instance&nbsp;0. The number of DB instances is given by the global variable <code>ndb</code>.</p>
+
+<p>For example, if <code>ndb == 3</code>, the neighbours would be: db0 =&gt; db1, db1 =&gt; db2, db2 =&gt; db0. This process is called
+a <em>gossip protocol</em>.</p>
+
+<p>An instance communicates with its neighbour via the queue (Q) service. The details are specified in a later section. For now,
+we&#8217;ll simply say that each DB instance has a channel on the queue, named after itself. Thus DB Instance&nbsp;1 would
+enqueue its gossip values on channel <code>db1</code>, while its neighbour DB Instance&nbsp;2 would read from channel <code>db1</code> to
+get values it needs to replicate. For its part, DB Instance&nbsp;2 would have a channel <code>db2</code> on which it would send
+gossip values to its neighbour, DB Instance&nbsp;3.</p>
+
+<p>Here is the gossip algorithm:</p>
+
+<p><strong>Sender</strong></p>
+
+<p>On every write request (rating, clock):</p>
+
+<p><strong>Update Thu April 10:</strong> Added <code>digest_list = []</code>.</p>
+
+<p><code>python
+  #  the global variable digest_list has been initialized to []
+  Merge the new rating and clock value into the average rating, choice list, and clock list already saved for this key
+  Save the merged values into the Redis database.
+  digest_list.append((this DB's instance identifier, key, rating, choices, clocks)) # Inner parentheses create a tuple
+  If the digest now has `config['digest-length']` or more values:
+     for every tuple in digest_list:
+       write the tuple to this instance's channel
+     digest_list = [] # Update
+</code></p>
+
+<p><strong>Recipient</strong></p>
+
+<p>On every write request (rating, clock) and every read request:</p>
+
+<p><strong>Update Thu April 10:</strong> Clarified write when <code>digest_list</code> fills.</p>
+
+<p><code>python
+  # Gossip algorithm
+  while there is data on the gossip channel from the neighbour:
+    dequeue the value
+    if the primary id is not this instance:
+       merge the value with the value stored in this instance's Redis server
+       save the merged rating, choice list, and clock list on Redis
+       append these values to this instance's digest_list, for later gossip to its neighbour
+       if the digest now has config['digest-length'] or more values                    # Update
+         write the (unchanged) tuples to this instance's channel (as for sender above) # Update
+</code></p>
+
+<p>The point at which the recipent does the gossip algorithm differs for reads and writes:</p>
+
+<ol>
+  <li>
+    <p>For <strong>writes</strong>, the recipient does the write request first, records it in the digest list, and then checks the channel for
+any pending gossip and merges it.</p>
+  </li>
+  <li>
+    <p>For <strong>reads</strong>, the recipient checks the channel for gossip first, merge any that it finds, and only then do its read.</p>
+  </li>
+</ol>
+
+<h3 id="how-the-gossip-protocol-works">How the gossip protocol works</h3>
+
+<p>The gossip protocol ensures that new values for ratings slowly propagate through the system until
+every database instance has the most recent value. Immediately after a value has been written
+to the primary instance, it will be the only instance with that value and every other instance
+will have an out of date value. Eventually, the primary instance will send the new value
+as a gossip to its neighbour. The next time the neighbour instance receives a request for
+a read or write, it will update read the gossip from its queue and update its value. Now
+two of the database instances are up to date, while the others are out of date.</p>
+
+<p>Eventually, the second instance will fill its digest and send the updated values in turn
+on to <em>its</em> neighbour, causing it to update its own values. After the process has gone through
+<code>N-1</code> gossip cycles, every instance will have the new value&#8212;assuming that no newer values
+have been written to the primary instance. In fact, given just the right sequence of writes
+to the primary, the N instances could have values with N different ages, every instance
+with a different value.</p>
+
+<p>To recap, here&#8217;s the key points:</p>
+
+<ol>
+  <li>The <code>config['digest-length']</code>&#8216;th write to an instance will cause it to <em>send</em> gossip to its channel.</li>
+  <li><em>Every</em>  read from and write to an instance will cause it to <em>check</em> for gossip from its
+neighbour, and process any gossip it finds.</li>
+  <li>New values propagate from one DB instance to another, starting from the primary instance
+and hopping to the next higher instance, wrapping around from the highest-numbered instance
+to the zeroth.</li>
+</ol>
+
+<h3 id="hints-on-structure">Hints on structure</h3>
+
+<p>Some hints on structuring your <code>serverDB.py</code> file:</p>
+
+<ol>
+  <li>Make the gossip algorithm a function&#8212;it will be called in at least two places.</li>
+  <li>Make merging values a function. Note that merging the value passed a write operation
+is slightly different from merging a gossip value: The value passed to a write is
+just a single rating and clock, whereas the values passed via gossip are a list of choices
+and clocks, exactly what was stored on the Redis database. But you can use your algorithm from
+the second assignment as a subroutine: Simply loop through the choices and clocks lists,
+merging them one at a time using your earlier algorithm.</li>
+  <li>You might make writing to the Redis database a separate function. Depending upon how
+you organize your code, you might call it from several places.</li>
+  <li>Note that a Python function can return multiple values:</li>
+</ol>
+
+<p>```python
+  # Define foo
+  def foo():
+     &#8230;
+     return a, b, c</p>
+
+<p># Call foo
+  d, e, f = foo() # d = a, e = b, f = c
+```</p>
+
+<h3 id="specification-for-the-database-service">Specification for the database service</h3>
+
+<p><strong>Example write:</strong> Assume you want to write a rating and time for tea
+&#8216;very-berry-white-tea&#8217; to the third DB instance, which has port 3002. Of
+course, this value will be merged with whatever is already stored. If this
+rating is older than one already stored for this tea, nothing will be
+changed. From the command line (for testing):</p>
+
+<p><code>
+  curl -XPUT -H'Content-type: application/json' -d'{"rating": 1, "clock": {"c0":1, "c1":3}}' http://localhost:3002/rating/very-berry-white-tea
+</code></p>
+
+<p>From Python (in your <code>serverLB.py</code>):</p>
+
+<p>```python
+    res = requests.put(&#8216;http://localhost:3002/rating/very-berry-white-tea&#8217;,
+                       data=json.dumps({&#8216;rating&#8217;: rating,
+                                        &#8216;clock&#8217;: clock.asDict()}),
+                       headers={&#8216;content-type&#8217;: &#8216;application/json&#8217;})</p>
+
+<p>```</p>
+
+<p><strong>Example read:</strong> Assume that you want to read the ratings and times for tea
+&#8216;capital-of-heaven-keemun-black-tea&#8217; from the second DB instance, which has port 3001.
+Since we&#8217;re reading directly from a database instance, we won&#8217;t be assured that
+we&#8217;re getting the most recent value unless Instance&nbsp;2 is the primary instance
+for this tea. From the command line (for testing):</p>
+
+<p><code>
+  curl -XGET http://localhost:3001/rating/capital-of-heaven-keemun-black-tea
+</code></p>
+
+<p>From Python (in your <code>serverLB.py</code>)</p>
+
+<p><code>python
+    url = 'http://localhost:3001/rating/capital-of-heaven-keemun-black-tea'
+    curdata = requests.get(url).json()
+    # Values in curdata['rating'], curdata['choices'], curdata['clocks']
+</code></p>
+
+<h2 id="the-queue-service-q">The queue service (Q)</h2>
+
+<p>We provide the code for this service and it will be automatically started by <code>test/run.py</code>. All you need is
+the calling sequences.</p>
+
+<h3 id="specification-for-the-queue-service">Specification for the queue service</h3>
+
+<p><strong>Example write:</strong> Assume you want to write the tuple, <code>('db0',
+'white-tea', rating, choices, clocks)</code> to channel <code>db3</code>, where
+<code>choices</code> and <code>clocks</code> are lists. From the command line (for
+testing):</p>
+
+<p><code>
+  curl -XPUT -H'Content-type: application/json' -d'{"primary": "db0", "key": "white-tea", "rating": 1, "choices": [2,3], "clocks": [{"c0":1},{"c1":3}]}' http://localhost:6000/q/db3
+</code></p>
+
+<p>From Python (in your <code>serverDB.py</code>):</p>
+
+<p>```python
+  # Globally initialize (done by the boilerplate)
+  from queueservice import Queue
+  queue = Queue(qport)</p>
+
+<p># The first argument must be a channel name, the second must be a Python dict
+  # If you want to include VectorClocks in the dict, they must be contained in a list
+  # If you want to include a single VectorClock, wrap it as a singleton list: &#8216;clock&#8217;: [clock]
+  queue.put(&#8216;db3&#8217;, {&#8216;primary&#8217;: &#8216;db0&#8217;, &#8216;key&#8217;: &#8216;white-tea&#8217;, &#8216;rating&#8217;: rating, &#8216;choices&#8217;: choices, &#8216;clocks&#8217;: clocks}) 
+```</p>
+
+<p><strong>Example read:</strong> Assume that you want to read from channel <code>db3</code>. From the command line (for testing):</p>
+
+<p><code>
+  curl -XGET http://localhost:6000/q/db3
+</code></p>
+
+<p>From Python (in your <code>serverDB.py</code>):</p>
+
+<p>```python
+  # Globally initialize (done by the boilerplate)
+  from queueservice import Queue
+  queue = Queue(qport)</p>
+
+<p># To use
+  msg = queue.get(&#8216;db3&#8217;)
+  # If there is nothing on the channel, msg == None
+  # If there are one or more dicts on the channel, msg will be assigned the first dict
+```</p>
+
+<h2 id="redis-service-r">Redis service (R)</h2>
+
+<p>These are just Redis servers that you call using the same Redis client calls that you used in the first Tea Emporium. In typical use, <code>test/run.py</code> 
+will start and stop them.</p>
+
+<h2 id="development-tips">Development tips</h2>
+
+<p><del><strong>NOTE:</strong> The initial <code>test/run.py</code> file has only two tests, <code>simple</code> and <code>testGetGossip</code>. It requires you to use <code>--test</code> to specify one
+of the two. We will be adding more tests soon and fixing run.py to let you run the whole sequence.</del></p>
+
+<p><strong>UPDATE:</strong> As of 15:45 Saturday April 5, <code>test/run.py</code> now runs all the tests in its suite by default. You
+have to request single tests via the <code>--test NAME</code> option.</p>
+
+<p>Tips on testing and debugging this assignment:</p>
+
+<ol>
+  <li>
+    <p><strong>Run tests using <code>test/run.py</code>.</strong> Starting up all these servers (a
+single LB and Q each, multiple DBs and Rs) is a lot of work. Shutting them
+down is more work. <code>test/run.py</code> does all that for you. To really understand
+the architecture, you might once or twice want to start everything from the
+command line, call each item using <code>curl</code>, then stop the processes, but that
+is tedious for regular use.</p>
+  </li>
+  <li>
+    <p><strong>Use the <code>--test NAME</code> option of <code>test/run.py</code>.</strong> Calling <code>test/run.py</code> runs every test in the system. When starting out,
+you&#8217;ll only want to run one test at a time, clearing out all the mis-spelled variables, basic errors, and so forth. A good simple
+test to start with is <code>simple</code>. Run it using <code>python test/run.py --test simple</code>.</p>
+  </li>
+  <li>
+    <p><strong>Use the <code>--leavedb</code> option to see what&#8217;s in your Redis databases.</strong> The <code>run.py</code> file is sometimes too convenient: It shuts down
+the Redis servers after your test. To see what your code has put in Redis, run a test with the <code>--leavedb</code> option:
+<code>python test/run.py --test simple --leavedb</code>. After the test concludes, the R processes will still be running and available on ports 5555, 5556, &#8230;
+Use the <code>redis-cli -p 5555</code> command to explore the contents of the database for the first instance. Some useful commands are
+<code>keys *</code> to list all the keys in this database, <code>hkeys key</code> to list all the fields for <code>key</code> (remember that the tea names are
+preceded by <code>/rating/</code>), and <code>hget key field</code> to get the value of <code>field</code> for tea <code>key</code>. <strong>Be sure to kill all the Redis processes
+after you&#8217;re done looking at them and before running your next test.</strong></p>
+  </li>
+  <li>
+    <p><strong>Test basic versions of the code with single instances.</strong> This is the one exception to the advice to use <code>test/run.py</code>.
+If you just run <code>serverLB.py</code>, <code>serverDB.py</code>, and <code>serverQ.py</code> from the command-line, they will start in single-instance mode, accessing
+the Redis instance running at port 6379. You will already have the instance running automatically if you installed
+Redis. Then use <code>curl</code> to send requests to the servers, seeing if they respond correctly. Every time you modify the code,
+kill and restart the process running it. You can&#8217;t test gossip this
+way though, because gossip requires more than one DB instance.</p>
+  </li>
+  <li>
+    <p><strong>Use the <code>--wait</code> option if you get connection errors.</strong> The <code>--wait</code> option to <code>test/run.py</code> specifies the seconds to
+wait between starting the LB and DB servers and sending them requests. By default, we wait one second. Sometimes that is not
+enough lead time for the servers to start and you get a connection error. In case you get a connection error, try specifying a
+longer wait time.</p>
+  </li>
+</ol>
+
+<h3 id="note-for-people-using-the-vm-we-provided-several-weeks-ago">Note for people using the VM we provided several weeks ago</h3>
+
+<p>The Ubuntu VM for Virtual Box that we provided some time ago is fine for developing this project. You may need to
+add the Python termcolor package, though:</p>
+
+<p><code>
+  sudo pip install --upgrade termcolor
+</code></p>
+
+<h2 id="and-now-youre-feeling-overwhelmed">And now you&#8217;re feeling overwhelmed</h2>
+
+<p>You&#8217;ve read this far. It seems like <em>so much</em> material. Where to even start? Bear in mind, <em>this is just the stuff we&#8217;ve
+been talking and reading about for the past five weeks</em>, stuff that you already have an idea about, stuff that might even, um,
+appear on the final. Thinking through the architecture is most definitely preparation for the final. A two-fer!</p>
+
+<p>Don&#8217;t leap into coding. Draw some diagrams. Draw lots of them. Discuss them with your your team member (if any) or with
+someone else in class. Come to the review sessions (schedule announced soon). Ask questions early.</p>
+
+<p>Design and build in stages. First just get the LB and DB code working without gossip. Then test it using the single-instance
+approach and <code>curl</code>, as described above in Development Tips. Only when you&#8217;ve really got that part working should
+you tackle gossip. We&#8217;ll award partial credit for versions that correctly run in single-instance mode.</p>
+
+<p>The challenge is not in the code. It&#8217;s in understanding the algorithm, specifically gossip. The code
+for gossip is short (maybe 30 lines) and it&#8217;s all in one file (<code>serverDB.py</code>). But you do need to understand
+<em>how</em> it should work before coding it.</p>
+
+<p>And one final note: Start early. You knew that, I knew you knew that, yet it&#8217;s still worth repeating.</p>
+
+<h2 id="questions">Questions</h2>
+
+<p>Here&#8217;s some questions that serve both as review questions for the course and to get you
+thinking about this assignment. You can think about them before the assignment, during it,
+or not at all, as you see fit.</p>
+
+<ol>
+  <li>Why does the LB have separate strong- and weak-consistency reads but the DB only have reads?</li>
+  <li>Under what circumstances might a DB instance receive a read request for a key for which
+it is not the primary instance?</li>
+  <li>What would happen if you reversed the order of the gossip algorithm in reads and writes for recipients? Under
+what circumstances would it make a difference?</li>
+  <li>This architecture makes a big simplifying assumption: instances and communication links never fail. What
+parts of the algorithm would have to be changed if either of these could fail?</li>
+  <li>Why do we have to put the primary id in the gossip tuples? Why do we care?</li>
+  <li>Under what circumstances would an eventually consistent read be faster than a strongly consistent
+read in this system? Are those circumstances likely?</li>
+  <li>This assignment actually only ever has VectorClocks with a single time value in them&#8212;they&#8217;re not really vectors at all. Why? Under what circumstances would multiple times in one VectorClock become
+necessary?</li>
+</ol>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

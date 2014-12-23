@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Review for final exam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Review for final exam</h1>
+		        
+			<h2 id="instructions">Instructions</h2>
+
+<p>These questions are designed to introduce you to the notations,
+question styles, and topics that will be tested on the final. The
+percentage proportions associated with each topic will be the
+percentages allocated to the questions on the final.</p>
+
+<p>The final exam will consist of questions only on these topics. Most
+questions will be in a style very similar to these but they will
+typically focus on specific details or present an instance of this
+topic and ask you to analyze it.  There may also be one or two
+questions of an entirely different style, to test your ability to
+respond to a new situation.</p>
+
+<p>I will not be providing answers to these review questions, so <strong>please do not
+ask for answers.</strong> You are encouraged to discuss your answers to this review
+with as many other students in the class as you wish.</p>
+
+<h2 id="cap-25">CAP (25%)</h2>
+
+<ol>
+  <li>
+    <p>What do the letters CAP stand for?</p>
+  </li>
+  <li>
+    <p>What is the main limitation highlighted by this principle? Express it in a sentence.</p>
+  </li>
+  <li>
+    <p>What trade-off have databases historically emphasized?</p>
+  </li>
+  <li>
+    <p>What is the new trade-off chosen by cloud-based systems?</p>
+  </li>
+  <li>
+    <p>What is the trade-off chosen by the designers of F1?</p>
+  </li>
+  <li>
+    <p>Given the following diagram, draw the line separating the two
+regions separated by the CAP Principle. <strong>Note:</strong> The axes are
+oriented differently from their counterparts in the &#8220;Distributed
+Algorithms for NoSQL Databases&#8221; diagram.</p>
+  </li>
+</ol>
+
+<p><img class="img-responsive" alt="Space of scalability and availability" src="images/scale-avail.png" /></p>
+
+<ol>
+  <li>On the diagram, mark the two points where the &#8220;My Little Image Sharer&#8221;
+application would lie, and indicate why you would put it there, for the following two cases. You
+may assume that S3 is itself scalable and partion-tolerant.</li>
+</ol>
+
+<ul>
+  <li>Only a single server.py instance</li>
+  <li>An arbitrary number of server.py instances</li>
+</ul>
+
+<h2 id="the-assignments-5">The assignments (5%)</h2>
+
+<ol>
+  <li>Diagram the architectures of My Little Image Sharer, Tea Emporium 1, and Tea Emporium 3 (final project)</li>
+</ol>
+
+<h2 id="forms-of-consistency-including-the-three-tea-emporium-assignments-40">Forms of consistency, including the three Tea-Emporium assignments (40%)</h2>
+
+<ol>
+  <li>
+    <p>What is the difference between eventual (weak) consistency and strong consistency?</p>
+  </li>
+  <li>
+    <p>Is the Tea Emporium 3 (the final project) system
+partition-tolerant? If yes, how does it successfully respond to a
+partition? If no, how does it fail when partition occurs?</p>
+  </li>
+  <li>
+    <p>Using the N, R, W notation from the lectures, characterize My Little Image Sharer. </p>
+  </li>
+  <li>
+    <p>Imagine that we wanted to make Tea Emporium 3 (the final project) more partition-tolerant. How would the notion
+of primary instance for an entity have to be revised?</p>
+  </li>
+  <li>
+    <p>How do vector clocks work? When are they useful?</p>
+  </li>
+  <li>
+    <p>Give an example of a series of calls to the Tea Emporium 3 (final project) system that produce an
+eventually consistent result. Your answer should consist of a sequence
+of GET and PUT calls, with the results of the GETs:</p>
+  </li>
+</ol>
+
+<table class="table">
+<caption>Example answer</caption>
+<thead>
+<tr><th>Call</th><th>Arguments</th><th>EC read?</th><th>Response (if a GET)</th></tr>
+</thead>
+<tbody>
+<tr><td>PUT</td><td>foo-tea, 4, {'c1':120}</td><td>NA</td><td>NA</td></tr>
+<tr><td>GET</td><td>foo-tea</td><td>Yes</td><td>[A number]</td></tr>
+</tbody>
+</table>
+
+<p>Explain how your sequence demonstrates eventual consistency.</p>
+
+<h2 id="tail-tolerant-design-10">Tail-tolerant design (10%)</h2>
+
+<ol>
+  <li>What is the algorithm for hedged requests? When are they useful?</li>
+</ol>
+
+<h2 id="logging-5">Logging (5%)</h2>
+
+<ol>
+  <li>What are five key features of a good logging service for a cloud system?</li>
+</ol>
+
+<h2 id="reliability-10">Reliability (10%)</h2>
+
+<ol>
+  <li>What do each of the Netflix &#8220;Monkeys&#8221; do? (Don&#8217;t worry about their names, what do they <em>do</em>?)</li>
+</ol>
+
+<h2 id="sharding-and-replication-5">Sharding and replication (5%)</h2>
+
+<ol>
+  <li>What is the difference between sharding and replication? When is each one useful?</li>
+</ol>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

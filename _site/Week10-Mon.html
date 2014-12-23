@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Amazon DynamoDB (Week 10, Monday, March 17, 2014)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Amazon DynamoDB (Week 10, Monday, March 17, 2014)</h1>
+		        
+			<h2 id="replicated-data-accepting-independent-writes">Replicated data accepting independent writes</h2>
+<p>Source: <a href="http://book.mixu.net/distsys/eventual.html">Distributed systems for fun and profit, Chapter 5</a>.</p>
+
+<p>Suppose instead of a single database, we have several replicas storing values for the same key.</p>
+
+<p>Two problems:</p>
+
+<ul>
+  <li>
+    <p>When the system is completely connected (no network partitions), we have to propagate changes to all the replicas</p>
+  </li>
+  <li>
+    <p>If we continue accepting updates to all replicas even when they are
+separated by network partitions, we have to reconcile conflicting values
+for the same key</p>
+  </li>
+</ul>
+
+<p>If we&#8217;re willing to give up strong consistency, we can be</p>
+
+<ul>
+  <li>
+    <p>Highly available, even in the presence of partitions</p>
+  </li>
+  <li>
+    <p>Low latency</p>
+  </li>
+  <li>
+    <p>Almost always &#8220;consistent enough&#8221;</p>
+  </li>
+</ul>
+
+<p>Amazon&#8217;s DynamoDB is an example of such a system</p>
+
+<h2 id="partial-quorums">Partial quorums</h2>
+
+<p>DynamoDB (and systems inspired by it) replace the notion of strict quorum with a partial quorum</p>
+
+<ul>
+  <li>
+    <p>Assume we have N replicas of the data</p>
+  </li>
+  <li>
+    <p>We <em>synchronously</em> write to W replicas on a write (1 &lt;= W &lt;= N)</p>
+
+    <ul>
+      <li>If W &lt; N, we gossip to make the remaining N-W replicas consistent</li>
+    </ul>
+  </li>
+  <li>
+    <p>We <em>synchronously</em> read from R replicas on a read (1 &lt;= R &lt;= N)</p>
+  </li>
+</ul>
+
+<p>Describe these using the first two diagrams of <a href="http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/">Distributed Algorithms in NoSQL Databases</a></p>
+
+<h2 id="demonstration">Demonstration</h2>
+
+<p>See the Berkeley <a href="http://pbs.cs.berkeley.edu/">PBS: Probabilistically Bounded Staleness (with interactive demonstration)</a>.</p>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

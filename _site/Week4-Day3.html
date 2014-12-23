@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 4, Day 3 (Friday, January 31)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 4, Day 3 (Friday, January 31)</h1>
+		        
+			<h2 id="in-class-exercise---individual-signed-and-turned-in">In-class exercise&#8212;individual, signed and turned in</h2>
+
+<p>Assume the following table describes two highly parallel systems, one with no hedges and one that issues tied requests after 1&nbsp;ms:</p>
+
+<p><img src="http://deliveryimages.acm.org/10.1145/2410000/2408794/figs/t2.jpg" class="img-responsive" alt="Read Latencies observed in a BigTable service benchmark" /></p>
+
+<p>Source: Table 2 of <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794">The Tail at Scale</a>, Copyright ACM&nbsp;2013.</p>
+
+<h3 id="instructions">Instructions</h3>
+
+<ol>
+  <li>
+    <p>First, do this exercise without consulting anyone else.</p>
+  </li>
+  <li>
+    <p>WHEN INSTRUCTED, consult with one or two people around you, revising your answers if you wish.</p>
+  </li>
+</ol>
+
+<h3 id="questions">Questions</h3>
+
+<p>Assuming you sent a request during a lightly-loaded period,</p>
+
+<ol>
+  <li>If you only cared about half of the response, how long would you expect to wait for the unhedged system versus the tied system?</li>
+  <li>For requests that require the entire response before they can complete, how much latency do you save using a tied system?</li>
+</ol>
+
+<p>Assuming you sent a request during a heavily-loaded period,</p>
+
+<ol>
+  <li>For requests that require the entire response before they can complete, how much latency do you save using a tied system?</li>
+  <li>If you had a heavily-loaded system that used unhedged requests and you wanted to reduce your latency, would it be better to increase your provisioning or implement tied requests? (Assume both solutions have the same cost.)</li>
+</ol>
+
+<h2 id="demo-of-testing-software">Demo of testing software</h2>
+
+<p>By Izaak.</p>
+
+<h2 id="discussion-of-distributed-systems">Discussion of distributed systems</h2>
+
+<p><strong>Moved to Monday.</strong></p>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

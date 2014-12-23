@@ -14,6 +14,16 @@ apache-nd-curator:
   url  : http://curator.apache.org/
   type : Software
   topic: CAP
+arvid2012:
+  title: "Principles of High Performance Programs [for CPU-limited Apps]"
+  url  : http://blog.libtorrent.org/2012/12/principles-of-high-performance-programs/
+  type : Post
+  topic: Performance
+atlassian-nd:
+  title: "Comparing [Git] Workflows"
+  url  : https://www.atlassian.com/git/tutorials/comparing-workflows
+  type : Tutorial
+  topic: Git
 ball2013:
   title: Deliberate Git
   url  : http://rakeroutes.com/blog/deliberate-git/
@@ -23,6 +33,21 @@ chacon2011:
   title: Reset Demystified
   url  : http://git-scm.com/blog/2011/07/11/reset.html
   type : Post
+  topic: Git
+chacon2011-ghf:
+  title: GitHub Flow
+  url  : http://scottchacon.com/2011/08/31/github-flow.html
+  type : Post
+  topic: Git
+clayton-2014:
+  title: "Getting Cirrius: Top 10 Technologies I Want My Software Engineers to Know in 2014"
+  url  : http://www.gettingcirrius.com/2014/02/top-10-technologies-i-want-my-software.html
+  type : Post
+  topic: Technology
+cottle-nd:
+  title: Learn Git Branching
+  url  : http://pcottle.github.io/learnGitBranching/?demo
+  type : Tutorial
   topic: Git
 cukes-nd:
   title: "Cucumber: Behaviour Driven Development With Elegance and Joy"
@@ -44,6 +69,11 @@ greenfeld2013:
   url  : http://pydanny.com/cookie-project-templates-made-easy.html
   type : Post
   topic: Opensource
+hettinger-2013:
+  title: Transforming Code into Beautiful, Idiomatic Python
+  url  : https://www.youtube.com/watch?v=OSGv2VnC0go
+  type : Video
+  topic: Python
 hileman2012:
   title: Git Pretty
   url  : http://justinhileman.info/article/git-pretty/
@@ -119,6 +149,11 @@ rose-2014:
   url  : https://www.youtube.com/watch?v=JQYnFyG7A8c
   type : Video
   topic: API
+smith2012:
+  title: "SPUNKI: A Reading Rubric That Engages Students With Course Content"
+  url  : http://www.oncourseworkshop.com/Learning049.htm
+  type : Reference
+  topic: Learning
 thompson-2013:
   title: 5 Useful Tips for a Better Commit Message
   url  : http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message

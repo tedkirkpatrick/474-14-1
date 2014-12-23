@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Game Days (Week 11, Friday, March 28, 2014)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Game Days (Week 11, Friday, March 28, 2014)</h1>
+		        
+			<h2 id="game-day-intro">Game day intro</h2>
+<p><small>From <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332">Weathering the Unexpected</a>.</small></p>
+
+<p>Annual, company-wide, event over several days</p>
+
+<ul>
+  <li>DiRT: Disaster Recovery Training (or &#8220;Game Day&#8221;)</li>
+  <li>Expensive to run</li>
+  <li>Has caused actual outages leading to revenue loss</li>
+</ul>
+
+<p>Given that every team is ready and on-site, problems can be resolved quickly</p>
+
+<p>Game Day complements continuous <em>component</em> testing.</p>
+
+<p>Example: A data centre is partitioned by failure of a switch</p>
+
+<ul>
+  <li>Recovery requires both DNS and directory services to failover (switch to backups)</li>
+  <li>The individual failovers should be tested regularly</li>
+  <li>Game Day tests whether all the individual failovers work together</li>
+</ul>
+
+<h3 id="example-simulated-earthquake">Example: Simulated earthquake</h3>
+
+<p>Caused Failure of Bay Area Google data center</p>
+
+<ul>
+  <li>Housed a number of internal services</li>
+  <li>Some of those services could not recover (single home, single point of failure)</li>
+  <li>Other services failed over to their local workstations
+    <ul>
+      <li>These didn&#8217;t work either </li>
+    </ul>
+  </li>
+  <li>Internal authentication services failed
+    <ul>
+      <li>Most Google staff now couldn&#8217;t work</li>
+      <li>Everyone went to dinner</li>
+      <li>Local cafes Denial-of-Service&#8217;d</li>
+    </ul>
+  </li>
+  <li>System for redirecting pages and alerts to non-Bay Area offices also failed
+    <ul>
+      <li>Calls reporting errors were not received</li>
+    </ul>
+  </li>
+  <li>Accounting approvals-tracking <em>did</em> failover
+    <ul>
+      <li>But the people who could approve the new topology were themselves cut off</li>
+      <li>So the automatically reconfigured system was useless</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="what-to-test">What to test</h2>
+
+<p>Failures of multiple systems in parallel</p>
+
+<ul>
+  <li>Loss of a data centre</li>
+  <li>Backbone fiber cable cut</li>
+  <li>Failure of core infrastructure on which other systems depend (Colossus file system, authentication, &#8230;)</li>
+</ul>
+
+<p>Identify weaknesses in less-tested interfaces between systems and groups</p>
+
+<ul>
+  <li>Design by team with members from all affected groups</li>
+  <li>Multiple teams collaborate to resolve problem</li>
+  <li>Important to have them all there and ready</li>
+</ul>
+
+<p>Be ready to turn off the test if serious problems arise</p>
+
+<h3 id="command-centre">Command centre</h3>
+
+<p>Technical team</p>
+
+<ul>
+  <li>Design cross-service tests</li>
+  <li>Evaluate tests by individual teams</li>
+  <li>Cause large-scale outages</li>
+  <li>Monitors test progress</li>
+  <li>Manages recovery when things go &#8220;worng&#8221;</li>
+</ul>
+
+<p>Coordinators</p>
+
+<ul>
+  <li>Plan and schedule tests</li>
+  <li>Ensure preparation done</li>
+</ul>
+
+<h3 id="example-phone-bridge-emergency-coordination">Example: Phone &#8220;bridge&#8221; emergency coordination</h3>
+
+<p>First test: Only one person figured out how to connect</p>
+
+<p>Second test: 100 people connected &#8230; but bridge only held 40 connections</p>
+
+<p>Third test: A caller put the bridge on hold &#8230; no one else could call in or out</p>
+
+<h3 id="example-buying-diesel-fuel-for-long-term-emergency-generators">Example: Buying diesel fuel for long-term emergency generators</h3>
+
+<p>Simulated long-term power outage for a data center</p>
+
+<p>Needed to buy extra diesel fuel for backup generator ($$$)</p>
+
+<p>No authorization possible from central management (comm failure)</p>
+
+<p>Expected employees to use (documented) emergency spending procedure</p>
+
+<p>Instead: Charged &gt; $100,000 on personal credit card</p>
+
+<h3 id="example-zombies-attack">Example: Zombies Attack!</h3>
+
+<p>One data centre goes down abruptly (Atlanta)</p>
+
+<p>The zombies are fiction (&#8230; maybe?) but the shutdown is real</p>
+
+<ol>
+  <li>Other three centres take up slack</li>
+  <li>Performance SLA maintained</li>
+  <li>But resilience SLA requires running with only <em>two</em> data centres</li>
+  <li>So they cleanly shut down another (Europe)</li>
+  <li>Now barely within performance SLA</li>
+</ol>
+
+<h2 id="growing-the-organization">Growing the organization</h2>
+
+<p>Start off with a few volunteer teams</p>
+
+<p>First tests can be quite safe</p>
+
+<p>Don&#8217;t expect a team&#8217;s first tests to really test much</p>
+
+<p>Increase complexity and breadth of tests with each run</p>
+
+<p>Embrace failure as a means of learning</p>
+
+<p>Track every problem</p>
+
+<p>Solid champion amongst senior executives aids process (VP Operations at Google)</p>
+
+<h2 id="guide-to-reading-for-next-class">Guide to reading for next class</h2>
+
+<p><strong>Read <a href="http://highscalability.com/blog/2007/8/30/log-everything-all-the-time.html">Log Everything All the Time</a>.</strong></p>
+
+<p>Key points:</p>
+
+<ol>
+  <li>Why logging everything is necessary</li>
+  <li>Why you need to build logging in rather than bolt it on later</li>
+  <li>Why it needs to be fast</li>
+</ol>
+
+<p>The post ends with a long list of bullet points for logging design. Each
+entry is terse and there are many. Get a general gist of these guidelines
+but don&#8217;t expect to memorize every one.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

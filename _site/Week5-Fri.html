@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 5, Day 3 (Friday, February 7)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 5, Day 3 (Friday, February 7)</h1>
+		        
+			<h2 id="in-class---sharding-and-replication">In class&#8212;sharding and replication</h2>
+
+<p>Suppose our image processing application (Assignment&nbsp;2) included
+its own image storage function rather than using Amazon&nbsp;S3. Some
+of the images on our site might become very popular (say, a striking
+photograph of a celebrity). When an image is popular, we want to
+retrieve it with low latency. We also want to ensure our images are
+retained even if there are disk crashes. (Recall that many data centers
+intentionally use disks with relatively low reliabilities.)</p>
+
+<p>How would you use the approaches of sharding and replication (from
+<a href="Week2-Day2.html">Week 2 Wednesday</a>) to decrease the latency of your
+image retrievals? For your sharding, how might you group images?</p>
+
+<h2 id="implementation-smallfrom-you-are-building-a-distributed-systemhttpdlacmorgproxylibsfucacitationcfmid24612562461274small">Implementation <small>(from <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">You Are Building a Distributed System</a>)</small></h2>
+
+<p>Build versus buy is not a simple choice</p>
+
+<p>Testing is difficult</p>
+
+<ul>
+  <li>Transient bugs are common</li>
+  <li>Total network outage is rare&#8212;degraded performance is common</li>
+  <li>Drive the system at expected load</li>
+  <li><strong>Induce failures</strong> (more on this in Week&nbsp;8)</li>
+</ul>
+
+<p>Operating the system requires careful monitoring (Week&nbsp;9)</p>
+
+<ul>
+  <li>If it moves, measure it</li>
+  <li>Need both real-time and analytic data</li>
+  <li>You will produce lots of data&#8212;which might require its own highly scalable, reliable system to manage</li>
+</ul>
+
+<h2 id="anonymous-poll">Anonymous poll</h2>
+
+<p>On an <strong>unsigned</strong> sheet of paper, briefly complete:</p>
+
+<ol>
+  <li>I most want to see the class start doing &hellip;</li>
+  <li>I most want to see the class continue doing &hellip;</li>
+  <li>I most want to see the class stop doing &hellip;</li>
+</ol>
+
+<h2 id="no-readings-over-reading-break">No readings over Reading Break</h2>
+
+<p>Work on <a href="sla.html">Assignment&nbsp;3</a> and review the previous readings.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

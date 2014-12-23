@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 1, Day 1</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 1, Day 1</h1>
+		        
+			<h2 id="who-we-are">Who we are</h2>
+
+<ul>
+  <li>Ted Kirkpatrick&#8212;instructor</li>
+  <li>Izaak Schroeder&#8212;Teaching Assistant, programmer extraordinaire</li>
+</ul>
+
+<p>Contact information is on the course home page (URL below).</p>
+
+<h2 id="things-you-need-to-know-about-this-course">Things you need to know about this course:</h2>
+
+<ul>
+  <li>There will be group projects.</li>
+  <li>There will be writing.</li>
+  <li>There will be reading.</li>
+  <li>Python (either 2.7 or 3.x) will be the language for all assignments.</li>
+  <li>
+    <p>A credit card is highly recommended for the Amazon assignments.</p>
+
+    <ul>
+      <li>There will be alternate assignments that don&#8217;t require an Amazon Web Services (AWS) ID, but you will learn the most (and gain the most valuable experience for your portfolio) from using an actual AWS ID (which requires a credit card).</li>
+      <li>All AWS usage will remain within the Free Tier—you will be able to complete your assignments without having your card charged.</li>
+    </ul>
+  </li>
+  <li>Material given in class will not necessarily be available in other forms (lecture notes and class exercises may not be posted on line). But all the key points will be repeated in several classes.</li>
+  <li>Much class time will be spent working with material, often in ad-hoc groups, using laptops.</li>
+</ul>
+
+<hr />
+
+<h2 id="grading-proportions">Grading Proportions</h2>
+
+<ul>
+  <li>50% assignments&#8212;though they will comprise more than 50% of your effort</li>
+  <li>15% Midterm</li>
+  <li>35% final</li>
+</ul>
+
+<hr />
+
+<h2 id="office-hours">Office hours</h2>
+
+<p>Poll of candidate office hours.</p>
+
+<hr />
+
+<h2 id="web-sites">Web sites</h2>
+
+<table class="table">
+<thead><tr><th scope="col">Site</th><th scope="col">URL</th><th scope="col">Purpose</th><th scope="col">Blame</th></tr></thead>
+<tbody>
+<tr><td>Course pages</td><td>http://sfu-innovation.github.io/474-14-1/</td><td>Description of activities, assignments, policies, &hellip;</td><td>Ted</td></tr>
+<tr><td>Course cloud</td><td>http://http://innovate.cs.surrey.sfu.ca/</td><td>Programming assignments</td><td>Izaak</td></tr>
+<tr><td>Grades</td><td>https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/</td><td>Standard CourSys site for CMPT grades</td><td>Greg Baker</td></tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="what-well-focus-on">What we&#8217;ll focus on</h2>
+
+<ul>
+  <li>How cloud architectures differ from your laptop, desktop, and phone</li>
+  <li>Designing software that works well with cloud architecture</li>
+  <li>The unique requirements of services delivered across the Internet</li>
+  <li>The services offered by Amazon Web Services (AWS)</li>
+</ul>
+
+<h2 id="what-we-wont-focus-on">What we won&#8217;t focus on</h2>
+
+<ul>
+  <li>Customer-facing features such as Apple iCloud, Microsoft Office365, or Google Gmail</li>
+  <li>Details of building a data centre</li>
+</ul>
+
+<hr />
+
+<h2 id="an-introduction-to-warehouse-scale-computers">An Introduction to Warehouse-Scale Computers</h2>
+
+<ul>
+  <li>
+    <p><a href="http://www.google.com/about/datacenters/">Google Data Centers</a></p>
+
+    <ul>
+      <li>Photo tour of Google Data Centres around the world</li>
+      <li><a href="http://www.youtube.com/watch?v=avP5d16wEp0">Video of Google data centre</a></li>
+      <li><a href="http://www.youtube.com/watch?v=zRwPSFpLX8I">Video of Google&#8217;s container-based data centre</a> (Section at 2:47&#8211;5:00 shows containers)</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="http://www.globalfoundationservices.com/posts/2013/march/26/microsoft-cloud-scale-data-center-designs.aspx">Microsoft Cloud-Scale Data Center Designs</a> (see photo of outdoor containers at Boydon, Virginia, USA).</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="in-class-exercise">In-class exercise</h2>
+
+<p><em>This exercise was moved to Wednesday due to lack of time.</em></p>
+
+<p>Break into pairs. Take half of the following phrases and explain it to your partner to the best of your understanding. Then switch roles, with your partner explaining the other half to you. If you have no idea what a term means, speculate.</p>
+
+<ul>
+  <li>data center</li>
+  <li>virtual machine</li>
+  <li>virtualization</li>
+  <li>provisioning</li>
+  <li>overprovisioned</li>
+  <li>oversubscribed</li>
+  <li>elastic computing</li>
+  <li>utilization</li>
+  <li>throughput</li>
+  <li>latency</li>
+  <li>API</li>
+</ul>
+
+<h2 id="reading-guide-for-next-class">Reading guide for next class</h2>
+
+<p>Read the following before coming to the next class:</p>
+
+<p><strong>1. <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721672">A View of Cloud Computing</a>, pp. 50&#8211;53</strong> (up to but not including &#8220;Top 10 Obstacles&#8221;).</p>
+
+<p>Things to look for in this article:</p>
+
+<ul>
+  <li>Key enabler of cloud computing.</li>
+  <li>Advantages of clouds.</li>
+  <li>The difference between Amazon Web Services and Google App Engine. But note that these services have become more similar since 2010.</li>
+  <li>How customer usage changes provisioning requirements.</li>
+</ul>
+
+<p>Things of less importance:</p>
+
+<ul>
+  <li>public versus private clouds.</li>
+</ul>
+
+<p><strong>2. <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374">Condos and clouds</a> pp. 50&#8211;53</strong> (up to but not including &#8220;Patterns in SAAS Apps&#8221;)</p>
+
+<p>Things to look for in this article:</p>
+
+<ul>
+  <li>What are the factors that make cloud computing attractive?</li>
+</ul>
+
+<p>As with the first article, we won&#8217;t pay much attention in this course to the distinction between public and private clouds. </p>
+
+<p><strong>3. Skim <a href="http://aws.amazon.com/ec2-sla/">Amazon EC2 Service Level Agreement (SLA)</a>.</strong></p>
+
+<p>Things to look for:</p>
+
+<ul>
+  <li>What is Amazon promising, in general terms?</li>
+  <li>How would the customer know Amazon has broken its promise?</li>
+  <li>What compensation does Amazon offer if the customer accuses them of breaking their promise?</li>
+</ul>
+
+<p>Things to <strong>ignore</strong>:</p>
+
+<ul>
+  <li>The complex, legal escape clauses and definitions.</li>
+</ul>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

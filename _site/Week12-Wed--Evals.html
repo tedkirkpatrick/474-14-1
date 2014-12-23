@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>F1 (Week 12, Wednesday, April 2)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>F1 (Week 12, Wednesday, April 2)</h1>
+		        
+			<h2 id="f1-is-as-mission-critical-as-it-gets">F1 is as mission-critical as it gets</h2>
+
+<p><small>Source: <a href="http://research.google.com/pubs/pub41344.html">F1: A Distributed Database that Scales</a></small></p>
+
+<p>Stores Google AdWords data</p>
+
+<ul>
+  <li>Google&#8217;s core revenue source</li>
+  <li>High amount of data stored (100 TB)</li>
+  <li>High velocity of incoming data</li>
+  <li>High query rate (100 kilo-requests/s)</li>
+  <li>High processing rate (10 Tera-rows scanned/day)</li>
+  <li>Availability &#8220;reaches&#8221; five 9s (~5 min/year)</li>
+  <li>Five-way replication across datacentres in multiple US regions</li>
+</ul>
+
+<h2 id="f1-does-way-more-than-your-grandparents-nosql-services">F1 does way more than your grandparents&#8217; NoSQL services</h2>
+
+<p>Strongly consistent</p>
+
+<div class="well">
+"Designing applications to cope with concurrency anomalies in their data [eventual consistency] is very error-prone,
+time-consuming, and ultimately not worth the performance gains." (p.&nbsp;1068)
+</div>
+
+<p>Supports database transactions (ACID)</p>
+
+<p>Full SQL query support and indexing</p>
+
+<h3 id="built-on-spanner">Built on Spanner</h3>
+<p><small>(Optional) <a href="https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf">Spanner: Google&#8217;s Globally-Distributed Database</a></small></p>
+
+<p>Spanner is a service that provides</p>
+
+<ul>
+  <li>Extremely scalable storage</li>
+  <li>Synchronous replication across datacentres
+    <ul>
+      <li>Quorum algorithm (Paxos)</li>
+      <li>Higher latency</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Global timestamps provide a total order</p>
+
+<ul>
+  <li>But only up to a slightly-old <em>global safe timestamp</em></li>
+  <li>The safe timestamp is typically 5&#8211;10&nbsp;s ago</li>
+  <li>Can read from any replica, anywhere in the world as of the safe timestamp</li>
+</ul>
+
+<p>The system has an uncertainty measure that indicates fuzziness of times</p>
+
+<ul>
+  <li>Uncertainty computed using a mixture of GPS and atomic clocks</li>
+  <li>Uncertainty typically around 10&nbsp;ms</li>
+</ul>
+
+<h2 id="latency-and-throughput-for-f1">Latency and throughput for F1</h2>
+
+<p>Read latencies of 5&#8211;10&nbsp;ms</p>
+
+<p>Write (commit) latencies of 50&#8211;150&nbsp;ms</p>
+
+<p>User-perceived latencies of 200&nbsp;ms</p>
+
+<ul>
+  <li>Comparable to older MySQL database</li>
+  <li>Better tail latency</li>
+</ul>
+
+<p>Queries more highly paralellizable</p>
+
+<ul>
+  <li>Linear speedup (claimed) with more instances</li>
+</ul>
+
+<h3 id="some-limitations">Some limitations</h3>
+
+<p>Higher CPU costs than MySQL</p>
+
+<p>Clients have to change access patterns and schema to achieve above latency</p>
+
+<h2 id="upcoming-activities">Upcoming activities</h2>
+
+<h3 id="final-assignment">Final assignment</h3>
+
+<p>The final assignment, which builds on and integrates the last two
+assignments into an eventually-consistent service, will be made available
+tonight or early tomorrow.</p>
+
+<h3 id="course-review">Course review</h3>
+
+<p>The answer key to the midterm will be made available on-line.</p>
+
+<p>Exercises for the final exam will be made available on-line.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

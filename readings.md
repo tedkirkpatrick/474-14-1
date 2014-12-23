@@ -1,6 +1,6 @@
 ---
 layout: course-table
-title: Course readings
+title: CMPT 474 readings and bibliography
 readings-activation: class="active"
 table: bibtable
 ---
