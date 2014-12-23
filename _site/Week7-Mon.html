@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 7, Monday (February 24, 2014)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 7, Monday (February 24, 2014)</h1>
+		        
+			<h2 id="shelliptuff-gets-real">S&hellip;tuff gets real</h2>
+<p>So far, we&#8217;ve assumed data are read-only</p>
+
+<ul>
+  <li>Sharding and replication are easy&#8212;every copy is the same!</li>
+  <li>If it takes too long to transmit a value, make a copy and place it closer to the user</li>
+</ul>
+
+<p>Life gets more complicated when the data can change</p>
+
+<h3 id="example-1-geographic-time-lag">Example 1: Geographic time lag</h3>
+
+<p>Takes 30&nbsp;ms for light to make round trip Canada/Europe</p>
+
+<ul>
+  <li>Actual transmission time longer (routers, congestion, protocols, &hellip;)</li>
+</ul>
+
+<p>A user in Vancouver adds a comment to an article while another user in Budapest comments on the same article</p>
+
+<ul>
+  <li>In what order should those comments be displayed?</li>
+  <li>What if instead they are both trying to buy the last available seat on the same flight?</li>
+</ul>
+
+<h3 id="example-2-network-link-degradation">Example 2: Network link degradation</h3>
+
+<p>We have users accessing a database from Halifax and Surrey. What happens if the cross-country backbone temporarily degrades?</p>
+
+<ul>
+  <li>Turn off access completely for one city? (Which one?)</li>
+  <li>Only let one city update it and give the other read-only access?</li>
+  <li>Let both cities update it without coordinating, then share updates afterwards?</li>
+</ul>
+
+<h3 id="example-3-machine-failure">Example 3: Machine failure</h3>
+
+<p>Once again, we have users in Halifax and Surrey. Suppose we store Surrey user&#8217;s data in Surrey and Halifax user&#8217;s data in Halifax.</p>
+
+<ul>
+  <li>Ensures rapid local access, at expense of slower remote access</li>
+  <li>Robust against cross-country link degradation or failure</li>
+  <li>But what happens to the Surrey data if the Surrey storage fails?</li>
+</ul>
+
+<p>Durability alone might require us to distribute our data, even when it is only used locally.</p>
+
+<h2 id="availability">Availability</h2>
+
+<p><a href="http://book.mixu.net/distsys/intro.html">Takada</a>:
+Availability is the proportion of time a system is in a functioning
+condition. If a user cannot access the system, it is said to be unavailable.</p>
+
+<ul>
+  <li>Distributed systems allow us to use redundancy to build a system that is more reliable than any one of its components</li>
+  <li>But our designs have to tolerate failures</li>
+  <li>
+    <p>Assume <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160734">message unreliability</a>:</p>
+
+    <ul>
+      <li>A message may never get through</li>
+      <li>A message may be delivered <em>after</em> one that was sent <em>later</em></li>
+      <li>A message may be delivered multiple times</li>
+      <li>Can&#8217;t assume TCP will solve the problem</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="partitioning">Partitioning</h2>
+
+<p>What happens when messages are delayed or lost between two nodes?</p>
+
+<ul>
+  <li>Perhaps due to unreliable transmission</li>
+  <li>Perhaps due to failure of the sender</li>
+  <li>Distinguishing these cases is impossible until after the problem is resolved</li>
+</ul>
+
+<h2 id="consistency">Consistency</h2>
+
+<p>How do you coordinate updates when you have multiple copies of a database?</p>
+
+<ul>
+  <li>Especially hard when copies are geographically separated</li>
+  <li>
+    <p>Different grades of consistency</p>
+
+    <ul>
+      <li>If I read after I write, will I get what I wrote?</li>
+      <li>If you read after I write, will you get what I wrote?</li>
+      <li>If we both write, what will the final value be?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="guide-to-reading-for-next-class">Guide to reading for next class</h2>
+
+<p><strong>Read <a href="http://book.mixu.net/distsys/intro.html">Distributed systems for fun and profit</a>,
+  Chapter 1</strong>, from &#8220;What we want to achieve: Scalability and other good things&#8221;, up to and <strong>including</strong>,
+  &#8220;What prevents us from achieving good things?&#8221;.</p>
+
+<p>This book is a good introduction to the issues of designing cloud
+systems. The book&#8217;s title refers to &#8220;Distributed Systems&#8221; but as he states
+in the <a href="http://book.mixu.net/distsys/index.html">Introduction</a>,</p>
+
+<blockquote>
+  <p>This text is focused on distributed programming and systems concepts you&#8217;ll need to understand commercial systems in the data center.</p>
+</blockquote>
+
+<p>This reading defines the vocabulary he will be using in later readings. It
+is review but the concepts are worth considering again.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

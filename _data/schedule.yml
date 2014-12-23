@@ -1,0 +1,288 @@
+# FOR NEXT OFFERING
+# Begin with brief introduction to concepts that will be dealt with in much detail in Weeks 8--13:
+#  CAP issues
+#  What "durability" means
+#  SLO (alternative to SLA)
+#
+# Students need to understand the basics of these to be able to read even some early papers.
+- week: 1
+  completed: done
+  outcomes: 
+    - tag: Layered
+      level: Understand
+  readings:
+  - tag: armbrust2010
+  - tag: helland2013
+  - tag: barroso2013
+    sect:
+    - Ch.&nbsp;1
+  days:
+  - prefix: Day1
+    completed: done
+  - prefix: Day2
+    completed: done
+  - prefix: Day3
+    completed: done
+  activities:
+  assignments:
+  - url: awsid.html
+    name: AWS id
+    percent: 2
+
+- week: 2
+  completed: done
+  outcomes:
+    - tag: SLA
+      level: Remember
+  readings:
+  - tag: barroso2013
+    sect:
+    - Ch.&nbsp;2
+  - tag: helland2013
+  days:
+  - prefix: Day1
+    completed: done
+  - prefix: Day2
+    completed: done
+  - prefix: Day3
+    completed: done
+  activities:
+
+- week: 3
+  completed: done
+  outcomes:
+    - tag: Distribute
+      level: Understand
+  readings:
+  - tag: dean2013
+  days:
+  - prefix: Day1
+    completed: done
+  - prefix: Day2
+    completed: done
+  - prefix: Day3
+    completed: done
+  activities:
+  assignments:
+   - url: access-keys-tut.html
+     name: Creating a new access key for an AWS id
+   - url: a2.html
+     name: My little image-sharer
+     percent: 4
+
+- week: 4
+  completed: done
+  outcomes:
+    # NEXT OFFERING:  DIDN'T COVER THIS AT ALL
+    #- tag: Reliability-classify
+    #  level: Understand
+  readings:
+  - tag: cavage2013
+  days:
+  - prefix: Day1
+    completed: done
+  - prefix: Day2
+    completed: done
+  - prefix: Day3
+    completed: done
+  activities:
+  assignments:
+#  - url: cluster-comp.html
+#    name: Cluster computation
+#    percent: 4
+
+- week: 5
+  completed: done
+  outcomes:
+    - tag: Distribute
+      level: Apply
+#    - tag: Tune
+#      level: Understand
+    - tag: SLA
+      level: Understand
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  readings:
+#  - tag: hull2013
+  - tag: cavage2013
+  activities:
+  assignments:
+  - url: sla.html
+    name: Developing an SLA
+    percent: 4
+
+- week: Break
+  completed: done
+  outcomes:
+    - tag: 'Reading break'
+      level: ''
+  readings:
+  activities:
+  assignments:
+
+- week: 6
+  completed: done
+  outcomes:
+    - tag: Midterm
+      level: ''
+  readings:
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri-midterm
+    completed: done
+  activities:
+  assignments:
+
+- week: 7
+  completed: done
+  outcomes:
+    - tag: CAP
+      level: Understand
+  readings:
+  - tag: takada2013
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  activities:
+  assignments:
+  - url: http://innovate.cs.surrey.sfu.ca/assignments/welcome
+    name: Welcome
+  #  percent: 3
+
+- week: 8
+  completed: done
+  outcomes:
+    - tag: CAP
+      level: Apply 
+  readings:
+  - tag: katsov2012
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  activities:
+  assignments:
+  - url: vm.html
+    name: Virtual machine test environment
+  - url: http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium
+    name: The Tea Emporium
+    percent: 5
+
+- week: 9
+  completed: done
+  outcomes:
+    - tag: Cluster
+      level: Understand
+     #- tag: Privacy
+     # level: Understand
+  readings:
+  #- tag: hamilton2007
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  activities:
+  #- name: Privacy
+  assignments:
+  #- url: cap.html
+  #  name: Trading off consistency, availability, and compensation
+  #  percent: 5
+
+- week: 10
+  completed: done
+  outcomes:
+    - tag: CAP
+      level: Analyze
+  readings:
+  #- tag: li2010
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  activities:
+  assignments:
+  #- url: analysis.html
+  #  name: Performance analysis of CAP tradeoffs
+  #  percent: 2
+
+- week: 11
+  completed: done
+  outcomes:
+    - tag: Reliability-classify
+      level: Understand
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix: Wed
+    completed: done
+  - prefix: Fri
+    completed: done
+  readings:
+  - tag: hamilton2007
+  - tag: tseitlin2013
+  - tag: krishnan2012
+  #- tag: barroso2013
+  #  sect:
+  #  - Ch.&nbsp;7
+  activities:
+  assignments:
+  - url: http://innovate.cs.surrey.sfu.ca/assignments/the-tea-emporium-2
+    name: The Tea Emporium 2
+
+- week: 12
+  completed: done
+  outcomes:
+    - tag: Cluster
+      level: Create
+    - tag: Reliability-use
+      level: Create
+  days:
+  - prefix: Mon
+    completed: done
+  - prefix : 'Wed--Evals'
+    completed: done
+  - prefix: 'Fri CANCELLED'
+    completed: done
+  readings:
+  - tag: hoff2007
+  - tag: shute2013
+  activities:
+  assignments:
+#  - url: robustness.html
+#    name: Making the system robust
+#    percent: 3
+
+- week: 13
+  completed: done
+#  readings:
+  activities:
+  assignments:
+   - url: final-assignment.html
+     name: Final assignment
+
+- week: Final exam
+  completed: done
+  assignments:
+    - url: final-review.html
+      name: Review for final exam

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 3, Day 3 (Friday, Jan 24)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 3, Day 3 (Friday, Jan 24)</h1>
+		        
+			<h2 id="distributing-computation-across-instances">Distributing computation across instances</h2>
+
+<p>In the first part of Assignment&nbsp;2, you are going to build a service, comprising two subservices connected by an SQS queue:</p>
+
+<p><img src="images/a2-struct-part1.png" class="img-responsive" alt="Structure of Assignment 2: User, Server, Worker, S3" /></p>
+
+<p>In the second part, you are going to make the system scalable by partitioning the image resizing step across multiple workers:</p>
+
+<p><img src="images/a2-struct-part2-partial.png" class="img-responsive" alt="Structure of Assignment 2, Part 2: Multiple workers" /></p>
+
+<p>How many workers is enough? As the number of image resizes grows,
+you&#8217;ll need more workers. To make it <em>scalable</em>, you will need to
+automatically <em>provision</em> more workers (EC2 instances):</p>
+
+<p><img src="images/a2-struct-part2-complete.png" class="img-responsive" alt="Structure of Assignment 2, Part 2: Starting new workers" /></p>
+
+<h2 id="reading-guide-for-next-class">Reading guide for next class</h2>
+
+<p><strong>Complete <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794">The Tail at Scale</a>, from &#8220;Cross-request long-term adaptations&#8221; to end.</strong></p>
+
+<p>You might also consider rereading the sections on &#8220;Hedged requests&#8221; and &#8220;Tied requests&#8221;.</p>
+
+<p>Key points to look for:</p>
+
+<ul>
+  <li>What is a good trade-off of partitions of the data?</li>
+  <li>How do large information retrieval systems (such as search services) differ from other services?</li>
+</ul>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

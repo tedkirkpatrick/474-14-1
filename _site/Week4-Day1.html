@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 4, Day 1 (Monday Jan 27)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 4, Day 1 (Monday Jan 27)</h1>
+		        
+			<h2 id="in-class-exercise">In-class exercise</h2>
+
+<p>List the biggest unknowns or risks you see for yourself or your team
+in Assignment&nbsp;2. Items to think about:</p>
+
+<p>In Part&nbsp;1:</p>
+
+<ul>
+  <li>How will you format the messages from the server to the worker?</li>
+</ul>
+
+<p>In Part&nbsp;2:</p>
+
+<ul>
+  <li>How will you set up an EC2 instance so that it will start the worker process when CloudWatch starts a new instance?</li>
+  <li>How will you force the load high enough to require that new instances be started?</li>
+</ul>
+
+<h2 id="reducing-latency-of-service-requests">Reducing latency of service requests</h2>
+
+<ul>
+  <li>The SLA for our service might be legally binding or a market requirement.</li>
+  <li>Variable latencies are inevitable.</li>
+  <li>How to keep our latencies within our (binding or best-effort) SLA?</li>
+  <li>
+    <p>Ways to reduce latency of a single request:</p>
+
+    <ul>
+      <li>Hedge the request: Wait a bit, request a duplicate, cancel second on first reply</li>
+      <li>Tie the request: Issue two requests, cancel second once first begins</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reading-guide-to-next-class">Reading guide to next class</h2>
+
+<p>Read <strong><a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">There Is No Getting Around It: You Are Building a Distributed System</a></strong>,
+up to but not including &#8220;Messaging&#8221;, p. 67.</p>
+
+<p>Note that (as he says on p. 85), his use of &#8220;distributed system&#8221; is
+synonymous with how we use &#8220;cloud&#8221;. </p>
+
+<p>Key point:</p>
+
+<blockquote>While much of the discussion, literature, and presentations focus on the en vogue technologies such as Paxos, Dynamo, or MapReduce &hellip; the reality of building a large distributed system is that many “traditional” problems are left unsolved by off-the-shelf solutions, whether commercial or open source. (p.&nbsp;64)
+</blockquote>
+
+<p>You don&#8217;t need to pay close attention to:</p>
+
+<ul>
+  <li>The opening pages (pp.&nbsp;63&#8211;64), giving two reasons for using a distributed system, are background.</li>
+</ul>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

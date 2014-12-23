@@ -4,4 +4,14 @@ title: Contact
 contact-activation: class="active"
 ---
 
-Contact me, Bob Guccione, personally, if you gotta problem.  (Is Guccione even still alive?}
+Course Instructor:
+
+Ted Kirkpatrick<br/>
+Room 4134, Surrey Campus<br/>
+ted@sfu.ca<br/>
+
+Teaching Assistant:
+
+Izaak Schroeder<br/>
+Room Bqhatevwr, Surrey Campus<br/>
+EMAIL

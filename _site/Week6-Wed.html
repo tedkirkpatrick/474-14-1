@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Review of Weeks 3&ndash;5 (Week 6, Wednesday)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Review of Weeks 3&ndash;5 (Week 6, Wednesday)</h1>
+		        
+			<h2 id="latency-consider-the-following-three-percentile-tables">Latency: Consider the following three percentile tables:</h2>
+
+<table class="table">
+<caption class="big-caption">Table 1</caption>
+<thead>
+<tr><th class="rttd" scope="col">Percentile of completed subrequests</th><th class="rttd" scope="col">Time (ms)</th></tr>
+</thead>
+<tbody>
+<tr><td class="rttd">50</td><td class="rttd">300</td></tr>
+<tr><td class="rttd">75</td><td class="rttd">350</td></tr>
+<tr><td class="rttd">99</td><td class="rttd">375</td></tr>
+</tbody>
+</table>
+
+<table class="table">
+<caption class="big-caption">Table 2</caption>
+<thead>
+<tr><th class="rttd" scope="col">Percentile of completed subrequests</th><th class="rttd" scope="col">Time (ms)</th></tr>
+</thead>
+<tbody>
+<tr><td class="rttd">50</td><td class="rttd">1000</td></tr>
+<tr><td class="rttd">75</td><td class="rttd">1100</td></tr>
+<tr><td class="rttd">99</td><td class="rttd">1200</td></tr>
+</tbody>
+</table>
+
+<table class="table">
+<caption class="big-caption">Table 3</caption>
+<thead>
+<tr><th class="rttd" scope="col">Percentile of completed subrequests</th><th class="rttd" scope="col">Time (ms)</th></tr>
+</thead>
+<tbody>
+<tr><td class="rttd">50</td><td class="rttd">500</td></tr>
+<tr><td class="rttd">75</td><td class="rttd">1000</td></tr>
+<tr><td class="rttd">99</td><td class="rttd">1750</td></tr>
+</tbody>
+</table>
+
+<p><strong>Question 1:</strong> Assume your SLA for latency is a 99% of
+900&nbsp;ms. For the response times for each table, what approach would you
+use to achieve your SLA?</p>
+
+<p><strong>Answer:</strong></p>
+
+<ol>
+<li>For these response times, even the slowest responses are well under our SLA. The simplest algorithm, distributing the work across the
+workers, will be more than enough.</li>
+<li>For these response times, even the 50th percentile is too low. The system must be rearchitected to speed up the basic operations. No amount of hedging or tying will make the system fast enough.
+</li>
+<li>These response times are a case where hedged or tied requests will help. Half the results are returned in 500 ms and three-quarters in 1000 ms but the last 25% form a long, slow tail. Hedged or tied requests will shrink that tail. We might not get down to our 900 ms goal but we could get close.
+</li>
+</ol>
+
+<p><strong>Question 2:</strong> If your service were something like a Web search, where a "good-enough" answer
+is sufficient, What approaches might you use for each table?
+</p>
+
+<p><strong>Answer:</strong></p>
+
+<ol>
+<li>As in the first case, these response times are so fast that we don't need any special handling to meet our target.
+</li>
+<li>Again, these times remain too slow. We don't even get half the results within our 900 ms target. That's not close to "good enough".
+</li>
+<li>Given these response times, we could elect to return a result to the user when we only have 50-70% of the data. That would keep our latencies within the 900 ms target.
+</li>
+</ol>
+
+<h2>Sharding and replication</h2>
+
+<p><strong>Question 1:</strong> Define <em>sharding</em>. Define <em>replication</em>. What is the difference?</p>
+
+<p><strong>Answer:</strong></p>
+
+<dl class="dl-horizontal">
+
+<dt>sharding</dt><dd>Breaking the primary key range of a dataset into sub-ranges
+('shards') so that requests to different shards can be handled
+independently.</dd>
+
+<dt>replication</dt><dd>Creating identical copies of a dataset or shard of a dataset so that requests to different replicas
+can be handled independently.</dd>
+
+</dl>
+
+<p>Both methods increase the number of requests that can be handled
+independently. Sharding splits different data across multiple
+instances, while replication spreads identical copies of some data
+across multiple instances.  </p>
+
+<p><strong>Question 2:</strong> Assume that you have a database storing data about 1000 products,
+numbered 0&ndash;999. The products numbered 0&ndash;399 are accessed 1000
+times/hr, the products numbered 400&ndash;799 are accessed 500 times/hr, and
+the products numbered 800&ndash;999 are accessed 100 times/hr.</p>
+
+<p>You want to maximize parallelism using some combination of sharding and
+replication. You have up to 10000 servers. How might you divide your 1000
+products into shards and replications to maximize the parallism? Note that
+you'll want to assign the most servers to the products that have the most
+requests. Your answer will probably not assign all 10000 servers.</p>
+
+<p><strong>Answer:</strong> The problem rewuests that you shard and replicate the
+  data. There are many ways of organizing this. Here is one. Start by
+  setting up shards that will require the same number of accesses: </p>
+
+<table class="table">
+<caption class="big-caption">Sharding of the 1000 products</caption>
+<thead>
+<tr><th scope="col" class="rttd">Accesses/hr/product</th><th scope="col" class="rttd">Products/shard</th>
+<th scope="col" class="rttd">Accesses/hr/shard</th><th scope="col" class="rttd">Products</th><th scope="col" class="rttd">Shards</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="rttd">1000</td><td class="rttd">1</td><td class="rttd">1000</td><td class="rttd">400</td><td class="rttd">400</td></tr>
+<tr><td class="rttd">500</td><td class="rttd">2</td><td class="rttd">1000</td><td class="rttd">400</td><td class="rttd">200</td></tr>
+<tr><td class="rttd">100</td><td class="rttd">10</td><td class="rttd">1000</td><td class="rttd">200</td><td class="rttd">20</td></tr>
+</tbody>
+</table>
+
+<p>Total shards is 620, all accessed 1000&nbsp;times/hr. Replicating 620
+shards as many times as possible across 10000 servers, we get 16
+replications each, with 80 servers left over.</p>
+
+<h2 id="descriptive-questions">Descriptive questions</h2>
+
+<p><strong>Question:</strong> What is the primary risk the network poses to a system?</p>
+
+<p><strong>Answer:</strong> The network will rarely fail completely but it is extremely likely that it will degrade
+  in quality and capacity at times. Your application must be ready to
+  handle such degradation. (<a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">Distributed</a>, p.&nbsp;69) </p>
+
+<p><strong>Question:</strong> Define <em>authentication</em> and <em>authorization</em>.</p>
+
+<p><strong>Answer:</strong> <em>Authentication</em> is the process of determining that a user
+  is who they claim to be. <em>Authorization</em> is the process of
+  determining whether an authenticated user can do an operation they have requested.</p>
+
+<p><strong>Question:</strong> List four categories of requirement that might be specified in an SLA.</p>
+
+<p><strong>Answer:</strong> <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">Distributed</a> lists five: availability, latency, throughput, consistency, and durability. Not all of these will be specified for every service but you do need to consider them all.</p>
+
+<p><strong>Question:</strong> Why don&#8217;t the percentile tables for response time include a row for 100%?</p>
+
+<p><strong>Answer:</strong> There is no upper bound on the very longest time a response might take. The worker may have crashed, resulting in infinite response time (you will never get an answer) or it may just take a very long time.</p>
+
+<p><strong>Question:</strong> What are the twin purposes of measuring the performance of your system?</p>
+
+<p><strong>Answer:</strong> 1. Monitoring the system in real time to detect failures and overloads, and 2. Analytics to determine usage trends.
+ (<a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">Distributed</a>, p.&nbsp;70)</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

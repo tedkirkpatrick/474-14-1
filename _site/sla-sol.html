@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Solution to "Developing an SLA"</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Solution to "Developing an SLA"</h1>
+		        
+			<h2 id="the-latency-formula">The latency formula</h2>
+
+<p>The formula for computing all the latencies in this design is:</p>
+
+<p>\[
+    s + q(n) + w(n)
+\]</p>
+
+<p> where \(s\) is the server latency, \(q\) is the queue latency,
+\(w\) is the worker latency, and \(n\) is the number of workers. The
+values for queue latency and worker latency are functions of the
+number of workers, as defined in the original assignment by the <code>ql</code>
+equation and the percentile tables.</p>
+
+<h2 id="part-1">Part 1</h2>
+
+<p><b>Question 1:</b> Assuming 2 workers, the latency formula becomes
+\(200 + (50+25 \times .30) + 175 = 407.5~\mathrm{ms}\), where
+\(\log_{10}(2)=.30\).</p>
+
+<p><b>Question 2:</b> Assuming 1000 workers, the formula becomes \(200 + (50+25 \times 3) + 1050 = 1375~\mathrm{ms}\).</p>
+
+<p><strong>Question 3:</strong> Assuming 1000 workers and a requests that are hedged
+at the 99th percentile, the worker latency now has two parts: The time
+it takes for the first 990 workers to complete (650&nbsp;ms) plus the time
+it takes for the remaining 10 hedged requests to complete (which each
+complete in the time for 2 requests, 175&nbsp;ms).</p>
+
+<p>Using those results, the formula becomes</p>
+
+<p>\[
+    200 + (50 \times 25 \times 3) + (650+175) = 1150~\mathrm{ms}
+\]</p>
+
+<p>For estimating an actual system, you&#8217;d
+likely use a more sophisticated statistical model for hedged
+requests. But this computation gives you a back-of-the-envelope estimate
+of the savings from a hedged request.</p>
+
+<p>This result is a special case of <a href="http://en.wikipedia.org/wiki/Amdahl's_law">Amdah&#8217;s
+Law</a>: Parallelization
+reduces the time required for that part of an algorithm that
+can be made parallel but has no effect on the sequential part. This
+makes the sequential portion the limiting case of the algorithm. In
+our case, hedging the requests reduced the latency for the 1000 workers from 1050&nbsp;ms
+to 825&nbsp;ms, a \((1050-825)/1050=21\%\) saving, but the sequential part of
+325&nbsp;ms was unchanged, so the savings on the total latency was only \((1375-1150)/1375 = 16\%\).</p>
+
+<h2 id="part-2">Part 2</h2>
+
+<p>Throughput is the number of requests possible per unit time. If each request completes in at most 1400&nbsp;ms and you have four instances reserved to exclusively perform this operation, throughput becomes</p>
+
+<p>\[
+    4 \times (1/1400) = 2.857 \times 10^{-3}~\mathrm{resizes/ms} = 2.857~\mathrm{resizes/s} = 171.42~\mathrm{resizes/min} = 10286~\mathrm{resizes/hr}.
+\]</p>
+
+<p>These answers are equivalent; any one will do, as would
+approximations. For provisioning estimates, the most useful estimate
+would likely be \(10300~\mathrm{resizes/hr}\).</p>
+
+<h2 id="part-3">Part 3</h2>
+
+<p>Assuming the worst case, Amazon&#8217;s downtime will occur outside your own
+maintenance downtime, so the worst-case total downtime of your system
+will be their sum. Referring to the <a href="Week1-Day2.html">availability table</a>
+from the first week of the course, the &#8220;four
+nines&#8221; downtime we are assuming for Amazon translates to one hour per
+year.  Adding the eight hours per year your operations staff want for
+their work gives a total of nine hours per year. Referring again to
+the table, nine hours per year is an annual rate of 99.9%, <strong>&#8220;three
+nines&#8221;</strong>.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+  
+
+	</body>
+</html>

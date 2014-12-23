@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Trading consistency for availability (Week 9, Friday&mdash;March 14, 2014)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Trading consistency for availability (Week 9, Friday&mdash;March 14, 2014)</h1>
+		        
+			<h2 id="emphasizing-availability-when-partitions-occur">Emphasizing availability when partitions occur</h2>
+
+<p>Source: <a href="http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&amp;arnumber=6133253">CAP Twelve Years Later</a></p>
+
+<p><img src="images/AP-Venn.png" alt="CAP Venn diagram with A and P subset highlighted" class="img-responsive" /></p>
+
+<p>So long as there are no network partitions (most of the time), a system can be strongly consistent and available:</p>
+
+<ul>
+  <li>
+    <p>Strongly consistent: The users cannot tell if the system is one instance or multiple instances</p>
+
+    <ul>
+      <li>Every user sees the same order of updates to a value</li>
+    </ul>
+  </li>
+  <li>
+    <p>Available: Every user can do every possible operation</p>
+  </li>
+</ul>
+
+<p>It won&#8217;t come free&#8212;there will still be latency costs to sustaining the illusion of a single system</p>
+
+<ul>
+  <li>
+    <p>Update messages between the instances</p>
+  </li>
+  <li>
+    <p>Waits for multiple synchronous writes to occur to replicas</p>
+
+    <ul>
+      <li>
+        <p>Limited by the slowest instance</p>
+      </li>
+      <li>
+        <p>The number of write instances will typically be much smaller (1-3) than the number of compute instances we considered in large-scale computation (1000s)</p>
+      </li>
+      <li>
+        <p>The problem of one very slow instance remains</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="time-outs-define-partitions-for-a-client">Time outs define &#8220;partitions&#8221; for a client</h3>
+
+<p>Every service request has a time out</p>
+
+<ul>
+  <li>
+    <p>If request does not complete within time out bound, the client must respond</p>
+  </li>
+  <li>
+    <p>Might retry one or more times, but when the final retry times out?</p>
+  </li>
+</ul>
+
+<p>The <strong>partition decision</strong>: How your code responds
+to timed-out requests determines whether your system is strongly consistent
+or available:</p>
+
+<ol>
+  <li>
+    <p>Keep retrying (maybe with longer time out limits) until requests start working (give up availability but remain strongly consistent); or</p>
+  </li>
+  <li>
+    <p>Enter partition mode, continue serving the user (give up strong consistency but remain available)</p>
+  </li>
+</ol>
+
+<p>Each client makes its own decision about &#8220;partition&#8221;. <strong>One client can see a partition while another client does not.</strong></p>
+
+<p>How long do we set the time out value?</p>
+
+<ul>
+  <li>
+    <p>Short (100s of ms)&#8212;we assume a failure quickly</p>
+
+    <ul>
+      <li>Induces lots of partitions</li>
+    </ul>
+  </li>
+  <li>
+    <p>Long (seconds)&#8212;takes time to detect a failure</p>
+
+    <ul>
+      <li>
+        <p>Longer latencies</p>
+      </li>
+      <li>
+        <p>Fewer partitions</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="relaxing-consistency">Relaxing consistency</h3>
+
+<p>If we abandon the requirement that all users see the same order of updates (strong consistency), what do we gain?</p>
+
+<ul>
+  <li>
+    <p>Greater scalability</p>
+  </li>
+  <li>
+    <p>Lower latency</p>
+  </li>
+  <li>
+    <p>Partition tolerance</p>
+  </li>
+</ul>
+
+<p>&#8220;Eventual consistency&#8221; is an ambiguous promise: If you stop updating the
+system, and wait &#8220;long enough&#8221;, the system will converge on &#8220;some
+value&#8221;&#8212;every user will eventually see the same value.</p>
+
+<ul>
+  <li>
+    <p>Trivially (but uselessly) achievable by returning an arbitrary value to every query (answer every question, &#8220;42&#8221;)</p>
+  </li>
+  <li>
+    <p>More usefully, is the application able to occasionally converge to an <em>out of date</em> value?</p>
+  </li>
+  <li>
+    <p>Or could your service return multiple values, letting the user pick the most useful one?</p>
+  </li>
+</ul>
+
+<p>Those are the <em>best</em> you can do after a partition</p>
+
+<ul>
+  <li>
+    <p>In the general case, you cannot guarantee that your system will converge to a single, latest value</p>
+  </li>
+  <li>
+    <p>Some specialized operations do permit this guarantee <small>(See CALM theorem and Converget Replicated Data Types, CRDTs)</small></p>
+
+    <ul>
+      <li>
+        <p>But you will not be able to build a full application using only these operations</p>
+      </li>
+      <li>
+        <p>So you&#8217;ll have to make some hard decisions</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="maintaining-business-rules-and-data-structure-invariants">Maintaining business rules and data structure invariants</h3>
+
+<p>An application typically has business rules it must maintain</p>
+
+<ul>
+  <li>
+    <p>A bank account cannot be negative</p>
+  </li>
+  <li>
+    <p>A flight cannot carry more passengers than seats</p>
+  </li>
+</ul>
+
+<p>These imply invariants across your data structures</p>
+
+<p>Relational database systems offer key constraints to ensure some invariants</p>
+
+<ul>
+  <li>A Purchase record cannot be created with a nonexistent customer id</li>
+</ul>
+
+<p><strong>You can&#8217;t guarantee the invariants if you keep running while partitioned</strong></p>
+
+<p>But in many cases you have compensation strategies</p>
+
+<ul>
+  <li>
+    <p>Banks permit an ATM to dispense small amounts (up to $200, say) when they are cut off from the server</p>
+  </li>
+  <li>
+    <p>If customer overdraws, bank adds service charge</p>
+  </li>
+  <li>
+    <p>Airlines routinely overbook flights</p>
+
+    <ul>
+      <li>
+        <p>Rare for every passenger to show up</p>
+      </li>
+      <li>
+        <p>If too many show up, offer free tickets to the ones willing to wait for a later flight</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>When designing for partitioned operations, which invariant violations can you compensate, which invariants must you never violate?</p>
+
+<ul>
+  <li>
+    <p>OK to send someone two copies of a book</p>
+  </li>
+  <li>
+    <p>Probably not OK to give patient twice their drug dosage</p>
+  </li>
+</ul>
+
+<h2 id="guide-to-reading-for-next-class">Guide to reading for next class</h2>
+
+<p><strong>Read <a href="http://book.mixu.net/distsys/eventual.html">Distributed systems for fun and profit, Chap.&nbsp;5</a>:</strong> up to but not including &#8220;Replica synchronization: gossip and Merkle trees&#8221;.</p>
+
+<p><strong>Important points:</strong> &#8220;Eventual consistency with probabilistic guarantees&#8221;&#8212;this is the normal definition of <em>eventual consistency</em>.</p>
+
+<p><strong>Points not important to this course:</strong> &#8220;eventual consistency
+with strong guarantees&#8221; (CRDTs and CALM)&#8212;this remains a research topic, with few to no
+applications built using this concept.</p>
+
+<p><strong>Important section:</strong> Reconciling different operation orders</p>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

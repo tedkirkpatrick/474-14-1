@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Active failure testing (Wednesday, Week 11, March 26)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Active failure testing (Wednesday, Week 11, March 26)</h1>
+		        
+			<h2 id="resilience">Resilience</h2>
+
+<p>Source: <a href="">The Antifragile Organization</a>.</p>
+
+<p>&#8220;Resilience is an attribute of a system that enables it to deal with failure
+in a way that does not cause the entire system to fail.&#8221;<small>&#8212;Tseitlin,
+p. 42.</small></p>
+
+<ul>
+  <li>If a movie recommendation service fails, give users a generic list of titles</li>
+  <li>&#8220;A complex system is constantly undergoing varying degrees of failure&#8221; (p.&nbsp;42)</li>
+</ul>
+
+<h2 id="tools-for-resilience">Tools for resilience</h2>
+
+<ol>
+  <li>
+    <p>Redundancy and fault tolerance</p>
+  </li>
+  <li>
+    <p>Regularly induce failure</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>Simply listing possible failures helps you understand your system:</p>
+
+    <ul>
+      <li>How far outside the service performance SLA is a &#8220;failure&#8221;?</li>
+      <li>How many retries before you consider a service &#8220;failed&#8221;?</li>
+      <li>What if only part of a service is working (say, read but not write)?</li>
+    </ul>
+  </li>
+  <li>Automatically (today)</li>
+  <li>Manually (next class)</li>
+</ul>
+
+<p>&#8220;Monkeys&#8221;&#8212;scripts that deliberately fail key services</p>
+
+<p><a href="https://github.com/Netflix/SimianArmy">Open source versions of Chaos Monkey, Conformity Monkey, and Janitor Monkey</a></p>
+
+<h3 id="chaos-monkey">Chaos Monkey</h3>
+
+<p>Randomly terminates live, customer-facing instances</p>
+
+<p>Ensures that services do not rely on 
+* On-instance state
+* Instance affinity (has to run on specific instance)
+* Persistent connections</p>
+
+<p>Services can set probability or opt out</p>
+
+<h3 id="chaos-gorilla">Chaos Gorilla</h3>
+
+<p>Causes Netflix services for an entire Amazon Availability Zone to fail
+* Partitioned mode (both sides continue)
+* Total failure (failed zone terminated)</p>
+
+<p>&#8220;Causes massive damage&#8221; to Netflix&#8217;s services
+* As of 2012, only run manually 
+* Increasingly aggressive with every run</p>
+
+<h3 id="chaos-kong">Chaos Kong</h3>
+
+<p>Takes down Netflix services for an entire Amazon Region (multiple Availability Zones)</p>
+
+<p>A resilient system cannot be limited to one Zone</p>
+
+<p>Chaos Kong still under development</p>
+
+<h3 id="latency-monkey">Latency Monkey</h3>
+
+<p>Introduces delays in client-server communication</p>
+
+<p>Service is still there, just <em>slow</em></p>
+
+<p><img src="images/latency-monkey-services.png" class="img-responsive" alt="A base service and two services that depdend upon it, with Latency Monkey between one service and the base" /></p>
+
+<p>Useful for testing resilience of new services
+* Increase latency of services they depend upon
+* Leave latency unchanged for all other clients of that service</p>
+
+<h3 id="conformity-monkeyhttpsgithubcomnetflixsimianarmywikiconformity-home"><a href="https://github.com/Netflix/SimianArmy/wiki/Conformity-Home">Conformity Monkey</a></h3>
+
+<p>A style checker (&#8220;lint&#8221;) for instances</p>
+
+<h3 id="janitor-monkeyhttpsgithubcomnetflixsimianarmywikijanitor-home"><a href="https://github.com/Netflix/SimianArmy/wiki/Janitor-Home">Janitor Monkey</a></h3>
+
+<p>Locates resources that should be deleted</p>
+
+<p>Notifies owner</p>
+
+<p>Owner has three days to countermand the deletion</p>
+
+<h3 id="bringing-up-bonzo">Bringing up Bonzo</h3>
+
+<p>Structured introduction of monkeys</p>
+
+<ul>
+  <li>Run in test environment</li>
+  <li>Run live with select volunteer services</li>
+  <li>Run live with services opting-in</li>
+  <li>Run live with services opting-out</li>
+</ul>
+
+<h2 id="monitoring">Monitoring</h2>
+
+<p>Constantly monitor the health of your system</p>
+
+<p>When users are impacted by a real event, turn off the monkeys</p>
+
+<p>Record all changes to the system</p>
+
+<h2 id="the-organization">The organization</h2>
+
+<p>Developers operate the services they create</p>
+
+<p>Learn from failures</p>
+
+<p>Blameless culture</p>
+
+<h2 id="guide-to-reading-for-next-class">Guide to reading for next class</h2>
+
+<p><strong>Read <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332">Weathering the Unexpected</a>.</strong></p>
+
+<p>Google&#8217;s Disaster Recovery Testing event (DiRT) is a complementary approach
+to Netflix&#8217;s Simian Army. Where Simian Army uses automated failures of key services, 
+DiRT uses manual failures of key services.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

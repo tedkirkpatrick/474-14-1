@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Week 5, Day 2 (Wednesday, February 5)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Week 5, Day 2 (Wednesday, February 5)</h1>
+		        
+			<h2 id="in-class-criteria-for-authentication-and-authorization">In class: Criteria for authentication and authorization</h2>
+
+<p>Assume that you are implementing the following two services:</p>
+
+<p><strong>Service 1: Authentication.</strong> Given an id, password, and MFA token, verify that
+they correctly identify a user. Return a cookie that indicates the
+holder has been authenticated as this user.</p>
+
+<p><strong>Service 2: Authorization.</strong> Given a cookie indicating an
+authenticated user, and an operation requested by that user, determine
+if that user can perform that operation. For example, the user may be
+able to read and write files they created, only list the names of files
+created by their coworkers, and not be able to learn anything about
+files created by anyone outside their company.</p>
+
+<p>For each service, answer the following:</p>
+
+<ol>
+  <li>
+    <p>Should it be global or regional?</p>
+  </li>
+  <li>If a typical user will do ten requests each time they are assigned
+a cookie, and each request will take 500&nbsp;ms, what is a reasonable
+latency for each service?</li>
+  <li>What do you think the typical ratio of reads to writes will be for
+the underlying database that each service is based upon?</li>
+</ol>
+
+<h2 id="guide-to-readings-for-next-class">Guide to readings for next class</h2>
+
+<p><strong>Complete <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274">There Is No Getting Around It: You Are Building a Distributed System</a></strong>, Implementation (p.&nbsp;69)&#8211;Conclusion (p.&nbsp;70).</p>
+
+<p>Points to look for:</p>
+
+<p>Up to this point, the article has described choices in system
+<em>architecture</em>. These last sections describe the choices you have to
+make when <em>implementing</em> your chosen architecture:</p>
+
+<ul>
+  <li>When is it OK to use a component that is already built? What are the risks?</li>
+  <li>What is the great threat that the network poses to meeting your reliability SLA?</li>
+  <li>What information do you need to run the system effectively?</li>
+  <li>What are the risks of using a &#8220;platform as a service&#8221; rather than writing your own?</li>
+</ul>
+
+<p>By the way, if you&#8217;re intrigued by the notion of the Netflix
+<em>Chaos&nbsp;Monkey</em>, see <a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022">The Antifragile Organization</a>,
+which describes that system and others like it.  We&#8217;ll read that article
+around the middle of the course.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

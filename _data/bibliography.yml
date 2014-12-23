@@ -1,0 +1,897 @@
+# Course bibliography
+abadi-2012:
+    title: "Consistency Tradeoffs in Modern Distributed Database System Design: CAP is Only Part of the Story"
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?arnumber=6127847
+    type : Article
+    topic: CAP
+abts2012:
+    title: A Guided Tour of Data-center Networking
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2184319.2184335
+    type : Article
+    topic: Datacenter
+adams2014:
+    title: "AWS Tips I Wish I'd Known Before I Started"
+    url  : http://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/
+    type : Post
+    topic: AWS
+agmon2014:
+    title: "The Rise of RaaS: The Resource-as-a-Service Cloud"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2627422
+    type : Article
+    topic: Business
+allspaw2012:
+    title: Fault Injection in Production
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2347736.2347751
+    type : Article
+    topic: Operations
+amazon-nd:
+    title: "boto: A Python Interface to Amazon Web Services"
+    url  : http://boto.readthedocs.org/en/latest/
+    type : Documentation
+    topic: AWS
+amazon-nd2:
+    title: AWS SDK for Java API Reference
+    url  : http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
+    type : Documentation
+    topic: AWS
+anderson2000:
+   title: Taxonomy of the Cognitive Domain
+   url  : http://thesecondprinciple.com/teaching-essentials/beyond-bloom-cognitive-taxonomy-revised/
+   type : Reference
+   topic: Learning
+armbrust2010: 
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721672
+   title: A View of Cloud Computing
+   shorter: View
+   type : Article
+   topic: Business
+bailis2013:
+    title: Eventual Consistency Today
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2447976.2447992
+    type : Article
+    topic: CAP
+bailis2013-hat:
+    title: "HAT, not CAP: Towards Highly Available Transactions"
+    url  : http://www.bailis.org/papers/hat-hotos2013.pdf
+    type : Article
+    topic: CAP
+bailis2014:
+    title: Quantifying Eventual Consistency with PBS
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2632661.2632792
+    type : Article
+    topic: CAP
+bailis-2014-net-reliable:
+    title: "The Network is [Not Really] Reliable"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2663191.2643130
+    type : Article
+    topic: Distributed
+bailis-nd:
+    title: 'PBS: Probabilistically Bounded Staleness (with interactive demonstration)'
+    url  : http://pbs.cs.berkeley.edu/
+    type : Reference
+    topic: CAP
+barroso2013:
+    url  : http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024
+    title: The Datacenter as a Computer, 2d. Ed.
+    shorter: Datacenter
+    type : Book
+    topic: Datacenter
+basho2013overview:
+    url  : http://basho.com/assets/RelationaltoRiak.pdf
+    title: Riak Technical Overview
+    type : Documentation
+    topic: Database
+basho2013home:
+    url  : http://basho.com/riak/
+    title: Riak Database
+    tooltitle: Riak
+    type : Software
+    topic: Database
+bayer2012:
+    title: The Absolutely Simplest Consistent Hashing Example
+    url  : http://techspot.zzzeek.org/2012/07/07/the-absolutely-simplest-consistent-hashing-example/
+    type : Post
+    topic: Database
+beckman2012:
+    title: "Why LINQ Matters: Cloud Composability Guaranteed"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2133806.2133820
+    type : Article
+    topic: Tools
+bisbee2014:
+    title: Exploring the NoSQL family tree
+    url  : http://ibmdatamag.com/2014/03/exploring-the-nosql-family-tree/?doing_wp_cron=1400101072.4355568885803222656250
+    type : Post
+    topic: Database
+bishop-2014:
+    title: "Apple's Arrival Cements Seattle's Status as 'Cloud Capital of the World'"
+    url  : http://www.geekwire.com/2014/new-apple-engineering-office-cements-seattles-status-cloud-hub/
+    type : Post
+    topic: Business
+brewer2000:
+    title: Towards Robust Distributed Systems
+    url  : http://www.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf
+    type : Slides
+    topic: CAP
+brewer2001:
+    title: Lessons From Giant-scale Services
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=939450
+    type : Article
+    topic: Scalability
+brewer2012:
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?tp=&arnumber=6133253
+    title: CAP Twelve Years Later
+    shorter: CAP+12
+    type : Article
+    topic: CAP
+brynjolfsson2010:
+    title: "Cloud Computing and Electricity: Beyond the Utility Model"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1735223.1735234
+    type : Article
+    topic: Business
+burrows2006:
+    title: The Chubby Lock Service for Loosely-coupled Distributed Systems
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1298455.1298487
+    type : Article
+    topic: Storage
+butler-2014:
+    title: "How Much Bigger is Amazon's Cloud vs. Microsoft and Google?"
+    url  : http://www.networkworld.com/article/2837910/public-cloud/how-much-bigger-is-amazon-s-cloud-vs-microsoft-and-google.html
+    type : Post
+    topic: Business
+cachin2011:
+    title: Introduction to Reliable and Secure Distributed Programming
+    url  : http://link.springer.com/book/10.1007%2F978-3-642-15260-3
+    type : Book
+    topic: Distributed
+calder2011:
+    title: "Windows Azure Storage: A Highly Available  Cloud Storage Service with Strong Consistency"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2043571
+    type : Article
+    topic: Storage
+castro2002:
+    title: Practical Byzantine Fault Tolerance and Proactive Recovery
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=571637.571640
+    type : Research
+    topic: Distributed
+castro2003:
+    title: "BASE: Using Abstraction to Improve Fault Tolerance"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=10.1145/859716.859718
+    type : Research
+    topic: Distributed
+cavage2013:
+    title: "There Is No Getting Around It: You Are Building a Distributed System"
+    shorter: Distributed
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2461256.2461274
+    type : Article
+    topic: App-design
+celery-nd:
+    title: Celery Distributed Task Queue
+    url  : http://celery.readthedocs.org/en/latest/index.html
+    type : Software
+    topic: Messaging
+chandy1985:
+    title: "Distributed Snapshots: Determining Global States of Distributed Systems"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=214451.214456
+    type : Research
+    topic: Distributed
+chandra2007:
+    title: "Paxos Made Live: An Engineering Perspective"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1281100.1281103
+    type : Article
+    topic: Distributed
+chang2006:
+    title: "Bigtable: A Distributed Storage System for Structured Data"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1298475
+    type : Article
+    topic: Platform
+citrusbyte2014:
+    tooltitle: Redis
+    title: Redis Key-Value Store
+    url  : http://redis.io/
+    type : Software
+    topic: Database
+clark2013:
+    title: "OSv: The Open Source Cloud Operating System That is Not Linux"
+    url  : http://www.linux.com/news/featured-blogs/200-libby-clark/748578-osv-the-open-source-cloud-operating-system-that-is-not-linux
+    type : Post
+    topic: Platform
+cockcroft-nd:
+    title: Adrian Cockcroft
+    url  : http://www.slideshare.net/adrianco
+    type : Blog
+    topic: Performance
+cooper2008:
+    title: "PNUTS: Yahoo!’s Hosted Data Serving Platform"
+    url  : http://www.vldb.org/pvldb/1/1454167.pdf
+    type : Article
+    topic: Storage
+corbett2012:
+    title: "Spanner: Google's Globally-Distributed Database"
+    url  : https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf
+    type : Article
+    topic: Storage
+cubrilovic2014:
+    title: "Notes on the Celebrity Data Theft [Sep 2014 Theft of Private Photos]"
+    url  : https://www.nikcub.com/posts/notes-on-the-celebrity-data-theft/
+    type : Post
+    topic: Security
+cusumano2010:
+    title: Cloud Computing and SaaS as New Computing Platforms
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1721654.1721667
+    type : Article
+    topic: Business
+czaajkowski2009:
+    title: "Large-scale Graph Computing at Google [Pregel]"
+    url  : http://googleresearch.blogspot.it/2009/06/large-scale-graph-computing-at-google.html
+    type : Post
+    topic: Platform
+davis2014:
+    title: How to Save 90% on Your S3 Bill
+    url  : http://www.appneta.com/blog/s3-list-get-bucket-default/
+    type : Post
+    topic: AWS
+dck-nd:
+    title: Data Center Knowledge
+    url  : http://www.datacenterknowledge.com/
+    type : Blog
+    topic: Datacenter
+dean2008:
+    title: "MapReduce: Simplified Data Processing on Large Clusters"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1327452.1327492
+    type : Article
+    topic: Platform
+dean2010:
+    title: "MapReduce: A Flexible Data Processing Tool"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1629175.1629198
+    type : Article
+    topic: Platform
+dean2013:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794
+    title: The Tail at Scale
+    shorter: Tail-Scale
+    type : Article
+    topic: Latency
+decandia2007:
+    title: "Dynamo: Amazon's Highly Available Key-Value Store"
+    url  : http://s3.amazonaws.com/AllThingsDistributed/sosp/amazon-dynamo-sosp2007.pdf
+    type : Article
+    topic: Storage
+desai2013:
+    title: "Beyond Location: Data Security in the 21st Century"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398368
+    type : Article
+    topic: Security
+deutsch-1994:
+    title: The Eight Fallacies of Distributed Computing
+    url  : https://blogs.oracle.com/jag/resource/Fallacies.html
+    type : Post
+    topic: Distributed
+drdobbs-nd:
+    title: Cloud---Dr. Dobb's
+    url  : http://www.drdobbs.com/cloud
+    type : Blog
+    topic: Tools
+drysdale2012:
+    title: "Pynamo: Exploring the Dynamo Paper in Python"
+    url  : http://lurklurk.org/pynamo/pynamo.html
+    type : Post
+    topic: Storage
+durkee2010:
+    title: Why Cloud Computing Will Never Be Free
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1735223.1735242
+    type : Article
+    topic: Business
+eaton2014:
+    title: 'The "Four Hamiltons" Framework for Mitigating Faults in the Cloud: Avoid It, Mask It, Bound It, Fix It Fast'
+    url  : http://highscalability.com/blog/2014/3/3/the-four-hamiltons-framework-for-mitigating-faults-in-the-cl.html
+    type : Post
+    topic: Operations
+eucalyptus-nd:
+    title: "Eucalyptus: Open Source AWS Compatible Private Clouds"
+    url  : https://www.eucalyptus.com/
+    type : Software
+    topic: Cloud
+fikes2010:
+    title: "[Google] Storage Architecture and Challenges [in 2010---includes Colossus File System]"
+    url  : http://static.googleusercontent.com/media/research.google.com/en//university/relations/facultysummit2010/storage_architecture_and_challenges.pdf
+    type : Slides
+    topic: Storage
+fischer1990:
+    title: "Impossibility of Distributed Consensus with One Faulty Process"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=10.1145/3149.214121
+    type : Research
+    topic: Distributed
+fitzpatrick2010:
+    title: The Case Against Data Lock-in
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1839676.1839691
+    type : Article
+    topic: Database
+ford2010:
+    title: "Availability in [Google's] Globally Distributed Storage Systems"
+    url  : https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Ford.pdf
+    type : Research
+    topic: Storage
+foundation-nd-sw:
+    title: FoundationDB
+    url  : https://foundationdb.com/
+    type : Software
+    topic: Database
+freiling-2011:
+    title: The Failure Detector Abstraction
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1883612.1883616
+    type : Research
+    topic: Distributed
+gauthier2013:
+    title: Software Reigns in Microsoft's Cloud-Scale Data Centers
+    url  : http://www.globalfoundationservices.com/posts/2013/february/11/software-reigns-in-microsofts-cloud-scale-data-centers.aspx
+    type : Post
+    topic: Datacenter
+gauthier2013a:
+    title: Microsoft Cloud-Scale Data Center Designs
+    url  : http://www.globalfoundationservices.com/posts/2013/march/26/microsoft-cloud-scale-data-center-designs.aspx
+    type : Post
+    topic: Datacenter
+ghemawat2003:
+    title: The Google File System
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=945450
+    type : Article
+    topic: Storage
+gilbert2002:
+    title: "Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerante Web Services"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?doid=564585.564601
+    type : Article
+    topic: CAP
+gilbert2012:
+    title: Perspectives on the CAP Theorem
+    url  : http://ieeexplore.ieee.org.proxy.lib.sfu.ca/xpl/articleDetails.jsp?arnumber=6122006
+    type : Article
+    topic: CAP
+golab2014:
+    title: 'Eventually Consistent: Not What You Were Expecting?'
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2576794
+    type : Article
+    topic: CAP
+google2014:
+    title: Google Data Centers
+    url  : http://www.google.com/about/datacenters/
+    type : Post
+    topic: Datacenter
+google2014a:
+    title: Explore a Google Data Center With Street View
+    url  : http://www.youtube.com/watch?v=avP5d16wEp0
+    type : Post
+    topic: Datacenter
+google2014b:
+    title: Google Container Data Center Tour
+    url  : http://www.youtube.com/watch?v=zRwPSFpLX8I
+    type : Post
+    topic: Datacenter
+greenberg2011:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897877
+    title: "VL2: A Scalable and Flexible Data Center Network"
+    type : Article
+    topic: Network
+gregg2013:
+    title: Thinking Methodically About Performance
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408791
+    type : Article
+    topic: Performance
+hale2010:
+    title: "You Can't Sacrifice Partition Tolerance"
+    url  : http://codahale.com/you-cant-sacrifice-partition-tolerance/
+    type : Post
+    topic: CAP
+hamilton2007:
+    title: On Designing and Deploying Internet-scale Services
+    shorter: Internet-scale
+    url  : https://www.usenix.org/conference/lisa-07/designing-and-deploying-internet-scale-services
+    type : Article
+    topic: Operations
+hamilton2013:
+    title: The Power Failure Seen Around the World
+    url  : http://perspectives.mvdirona.com/2013/02/04/ThePowerFailureSeenAroundTheWorld.aspx
+    type : Post
+    topic: Operations
+hathaway2010:
+    title: Lazy logging calls in Python
+    url  : http://stackoverflow.com/questions/4148790/lazy-logger-message-string-evaluation
+    type : Post
+    topic: Operations
+helland2007:
+    title: "Life Beyond Distributed Transactions: An Apostate's View"
+    url  : http://www.ics.uci.edu/~cs223/papers/cidr07p15.pdf
+    type : Article
+    topic: Distributed
+helland2012:
+   title: Idempotence Is Not a Medical Condition
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2160734
+   type : Article
+   topic: Distributed
+helland2013:
+   url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2398356.2398374
+   title: Condos and clouds
+   shorter: Condos
+   type : Article
+   topic: App-design
+herley-2014:
+    title: Security, Cybercrime, and Scale
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2654847
+    type : Article
+    topic: Security
+herrnstadt-2013:
+    title: 7 Things That Make Google F1 and the FoundationDB SQL Layer So Strikingly Similar
+    url  : http://blog.foundationdb.com/7-things-that-make-google-f1-and-the-foundationdb-sql-layer-so-strikingly-similar
+    type : Post
+    topic: Database
+highscalability-nd:
+    title: "High Scalability: Building Bigger, Faster, More Reliable Websites"
+    url  : http://highscalability.com/
+    type : Blog
+    topic: Scalability
+hintjens-2008:
+    title: "What's Wrong With AMQP (And How to Fix It)"
+    url  : http://www.imatix.com/articles:whats-wrong-with-amqp/
+    type : Post
+    topic: Messaging
+hintjens2013:
+   url  : http://zguide.zeromq.org/
+   title: 0MQ---The Guide
+   tooltitle: ZMQ
+   type : Documentation
+   topic: Messaging
+hodges2013:
+    title: Notes on Distributed Systems for Young Bloods
+    url  : http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/
+    type : Post
+    topic: Distributed
+hoff2007:
+   title: Log Everything All the Time
+   url  : http://highscalability.com/blog/2007/8/30/log-everything-all-the-time.html
+   type : Post
+   topic: Operations
+hull2013:
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500468.2500475
+    title: 20 Obstacles to Scalability
+    shorter: Obstacles
+    type : Article
+    topic: Scalability
+iMatix2013tool:
+    url  : http://zeromq.org/
+    title: 0MQ
+    type : Software
+    topic: Messaging
+isard2007:
+    title: "Dryad: Distributed Data-Parallel Programs From Sequential Building Blocks"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1272996.1273005
+    type : Article
+    topic: Distributed
+isard2009:
+    title: "Distributed data-parallel computing using a high-level programming language [DryadLINQ]"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1559845.1559962
+    type : Article
+    topic: Distributed
+janakiram2014:
+    title: "Demystifying Kubernetes: The Tool to Manage Google-scale Workloads in the Cloud"
+    url  : http://www.computerweekly.com/feature/Demystifying-Kubernetes-the-tool-to-manage-Google-scale-workloads-in-the-cloud
+    type : Post
+    topic: Containers
+juels2013:
+    title: New Approaches to Cloud Security and Availability for Cloud Data
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408793
+    type : Article
+    topic: Security
+katsov2012:
+    title: Distributed Algorithms in NoSQL Databases
+    shorter: NoSQL
+    url  : http://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
+    type : Article
+    topic: CAP
+katsov2014:
+    title: 'Google Finds: Centralized Control, Distributed Data Architectures Work Better Than Fully Decentralized Architectures'
+    url  : http://highscalability.com/blog/2014/4/7/google-finds-centralized-control-distributed-data-architectu.html
+    type : Post
+    topic: CAP
+katsov-nd:
+    title: Highly Scalable Blog
+    url  : http://highlyscalable.wordpress.com/
+    type : Blog
+    topic: Scalability
+kava2014:
+    title: "Better Data Centers Through Machine Learning [Google]"
+    url  : http://googleblog.blogspot.ca/2014/05/better-data-centers-through-machine.html
+    type : Post
+    topic: Datacenter
+kingsbury-2013:
+    title: 'Jepsen: Testing the Partition Tolerance of PostgreSQL, Redis, MongoDB, and Riak'
+    url  : http://www.infoq.com/articles/jepsen
+    type : Article
+    topic: CAP
+kingsbury-2014:
+    title: 'Call me maybe: Carly Rae Jepsen and the perils of network partitions'
+    url  : http://aphyr.com/tags/jepsen
+    type : Post
+    topic: CAP
+kingsbury-2014-rabbitmq:
+    title: "Call Me Maybe: RabbitMQ"
+    url  : http://aphyr.com/posts/315-call-me-maybe-rabbitmq
+    type : Post
+    topic: Messaging
+kingsbury-nd:
+    title: "Partitions-post [Accumulating list of network outages]"
+    url  : https://github.com/aphyr/partitions-post
+    type : Post
+    topic: Distributed
+kotla2008:
+    title: "Zyzzyva: Speculative Byzantine Fault Tolerance"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1400214.1400236
+    type : Research
+    topic: Distributed
+krishnan2012:
+    title: Weathering the Unexpected
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2366316.2366332
+    type : Article
+    topic: Operations
+lakshman2010:
+    title: "Cassandra: A Decentralized Structured Storage System"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1773912.1773922
+    type : Article
+    topic: Storage
+lamport1978:
+    title: Time, Clocks, and the Ordering of Events in a Distributed System
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=10.1145/3149.214121
+    type : Research
+    topic: Distributed
+lamport1984:
+    title: Using Time Instead of Timeout for Fault-Tolerant Distributed Systems
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=10.1145/2993.2994
+    type : Research
+    topic: Distributed
+lamport1998:
+    title: "The Part-time Parliament [Paxos]"
+    url  :  http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=279227.279229
+    type : Research
+    topic: Distributed
+lamport2001:
+    title: Paxos Made Simple
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=568425.568433
+    type : Article
+    topic: Distributed
+lamport2006:
+    title: Fast Paxos
+    url  : http://research.microsoft.com/pubs/64624/tr-2005-112.pdf
+    type : Research
+    topic: Distributed
+lampson1996:
+    title: How to Build a Highly Available System Using Consensus
+    url  : http://research.microsoft.com/en-us/um/people/blampson/58-Consensus/Acrobat.pdf
+    type : Article
+    topic: Distributed
+lango2014:
+    title: Toward Software-Defined SLAs
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2541883.2541894
+    type : Article
+    topic: SLA
+laurie2014:
+    title: "[TLS/SSL] Certificate Transparency"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2659897
+    type : Article
+    topic: Security
+li2010:
+    title: "CloudCmp: Comparing Public Cloud Providers"
+    shorter: CloudCmp
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1879143
+    type : Article
+    topic: Performance
+li2014:
+    title: "Fundamentals of Multimedia: Cloud Computing for Multimedia Services"
+    url  : http://link.springer.com.proxy.lib.sfu.ca/chapter/10.1007/978-3-319-05290-8_19
+    type : Chapter
+    topic: Multimedia
+liskov1991:
+    title: Replication in the Harp File System
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=121132.121169
+    type : Article
+    topic: Storage
+loggly-nd:
+    title: loggly
+    url  : https://www.loggly.com/
+    type : Software
+    topic: Operations
+lloyd-2014:
+    title: "Don't Settle for Eventual Consistency"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2596624
+    type : Article
+    topic: CAP
+logstash-nd:
+    title: logstash
+    url  : http://logstash.net/
+    type : Software
+    topic: Operations
+ma2014:
+    title: "Data Consistency Models of Public Cloud Services: Amazon S3, Google Cloud Storage and Windows Azure Storage"
+    url  : http://www.highlyscalablesystems.com/3551/data-consistency-models-of-public-cloud-storage-services-amazon-s3-google-cloud-storage-and-windows-azure-storage/
+    type : Post
+    topic: Storage
+madhavapeddy2014:
+    title: "Unikernels:	Rise of the Virtual Library Operating System"
+    url  : http://queue.acm.org/detail.cfm?id=2566628
+    type : Article
+    topic: Platform
+malewicz2010:
+    title: "Pregel: A System for Large-scale Graph Processing"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1807167.1807184
+    type : Article
+    topic: Platform
+marz2011:
+    title: How to Beat the CAP Theorem
+    url  : http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html
+    type : Post
+    topic: CAP
+mckusick2010:
+    title: "GFS: Evolution on Fast-Forward"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1666420.1666439
+    type : Article
+    topic: Storage
+mcmillan2014:
+    title: "Cloud Computing a 'Security Nightmare', says Cisco CEO"
+    url  : http://www.computerworld.com/article/2523825/security0/cloud-computing-a--security-nightmare---says-cisco-ceo.html
+    type : Article
+    topic: Security
+meijer2012:
+    title: All Your Database Are Belong to Us
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2330667.2330684
+    type : Article
+    topic: Database
+melnik2011:
+    title: "Dremel: Interactive Analysis of Web-scale Datasets"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1953122.1953148
+    type : Article
+    topic: Database
+metz2009:
+    title: "Google File System II: Dawn of the Multiplying Master Nodes [Colossus]"
+    url  : http://www.theregister.co.uk/2009/08/12/google_file_system_part_deux/
+    type : Post
+    topic: Storage
+michi2008:
+    title: Another Note on Distributed Computing
+    url  : http://www.triodia.com/staff/michi/blog/Another_note.pdf
+    type : Article
+    topic: Distributed
+millsap2010a:
+    title: Thinking Clearly About Performance, Part 1
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1810891.1810909
+    type : Article
+    topic: Performance
+millsap2010b:
+    title: Thinking Clearly About Performance, Part 2
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1831407.1831422
+    type : Article
+    topic: Performance
+mitsuhiko-nd:
+    title: Logbook source code
+    url  : https://github.com/mitsuhiko/logbook
+    type : Software
+    topic: Operations
+moz-nd:
+    title: "Google [Indexing] Algorithm Change History"
+    url  : http://moz.com/google-algorithm-change
+    type : Post
+    topic: Search
+ms-escience2014:
+    title: Cloud Design Patterns Now Available
+    url  : http://blogs.msdn.com/b/escience/archive/2014/01/28/cloud-design-patterns-now-available.aspx
+    type : Post
+    topic: App-design
+msr-nd-dryad:
+    title: Dryad
+    url  : http://research.microsoft.com/en-us/projects/dryad/
+    type : Post
+    topic: Research
+musial2014:
+  title: Implementing Distributed Shared Memory for Dynamic Networks
+  url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2500874
+  type : Article
+  topic: CAP
+nanavati2014:
+    title: "Cloud Security: A Gathering Storm"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2593686
+    type : Article
+    topic: Security
+netflix:
+    title: The Netflix Tech Blog
+    url  : http://techblog.netflix.com/
+    type : Blog
+    topic: Cloud
+netflix-nd:
+    title: Netflix Open Source Software Centre
+    url  : http://netflix.github.io/#repo
+    type : Software
+    topic: Cloud
+newman-2014:
+    title: "Inside Risks: Risks and Myths of Cloud Computing and Cloud Storage"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2661049
+    type : Article
+    topic: Security
+newcombe2013:
+    title: Use of Formal Methods at Amazon Web Services
+    url  : http://research.microsoft.com/en-us/um/people/lamport/tla/formal-methods-amazon.pdf
+    type : Article
+    topic: Verification
+newrelic2014:
+    tooltitle: New Relic
+    title: "New Relic [Application Peformance Monitoring]"
+    url  : http://newrelic.com/
+    type : Software
+    topic: Operations
+oliner2012:
+    title: Advances and Challenges in Log Analysis
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2076450.2076466
+    type : Article
+    topic: Operations
+pantheios-nd:
+    title: "Pantheios [C/C++ Logging Library]"
+    url  : http://www.pantheios.org/
+    type : Software
+    topic: Operations
+peng2010:
+    title: "Large-scale Incremental Processing Using Distributed Transactions and Notifications [Percolator]"
+    url  : https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Peng.pdf
+    type : Article
+    topic: Platform
+pivotal-nd:
+    title: "RabbitMQ [AMQP Messaging Software]"
+    url  : http://www.rabbitmq.com/
+    type : Software
+    topic: Messaging
+princeton2014:
+    title: Princeton Alumni Weekly Special Issue on Privacy
+    url  : http://paw.princeton.edu/issues/2014/01/08/features/
+    type : Issue
+    topic: Privacy
+proctor2013:
+    title: Do All Roads Lead Back to SQL?
+    url  : http://www.drdobbs.com/cloud/do-all-roads-lead-back-to-sql/240162452
+    type : Article
+    topic: Database
+ratzel2012:
+    title: "Toward Higher Precision [Network Time Synchronization]"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=10.1145/2347736.2347750
+    type : Article
+    topic: Network
+rexford2011:
+    title: 'VL2: Technical Perspective'
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1897852.1897876
+    type : Article
+    topic: Network
+robinson-2013:
+    title: The CAP FAQ
+    url  : http://henryr.github.io/cap-faq/
+    type : Post
+    topic: CAP
+robinson-nd:
+    title: "Paper Trail: Computer Systems, Distributed Algorithms, and Databases"
+    url  : http://the-paper-trail.org/
+    type : Blog
+    topic: Distributed
+robinson-2014:
+    title: Distributed Systems Theory for the Distributed Systems Engineer
+    url  : http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/
+    type : Post
+    topic: Distributed
+roche2013:
+    title: Adopting DevOps practices in quality assurance
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2524713.2524721
+    type : Article
+    topic: Operations
+rollbar-nd:
+    title: "Rollbar [Collect Error Reports from Web and Mobile Apps]"
+    url  : https://rollbar.com/
+    type : Software
+    topic: Operations
+ronacher2010:
+    title: Logbook 0.6.0
+    url  : https://pythonhosted.org/Logbook/index.html
+    type : Software
+    topic: Operations
+rotem-gal-oz-nd:
+    title: Fallacies of Distributed Computing Explained
+    url  : http://www.rgoarchitects.com/Files/fallacies.pdf
+    type : Article
+    topic: Distributed
+samovskiy2010:
+    title: The Rise of DevOps
+    url  : http://www.somic.org/2010/03/02/the-rise-of-devops/
+    type : Post
+    topic: Operations
+sarkuni2014:
+    title: AWS Tips, Tricks, and Techniques
+    url  : https://launchbylunch.com/posts/2014/Jan/29/aws-tips/
+    type : Post
+    topic: AWS
+schaffer2013:
+    title: Thoughts on Scalability
+    url  : http://matschaffer.com/2013/09/scalability/
+    type : Post
+    topic: Scalability
+schneider1990:
+    title: "Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial"
+    url  : http://research.microsoft.com/pubs/64624/tr-2005-112.pdf
+    type : Research
+    topic: Distributed
+scott-nd:
+    title: "Latency Numbers Every Programmer Should Know (By Year)"
+    url  : http://www.eecs.berkeley.edu/~rcs/research/interactive_latency.html
+    type : Reference
+    topic: Latency
+sirer2013:
+    title: "Broken by Design: MongoDB Fault Tolerance"
+    url  : http://hackingdistributed.com/2013/01/29/mongo-ft/
+    type : Post
+    topic: Database
+shute2013:
+    title: "F1: A Distributed Database that Scales"
+    shorter: F1
+    url  : http://research.google.com/pubs/pub41344.html
+    type : Article
+    topic: Database
+skeen1982:
+    title: A quorum-based commit protocol
+    url  : https://ecommons.library.cornell.edu/bitstream/1813/6323/1/82-483.pdf
+    type : Research
+    topic: Distributed
+somers2013:
+     title: Heroku's Ugly Secret
+     url  : http://news.rapgenius.com/James-somers-herokus-ugly-secret-annotated
+     type : Post
+     topic: Platform
+stonebraker2011:
+    title: "10 Rules for Scalable Performance in 'Simple Operation' Datastores"
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1953122.1953144
+    type : Article
+    topic: Database
+takada2013:
+    title: Distributed systems for fun and profit
+    url  : http://book.mixu.net/distsys/
+    type : Book
+    topic: Distributed
+terry2013:
+    title: Replicated Data Consistency Explained Through Baseball
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2534706.2500500
+    type : Article
+    topic: CAP
+tseitlin2013:
+    title: The Antifragile Organization
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2492007.2492022
+    shorter: Antifragile
+    type : Article
+    topic: Operations
+vogels2009:
+    title: Eventual Consistency
+    url  : http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=1435417.1435432
+    type : Article
+    topic: CAP
+waldo1994:
+    title: A Note on Distributed Computing
+    url  : http://www.cs.mcgill.ca/~navindra/kde-devel/kwn-18/smli_tr-94-29.ps.gz
+    type : Article
+    topic: Distributed
+weeks2014:
+    title: "S3mper: Consistency in the Cloud"
+    url  : http://techblog.netflix.com/2014/01/s3mper-consistency-in-cloud.html
+    type : Post
+    topic: CAP
+weil2006:
+    title: "Ceph: A scalable, high-performance distributed file system"
+    url  : http://ceph.com/papers/weil-ceph-osdi06.pdf
+    type : Research
+    topic: Storage
+white2007:
+    title: Consistent Hashing
+    url  : https://weblogs.java.net/blog/tomwhite/archive/2007/11/consistent_hash.html
+    type : Post
+    topic: Database
+wiger-2014:
+    title: Powering Gaming Applications with Amazon DynamoDB
+    url  : http://blogs.aws.amazon.com/bigdata/post/Tx27Y7HOQ4V6393/Powering-Gaming-Applications-with-Amazon-DynamoDB?sc_ichannel=EM&sc_icountry=NA&sc_icampaigntype=Newsletter&sc_icampaign=EM_124215170&sc_idetail=1173744&ref_=pe_395770_124215170_20
+    type : Post
+    topic: Database

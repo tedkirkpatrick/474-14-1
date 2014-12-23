@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Assignment 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li ><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Assignment 2</h1>
+		        
+			
+<h2 id="next-version">Next version</h2>
+
+<ul>
+  <li>Teach them to use long-poll in SQS&#8212;keeps them in the free tier of SQS ops</li>
+  <li>Revised name of &#8220;server&#8221;&#8212;potentially confusing, overdetermined definition. Perhaps &#8220;leader&#8221;?</li>
+  <li>Would fit into latency discussion better if workers returned completions to server, server returned final completion to user.</li>
+</ul>
+
+<h2 id="my-little-image-sharer-clouds-are-magic">My Little Image Sharer: Clouds Are Magic</h2>
+
+<div class="well">Important: Deliverables/grading is tentative, pending approval from Ted. Load testing service to be released hopefully by Wednesday.</div>
+
+<p><img src="http://i.imgur.com/PPFXNhy.png" style="float: right; margin-left: 20px; margin-bottom: 20px" alt="Rainbow Dash" /></p>
+
+<p><strong>Due:</strong> Sunday, February 2nd, 23:59.<br />
+<strong>Submissions:</strong> <a href="https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/+a2">CourSys</a><br />
+<strong>Boilerplate:</strong> <a href="https://github.com/sfu-innovation/cmpt-474-a2">GitHub</a><br />
+<strong>TEST TOOL:</strong> <a href="http://ec2-54-213-21-158.us-west-2.compute.amazonaws.com/">RUN THIS</a></p>
+
+<h3 id="overview">Overview</h3>
+<p>TNI (Ted n Izaak) has hired you to finish their half-completed project: My Little Image Sharer (you guessed it: an image sharing service). The previous developers were terrible and fired; so they brought you on board and you&#8217;ve been left with partially-completed server and worker services. Users of My Little Image Sharer start by uploading an image to the server service (the only publicly accessible component). Upon receiving said image, the server (i) saves the image in S3, and (ii) sends a notification to the worker service via SQS so the worker can do further processing. When the worker receives an image, it computes several scaled thumbnails and saves each of them in S3. The worker service is <em>asynchronous</em>: The server simply sends the image and does not wait for the worker to complete. This means the user has no guarantee on how quickly the scaled versions will be retrievable from S3 after the original image is available on S3. In the terms we will consider Friday January&nbsp;24, the <em>latency</em> of the scaled images is unbounded.</p>
+
+<h3 id="part-1-into-the-clouds">Part 1: Into the Clouds</h3>
+
+<h4 id="deliverables">Deliverables</h4>
+<ul>
+  <li>Performance analysis (via our load testing tool)</li>
+  <li>Source code (uploaded zip or link to GitHub repository)
+    <ul>
+      <li>server.py </li>
+      <li>worker.py</li>
+      <li>etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="grading-13">Grading (/13)</h4>
+<ul>
+  <li>Performance results (via our load testing tool)
+    <ul>
+      <li>POST / returns HTTP 200 OK + URLs for single request /1</li>
+      <li>GET all image URLS respond HTTP 200 OK + image data within 30s /2</li>
+    </ul>
+  </li>
+  <li>server.py
+    <ul>
+      <li>generate_id() /2</li>
+      <li>notify_worker() /4</li>
+    </ul>
+  </li>
+  <li>worker.py
+    <ul>
+      <li>main() /4</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="overview-1">Overview</h4>
+
+<p>The server is mostly complete, being able to receive images and store them into S3. The worker has only basic image scaling functionality implemented. None of the communication exchange between worker and server was written. To complete the service, you must:</p>
+
+<ul>
+  <li>modify the server to communicate the arrival of a new image by putting a message in the work queue, and</li>
+  <li>modify the worker to listen for that message; when the worker receives the message, it needs to retrieve the existing image that was uploaded by the server, resize it to the requested thumbnail sizes, and then save those thumbnails to S3.</li>
+</ul>
+
+<h3 id="part-2-and-over-the-rainbow">Part 2: And Over the Rainbow</h3>
+
+<div class="well">Do not start this part before finishing Part&nbsp;1 or your life will be filled with regret!!!!</div>
+
+<h4 id="deliverables-1">Deliverables</h4>
+<ul>
+  <li>Performance analysis (via our load testing tool)</li>
+  <li>Screenshots of your AutoScaling group including
+    <ul>
+      <li>Details</li>
+      <li>Scaling History</li>
+      <li>Scaling Policies</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="grading-7">Grading (/7)</h4>
+<ul>
+  <li>Performance results
+    <ul>
+      <li>GET all image URLS behavior is responsive /3</li>
+    </ul>
+  </li>
+  <li>Screenshots of your AutoScaling group including
+    <ul>
+      <li>Details /1</li>
+      <li>Scaling History /1</li>
+      <li>Scaling Policies /2</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="overview-2">Overview</h4>
+
+<p>Unfortunately, simply completing the code for My Little Image Sharer won&#8217;t be enough to save it from failing when hordes of emotionally-underdeveloped cloud system developers suddenly upload or view all the images of love, tolerance and distributed systems they&#8217;ve been waiting to share with the world. TNI needs to have a service that <em>scales</em> (meets its SLA even as the number of users grows quickly). There are (at least) two scaling issues present: the worker service could become <em>under-provisioned</em> (too many images, not enough resizing power) and the data delivery network could become <em>under-provisioned</em> (too many requests, not enough network bandwidth).</p>
+
+<p>To ensure that there is enough resizing power available, you need to be able to spin up more workers as necessary. When to spin up new workers is left to your discretion, and you have many options to choose from in CloudWatch. This magic can be achieved by:
+ * creating an AMI with the worker embedded into it, 
+ * and configuring CloudWatch to automatically spin up new instances of that AMI.</p>
+
+<h3 id="part-3-but-wait-theres-more">Part 3: But wait&#8230; There&#8217;s More!</h3>
+
+<div class="well">
+This is short, informal, and just here to get you thinking about some of the real issues an app might face. Write in bullet points if you'd like!
+</div>
+
+<h4 id="deliverables-2">Deliverables</h4>
+<ul>
+  <li>Overview (txt/md/doc/pdf)</li>
+</ul>
+
+<h4 id="grading-4">Grading (/4)</h4>
+<ul>
+  <li>Overview
+    <ul>
+      <li>Shows how at least one implementation choice affects scalability/reliability /1</li>
+      <li>Suggests at least one scalability/reliability improvement that could be made /1</li>
+      <li>Explains how the application uses at least one cloud infrastructure component /1</li>
+      <li>Contains one other thoughtful comment /1</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="overview-3">Overview</h4>
+
+<p>Even after you&#8217;ve gotten through the blood, sweat and tears, TNI being the horribly devlish company it is, wants a brief overview of what your app promises to deliver (and just as importantly what it doesn&#8217;t) so they can immediately sell it off and become millionaires. Some thought-provoking questions you might wish to considering answering or thinking about are as follows:</p>
+
+<ul>
+  <li>How are these terms relevant or related to your app:
+    <ul>
+      <li>data center</li>
+      <li>virtual machine</li>
+      <li>virtualization</li>
+      <li>provisioning</li>
+      <li>overprovisioned</li>
+      <li>underprovisioned</li>
+      <li>elastic computing</li>
+      <li>utilization</li>
+      <li>throughput</li>
+      <li>latency</li>
+      <li>API</li>
+    </ul>
+  </li>
+  <li>What does the Amazon SLA mean you can expect from your app?</li>
+  <li>How does or doesn&#8217;t your ID generation algorithm prevent conflicts?</li>
+  <li>What platform-level, cluster-level, and application-level software is being used in your app?</li>
+  <li>How does your app scale?</li>
+  <li>How might it fail? (Hint: server.py)</li>
+  <li>How could you change it to scale better?</li>
+  <li>What other existing apps might use a similar platform? Why? (Hint: Video.)</li>
+  <li>What metric did you chose for your AutoScaler/CloudWatch alarm? Why?</li>
+  <li>If a worker fails while encoding an image, what happens? Can your system recover?</li>
+</ul>
+
+<h3 id="architectural-overview">Architectural Overview</h3>
+<p><img src="images/a2-structure.png" class="img-responsive" alt="Structure of Assignment 2 system" /></p>
+
+<h3 id="errata">Errata</h3>
+<div class="well">Note: The first version of this assignment very intentionally included references to Amazon's CloudFront system. However it has been deemed not relevant and subsequently removed (courtesy of Ted). However, if you've already incorporated CloudFront in your application, or want to do it, you will not be penalized in any way. If you wish to implement it the overview is below.
+<hr />
+To ensure that there is enough network bandwidth available, you need to have your images available from a lot of different network locations. This can be achieved by using a content distribution network to host your images.
+<ul>
+ <li>setup a CloudFront distribution to serve data from your S3 bucket,</li>
+ <li>and update the server to return CloudFront URLs instead of S3 ones.</li>
+</ul>
+</div>
+
+<p><strong>Important</strong>: TNI has intentionally omitted documentation in several
+  areas both to give you experience navigating through the
+  documentation and help sources (e.g. how do I make an AMI? how do I
+  get a Python script to start at boot? how do I use CloudWatch?) and
+  to encourage exploration, discussion and collaboration. Feel free to
+  share your knowledge with others by posting your issues or resources
+  on our friendly neighbourhood
+  <a href="http://www.reddit.com/r/sfu_innovation/">subreddit</a> or swinging by
+  <a href="http://sfu-innovation.github.io/474-14-1/chat.html">IRC</a>.</p>
+
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+  <li>Focus on core requirements first</li>
+  <li>Use &#8220;curl&#8221; to write simple tests</li>
+  <li>Start today</li>
+  <li>Ask lots of questions</li>
+  <li>Share knowledge</li>
+</ul>
+
+<h2 id="helpful-knowledge">Helpful Knowledge</h2>
+
+<h3 id="curling-for-fun--profit">Curling for Fun &amp; Profit</h3>
+
+<p>The &#8220;curl&#8221; command is useful for sending HTTP requests much like your browser does, but from the command line. Sane OS (i.e. Linux and Mac OS X) users have curl installed by default; Windows users however must <a href="http://www.paehl.com/open_source/?download=curl_734_0.zip">download</a> it. A description of all the options can be found on the <a href="http://curl.haxx.se/docs/manpage.html">man page</a>.</p>
+
+<p>You can use it to test your image uploading service by running the command:
+<code>bash
+curl -i -XPOST -F"image=@/path/to/img.jpg" http://ec2-url.com
+</code></p>
+
+<p>On Windows, if you get an error complaining about missing DLLs (e.g. libssh2.dll), make sure you&#8217;ve installed the most barebones version of curl without support for extra fancy things like ssh. The download link above is a reference to such a barebones version.</p>
+
+<p>If anything goes wrong you can enable more verbose output by adding &#8220;-v&#8221; to the list of flags to see what&#8217;s going on. Be sure to check the HTTP status code that looks something like &#8220;HTTP/1.1 200 OK&#8221;. Some common errors you might encounter:</p>
+
+<ul>
+  <li>Unable to connect; either your server.py file is not running on your instance, your instance is not turned on, or your instace&#8217;s security settings are not configured properly.</li>
+  <li>HTTP 403: Forbidden; you&#8217;re not allowed to access that resource; if it&#8217;s your bucket make sure you&#8217;ve made your bucket public.</li>
+  <li>HTTP 404: Not found; you&#8217;re trying to access a resource that doesn&#8217;t exist (e.g. /dgertfg)</li>
+  <li>HTTP 405: Method not allowed; you&#8217;re trying to use a method (e.g. GET/POST/PUT/etc.) on a resource (e.g. /) that doesn&#8217;t support it.</li>
+  <li>HTTP 500: Internal server error; your Python code threw an exception somewhere; check your server console for details.</li>
+</ul>
+
+<p>A full list of HTTP status codes and their meanings can be found <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">here</a>.</p>
+
+<h3 id="staying-alive">Staying Alive</h3>
+
+<p>Ubuntu uses a system called &#8220;upstart&#8221; to manage most of its system processes. Starting a continuously running Python process using uptstart is described <a href="http://askubuntu.com/questions/175751/how-do-i-run-a-python-script-in-the-background-and-restart-it-after-a-crash">here</a>.</p>
+
+<p>Remember that if you start your server inside an ssh session and you then close the ssh session that server is terminated unless either the system is managing the process through something like upstart or you&#8217;re using a smarter terminal management system such as <a href="http://tmux.sourceforge.net/">tmux</a> (an overview for which can be found <a href="http://robots.thoughtbot.com/a-tmux-crash-course">here</a>). </p>
+
+<h3 id="opening-the-gates">Opening the Gates</h3>
+
+<p>By default your EC2 instance only allows incoming traffic on port 22. To make your server.py (which runs on port 80), accessable to the rest of the world you need to add a rule allowing incoming traffic on port 80. Instructions for doing so can be found <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html">here</a>.</p>
+
+<p>By default your S3 bucket can only be accessed by you. In order to make it world-readable you need to apply a policy to all objects in your bucket. Instructions for doing so can be found <a href="http://ariejan.net/2010/12/24/public-readable-amazon-s3-bucket-policy/">here</a>.</p>
+
+<h3 id="ubuntu-setup-instructions">Ubuntu Setup Instructions</h3>
+
+<p>In order to prepare a vanilla Ubuntu install for this application you need to install a couple of things. Simply run the following commands to make sure you&#8217;ve got everything:</p>
+
+<p><code>
+sudo apt-get install git python-dev python-pip libjpeg-dev libpng-dev
+sudo pip install --upgrade boto pillow bottle
+sudo python server.py
+</code></p>
+
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

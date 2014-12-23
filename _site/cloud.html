@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Sequence of assignments for cloud software</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li ><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container commentary">
+			<h1>Sequence of assignments for cloud software</h1>
+		        
+		        <div class="well">The following page is speculation and
+			commentary, not finalized ideas or plans.</div>
+
+		        
+			<p>This page specifies the requirements for
+Cloud474. It is intended for the Cloud474 implementor,
+not for the students in the class. The individual assignment pages
+will describe the assignments for the students.</p>
+
+<p>All assignments for Cloud474 will be in Python, so the APIs should all be in Python.</p>
+
+<p>All assignments for Cloud474 will be done in groups of 3&#8211;4
+and completed in one week. The workload should be commensurate with
+that level of effort (18&#8211;24 programmer-hours per week).</p>
+
+<p>To add to general specification:</p>
+
+<ul>
+  <li>CLIENT ROBOTS. </li>
+  <li>OVERARCHING application narrative.</li>
+</ul>
+
+<section>
+	<h1>Izaak's Overview</h1>
+
+	<section>
+		<h2>Nomenclature</h2>
+		<dl>
+			<dt>Instance</dt>
+			<dd>
+				A single container with assigned virtual network,
+				a set of services and an owner.
+			</dd>
+			
+			<dt>Container</dt>
+			<dd>
+				An LXC container. 
+			</dd>
+			
+			<dt>Service</dt>
+			<dd>
+				A single program with distinct configuration and setup
+				requirements. This program may or may not spawn other
+				processes, listen on sockets, manipulate files, etc.
+			</dd>
+
+			<dt>Application</dt>
+			<dd>
+				A collection of services on a non-empty set of instances
+				providing some developer-defined functionality to users.
+			</dd>
+			
+			<dt>User</dt>
+			<dd>
+				An entity which uses an application by accessing its
+				services on one or more instances. 
+			</dd>
+
+			<dt>Redis</dt>
+			<dd>
+				A key-value store available as one of the services.
+			</dd>
+		</dl>
+	</section>
+
+	<section>
+		<h2>Architecture</h2>
+		<p>
+			Platform makes use of a variety of Linux tools
+			to simulate a large scale cloud platform on
+			smaller scale hardware. 
+		</p>
+	</section>
+
+	<section>
+		<h2>Timeline</h2>
+		<section>
+			<h3>Week 3 - Availability</h3>
+			<p>
+				Students are given two instances, one with a Redis service, 
+				the other with the load-balancer service. Students are to
+				explore using the existing code given for the load-balancer.
+				The Redis service instance is setup to fail periodically and 
+				thus students need to create an appropriate number of new 
+				Redis instances that mirror the data such that the global
+				failure rate for requests approaches 0.
+			</p>
+			<p>
+				Evaluated by calculating request failures.
+			</p>
+			<p>
+				Learning outcomes / stuff here.
+			</p>
+		</section>
+		<section>
+			<h3>Week 4 - Latency</h3>
+			<p>
+				Student's existing setup, while now containing some redundency,
+				does not yet address the problem whereby some requests take 
+				longer than others (when a request is made and the instance its
+				being made to times out, for example). Students are to address
+				this using hedged requests which is a relatively simple extension
+				of their work in week 3.
+			</p>
+		</section>
+		<section>
+			<h3>Week 5 - Data Partitioning</h3>
+			<p>
+				Students are required to add more data than can fit in any single
+				instance. They must add another two Redis instances and distribute
+				their existing and new data amongst all the Redis instances using
+				consistent hashing. 
+			</p>
+		</section>
+		<section>
+			<h3>Week 6 - Midterm</h3>
+			<p>
+				No activity.
+			</p>
+		</section>
+		<section>
+			<h3>Week 7 - Network Partitioning</h3>
+			<p>
+				Students add writes.
+			</p>
+		</section>
+		<section>
+			<h3>Week 8 - Consistency</h3>
+			<p>
+				Student's are required to make consistency garantees for their writes.
+			</p>
+		</section>
+		<section>
+			<h3>Week 9 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 10 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 11 - </h3>
+			<p>
+				
+			</p>
+		</section>
+		<section>
+			<h3>Week 12 - </h3>
+			<p>
+				
+			</p>
+		</section>
+	</section>
+
+</section>
+
+<h2 id="teds-overview">Ted&#8217;s Overview</h2>
+
+<h2 id="instance-sequence">Instance-level sequence</h2>
+
+<p>The first sequence of projects will run Week&nbsp;3&#8211;Week&nbsp;5,
+inclusive, which runs Jan&nbsp;20&#8211;Feb&nbsp;9. The server must have
+the functionality up to that necessary to support the
+<a href="#latency">latency</a> project by Jan&nbsp;20.</p>
+
+<p>In the weeks before Jan.&nbsp;20, the TA should focus on getting the
+Cloud474 software to run, downplaying interaction with the
+students.</p>
+
+<h3 id="single">Single instance</h3>
+
+<p>The first assignment will require a simple, single instance. The
+instance will not have any updatable store (that gets added in the
+<a href="#keyvalue">key-value database step</a>), although it might have a
+read-only store, such as the music database.</p>
+
+<p>I would prefer that students not need to know the details of REST
+parsing and so forth. They should simply write functions that will be
+called with fixed parameters when a service is requested.</p>
+
+<p>This first sequence of assignments (up to and including <a href="#latency">latency
+control</a>) should require only simple computation, one
+eligible for massive parallelism. The actual work of an individual
+step is immaterial&#8212;we can fatten the latency as necessary in the
+later steps.</p>
+
+<p>Note that for some students, this will be their first assignment in
+Python. I will be working with students in some class sessions, with
+class members who are experienced Python programmers working with
+students who are new or inexperienced with the language. The
+assignment for <a href="python-intro.html">Week&nbsp;2</a> will get the students
+up to speed on the basics. Groups will be organized so that there is
+at least one experienced Python programmer on each team.</p>
+
+<h3 id="cluster">Cluster instance</h3>
+
+<p>The students will next structure their application as a compute
+cluster, spreading the computation from the previous week across
+multiple instances in a master-minion organization. I suggest that the
+synchronization be done by
+<a href="http://zguide.zeromq.org/">ZMQ</a>
+but am open to other suggestions. An <a href="outstanding.html">outstanding
+issue</a> of the course is that I have not yet written a
+basic ZMQ application to do this kind of stuff.</p>
+
+<h3 id="latency">Latency control</h3>
+
+<p>In the final step of the sequence, students will implement
+latency-control, using either the hedged request or tied request
+techniques described on pp.&nbsp;77&#8211;78 of
+<a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794">The Tail at Scale</a>.</p>
+
+<p>This will require that Cloud474 provide a knob for the
+instructor to define test cases where instances take extremely long
+times or even outright fail. (Taking a long time is a required feature
+for Cloud474; failing outright is optional but would be nice
+to have&#8212;it requires students to handle time outs rather than just
+wait for a delayed response, however long it takes.)</p>
+
+<h2 id="cluster-sequence">Cluster-level infrastructure sequence</h2>
+
+<p>This sequence of assignments emphasizes using cluster-level
+infrastructure (as defined in Sect.&nbsp;2.4 of
+<a href="http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024">The Datacenter as a Computer, 2d. Ed.</a>). It
+will begin after the midterm and run Week&nbsp;7&#8211;Week&nbsp;13,
+Feb.&nbsp;10&#8211;April&nbsp;9.</p>
+
+<p>By this point in the semester, the teams should all be competent
+Python programmers, although the expertise will vary across
+individuals within a team.</p>
+
+<p>To expand:</p>
+
+<ul>
+  <li>Correspondence of infrastructure here and AWS features (perhaps Google as well?)</li>
+</ul>
+
+<h3 id="keyvalue">Key-value database</h3>
+
+<p>Key-value database, probably <a href="http://redis.io/">Redis</a>.</p>
+
+<h3 id="infrastructure">Cluster-level infrastructure</h3>
+
+<p>Cluster-level infrastructure. Because!</p>
+
+<h3 id="cap">Trading off consistency, availability, and compensation</h3>
+
+<p>CAP.</p>
+
+<h3 id="perfanalysis">Performance analysis</h3>
+
+<p>Performance analysis.</p>
+
+<h3 id="logging">Logging</h3>
+
+<p>Logging.</p>
+
+<h3 id="robust">Robust system</h3>
+
+<p>Robust version.</p>
+
+<h3 id="final">Final report</h3>
+
+<p>Final report.</p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>

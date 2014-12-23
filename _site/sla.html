@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web site for CMPT 474, Spring 2015">
+    <meta name="author" content="A. E. Kirkpatrick">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Developing a Service-Level Agreement (SLA)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/navbar-static-top/navbar-static-top.css" rel="stylesheet">
+    <link href="course.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="dist/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+	<body>
+		<div class="container">
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+				<span class="sr-only">Toggle navigation</span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  		<span class="icon-bar"></span>
+		  	</button>
+			<a class="navbar-brand " href="index.html">CMPT 474</a>
+		</div>
+		<div class="collapse navbar-collapse" id="collapse-id">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="schedule.html">Schedule</a></li>
+				<li ><a href="outcomes.html">Learning outcomes</a></li>
+				<li ><a href="challenges.html">Challenges</a></li>
+				<li ><a href="design.html">Design principles</a></li>
+				<li ><a href="readings.html">Readings</a></li>
+				
+				<li ><a href="aws.html">AWS details</a></li>
+				
+		      </ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="container ">
+			<h1>Developing a Service-Level Agreement (SLA)</h1>
+		        
+			<h2 id="solution">Solution</h2>
+<p><strong>Thursday, Feb. 20:</strong> The <a href="sla-sol.html">answer key</a>.</p>
+
+<h2 id="submission-details">Submission details</h2>
+
+<p><strong>Due:</strong> Wednesday, February&nbsp;19, 2014<br />
+<strong>Submit to <a href="https://courses.cs.sfu.ca/2014sp-cmpt-474-d1/+a3-sla">CourSys</a>:</strong> A PDF file giving your answers to each question. Show how they were derived.<br />
+<strong>Percentage of course grade:</strong> 4%</p>
+
+<h2 id="part-1-sla-for-latency">Part 1: SLA for Latency</h2>
+
+<p>This assignment asks you to work through the issues discussed in
+<a href="http://dl.acm.org.proxy.lib.sfu.ca/citation.cfm?id=2408776.2408794">The Tail at Scale</a>. We will use
+the structure of Assignment&nbsp;2 as an example application.</p>
+
+<p>The latency of a request in Assignment&nbsp;2 is due to the latencies
+of each of its component parts: The server (which saves the original
+image in S3 and queues up resizes on the workers), the time it takes
+the SQS queue to deliver messages from the server to the workers, and
+the workers (which do one or more resizes and save them in S3). Assume
+the following characteristics for each component:</p>
+
+<ul>
+  <li>the latency of the server is a constant 200&nbsp;ms,</li>
+  <li>the latency of the queue (the time it takes for a message to travel from the server to a worker) in ms is a logarithmic function of the number of workers, <code>ql = 50 + 25 * log10 w</code>, where <code>w</code> is the number of workers, and</li>
+  <li>the latencies of the workers according to the following tables:</li>
+</ul>
+
+<h3 id="latency-for-2-workers">Latency for 2 workers</h3>
+
+<table class="table">
+<caption class="ignore-caption">Latency percentiles for <code>w = 2</code> workers</caption>
+<thead><tr><th scope="col" class="rttd">Percentile</th><th scope="col" class="rttd">Time (ms)</th>
+</tr></thead>
+<tbody>
+<tr><td class="rttd">50.0</td><td class="rttd">125</td></tr>
+<!--
+<tr><td class="rttd">75</td><td class="rttd">175</td></tr>
+<tr><td class="rttd">90</td><td class="rttd">250</td></tr>
+<tr><td class="rttd">99</td><td class="rttd">300</td></tr>
+-->
+<tr><td class="rttd">99.9</td><td class="rttd">175</td></tr>
+</tbody>
+</table>
+
+<p>Example: If two workers are creating thumbnails and every request
+requires each worker to make a thumbnail, 50% of the time all
+thumbnails for one request will be completed within 125&nbsp;ms after
+the <em>workers</em> have received them and virtually all requests will have
+all their thumbnails ready 175&nbsp;ms after the <em>workers</em> have
+received them.</p>
+
+<h3 id="latency-for-1000-workers">Latency for 1000 workers</h3>
+
+<table class="table">
+<caption class="ignore-caption">Latency percentiles for <code>w = 1000</code> workers</caption>
+<thead><tr><th scope="col" class="rttd">Percentile</th><th scope="col" class="rttd">Time (ms)</th>
+</tr></thead>
+<tbody>
+<tr><td class="rttd">50.0</td><td class="rttd">150</td></tr>
+<!--<tr><td class="rttd">75</td><td class="rttd">175</td></tr>-->
+<tr><td class="rttd">90.0</td><td class="rttd">325</td></tr>
+<tr><td class="rttd">99.0</td><td class="rttd">650</td></tr>
+<tr><td class="rttd">99.9</td><td class="rttd">1050</td></tr>
+</tbody>
+</table>
+
+<h3 id="question-1">Question 1</h3>
+
+<p>Assume the latency for a complete request is the sum of the server,
+queue, and worker latencies. This is the time between the receipt of a
+request from a user task and all the thumbnails being stored in S3 and
+available to be read.</p>
+
+<p>Using the above formulas, calculate the 99.9th percentile latency for requests when there are two workers.</p>
+
+<h3 id="question-2">Question 2</h3>
+
+<p>Using the same assumptions as above, but now asssuming 1000 workers
+and that every request will require creation of 1000 thumbnails, one for each worker,
+calculate the 99.9th percentile latency.</p>
+
+<h3 id="question-3">Question 3</h3>
+<p><strong>Added Mon, Feb 17:</strong> <em>For this question, continue the assumption that you have 1000 workers, as done in Question&nbsp;2.</em></p>
+
+<p>Now assume that you have revised your project to use a hedged request
+algorithm. At the 99th percentile time, for every worker that has
+still not replied, you start a second worker with the same
+request. Assume you have a pool of idle workers from which to assign
+the duplicate request. Assume that a duplicated request has the latency
+distribution of 2 workers. (This is unrealistically simple but it makes the
+computation easier.)</p>
+
+<p>What is the 99.9th percentile of this latency distribution?</p>
+
+<h2 id="part-2-sla-for-throughput">Part 2: SLA for Throughput</h2>
+
+<p><strong>Added Mon, Feb 17:</strong> <em>This question does not include any of the
+assumptions from Part&nbsp;1. Answer it only using the assumptions
+given in this part. Each EC2 instance can only do one request at a
+time and every request requires only a single EC2 instance.</em></p>
+
+<p>Assume that your latency computations make you comfortable setting an
+SLA of 99% at 1400&nbsp;ms for all your requests. You have reserved
+four EC2 instances that will be used exclusively for this service (in other words, <em>single-tenant</em>). These
+instances are identical to the one used for the latency
+computation.</p>
+
+<p><strong>What is your SLA for throughput?</strong></p>
+
+<h2 id="part-3-sla-for-availability">part 3: SLA for Availability</h2>
+
+<p>Assume that Amazon offers an availability of &#8220;four nines&#8221; (99.99%). In addition, your
+operations staff tell you that they will likely need to have the
+system down for one working day (eight hours) per year. </p>
+
+<p><strong>How many &#8220;nines&#8221; is your SLA for annual availability?</strong></p>
+
+		</div> <!-- /container -->
+
+		    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+  
+
+	</body>
+</html>
