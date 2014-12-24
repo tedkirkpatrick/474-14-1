@@ -1,2 +1,1 @@
-# CMPT474
-The static component is going here for now.
+This repo supports a site on github.io. The only branch that counts is gh-pages.
